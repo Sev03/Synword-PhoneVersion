@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="SynWord"
+                    android:id="@+id/textView"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="75dp"
+                    android:textColor="#ffffffff"
+                    android:layout_gravity="center"
+                    android:layout_weight="2.22"
+                    android:layout_margin="25dp" />
+
+                <Button
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:text="Play"
+                    android:id="@+id/button"
+                    android:background="@drawable/a"
+                    android:layout_weight="0.33"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:layout_marginTop="20dp" />
+
+                <Button
+                    android:layout_width="240dp"
+                    android:layout_height="50dp"
+                    android:text="Highscore"
+                    android:id="@+id/button3"
+                    android:background="@drawable/b"
+                    android:layout_weight="0.33"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/textView8"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

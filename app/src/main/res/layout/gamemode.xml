@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Zurück          Runde             Punkte"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff"
+        android:textSize="25dp"/>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="32dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/prgbar" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Suche ein Synonym für:"
+                    android:id="@+id/textView"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="25dp"
+                    android:textColor="#ff000000"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="WORT"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="40dp"
+                    android:textColor="#FF000000"
+                    android:layout_weight="0.32" />
+
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.28">
+
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="75dp"
+                        android:text="Synonym"
+                        android:id="@+id/button8"
+                        android:layout_row="0"
+                        android:layout_column="7"
+                        android:background="@drawable/bl"
+                        android:layout_margin="10dp" />
+
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="75dp"
+                        android:text="Non-Synonym"
+                        android:id="@+id/button6"
+                        android:layout_row="0"
+                        android:layout_column="8"
+                        android:background="@drawable/gr"
+                        android:layout_margin="10dp" />
+
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="75dp"
+                        android:text="Non-Synonym"
+                        android:id="@+id/button9"
+                        android:layout_row="1"
+                        android:layout_column="7"
+                        android:background="@drawable/gr"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="75dp"
+                        android:text="Synonym"
+                        android:id="@+id/button10"
+                        android:layout_row="1"
+                        android:layout_column="8"
+                        android:layout_columnWeight="2"
+                        android:background="@drawable/bl"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="75dp"
+                        android:text="Non-Synonym"
+                        android:id="@+id/button7"
+                        android:layout_row="2"
+                        android:layout_column="7"
+                        android:background="@drawable/bl"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <Button
+                        android:layout_width="150dp"
+                        android:layout_height="75dp"
+                        android:text="Non-Synonym"
+                        android:id="@+id/button5"
+                        android:layout_row="2"
+                        android:layout_column="8"
+                        android:layout_columnWeight="2"
+                        android:background="@drawable/gr"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp" />
+                </GridLayout>
+
+                <TextView
+                    android:layout_width="114dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                    android:text="SynWord"
+                    android:id="@+id/textView"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="25dp"
+                    android:textColor="#ffffffff"
+                    android:layout_margin="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.08" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
