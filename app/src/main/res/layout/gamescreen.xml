@@ -64,7 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="WORT"
+                    android:text="dog"
                     android:id="@+id/textView3"
                     android:layout_gravity="center_horizontal"
                     android:textSize="40dp"
@@ -82,7 +82,7 @@
                     <Button
                         android:layout_width="150dp"
                         android:layout_height="75dp"
-                        android:text="Synonym"
+                        android:text="hound"
                         android:id="@+id/button8"
                         android:layout_row="0"
                         android:layout_column="7"
@@ -92,7 +92,7 @@
                     <Button
                         android:layout_width="150dp"
                         android:layout_height="75dp"
-                        android:text="Non-Synonym"
+                        android:text="wolf"
                         android:id="@+id/button6"
                         android:layout_row="0"
                         android:layout_column="8"
@@ -102,7 +102,7 @@
                     <Button
                         android:layout_width="150dp"
                         android:layout_height="75dp"
-                        android:text="Non-Synonym"
+                        android:text="hyena"
                         android:id="@+id/button9"
                         android:layout_row="1"
                         android:layout_column="7"
@@ -114,7 +114,7 @@
                     <Button
                         android:layout_width="150dp"
                         android:layout_height="75dp"
-                        android:text="Synonym"
+                        android:text="puppy"
                         android:id="@+id/button10"
                         android:layout_row="1"
                         android:layout_column="8"
@@ -127,7 +127,7 @@
                     <Button
                         android:layout_width="150dp"
                         android:layout_height="75dp"
-                        android:text="Non-Synonym"
+                        android:text="lynx"
                         android:id="@+id/button7"
                         android:layout_row="2"
                         android:layout_column="7"
@@ -139,7 +139,7 @@
                     <Button
                         android:layout_width="150dp"
                         android:layout_height="75dp"
-                        android:text="Non-Synonym"
+                        android:text="fox"
                         android:id="@+id/button5"
                         android:layout_row="2"
                         android:layout_column="8"
