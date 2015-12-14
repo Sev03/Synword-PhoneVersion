@@ -29,6 +29,16 @@
             android:label="Gamescreen" >
         </activity>
 
+        <activity
+            android:name=".creditsActivity"
+            android:label="Credits" >
+        </activity>
+
+        <activity
+            android:name=".helpActivity"
+            android:label="Help" >
+        </activity>
+
     </application>
 
 </manifest>

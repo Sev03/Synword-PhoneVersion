@@ -57,4 +57,18 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, HighscoreActivity.class);
         startActivity(intent);
     }
+
+    public void showHelp(View view) {
+        // Do something in response to button
+
+        Intent intent = new Intent(this, helpActivity.class);
+        startActivity(intent);
+    }
+
+    public void showCredits(View view) {
+        // Do something in response to button
+
+        Intent intent = new Intent(this, creditsActivity.class);
+        startActivity(intent);
+    }
 }

@@ -84,8 +84,7 @@
                     android:layout_marginBottom="15dp"
                     android:layout_gravity="center"
                     android:textSize="30dp"
-                    android:onClick="showHelp"/>
-
+                    android:onClick="showHelp" />
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
