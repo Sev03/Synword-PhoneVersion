@@ -36,7 +36,8 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginRight="25dp"
-                    android:layout_marginBottom="5dp" />
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="0.25" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -46,8 +47,8 @@
                     android:layout_gravity="center_horizontal"
                     android:textSize="35dp"
                     android:textColor="#ffffff"
-                    android:layout_weight="0.07"
-                    android:layout_marginBottom="75dp" />
+                    android:layout_weight="0.25"
+                    android:layout_marginBottom="25dp" />
 
                 <Button
                     android:layout_width="280dp"
@@ -55,11 +56,12 @@
                     android:text="Play"
                     android:id="@+id/btnPlay"
                     android:background="@drawable/a"
-                    android:layout_weight="0.33"
+                    android:layout_weight="0.25"
                     android:layout_marginBottom="20dp"
                     android:layout_gravity="center"
                     android:textSize="30dp"
-                    android:layout_marginTop="20dp" />
+                    android:layout_marginTop="20dp"
+                    android:onClick="showPlay"/>
 
                 <Button
                     android:layout_width="280dp"
@@ -67,10 +69,11 @@
                     android:text="Highscore"
                     android:id="@+id/btnScore"
                     android:background="@drawable/b"
-                    android:layout_weight="0.33"
+                    android:layout_weight="0.25"
                     android:layout_marginBottom="20dp"
                     android:layout_gravity="center"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    android:onClick="showHighscore"/>
 
                 <Button
                     style="?android:attr/buttonStyleSmall"
