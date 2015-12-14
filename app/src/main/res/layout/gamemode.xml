@@ -46,8 +46,7 @@
                     android:layout_gravity="center_horizontal"
                     android:textSize="35dp"
                     android:textColor="#ffffff"
-                    android:layout_marginBottom="20dp"
-                    android:layout_weight="0.25" />
+                    android:layout_marginBottom="20dp" />
 
                 <Button
                     android:layout_width="280dp"
@@ -55,7 +54,7 @@
                     android:text="Fehlerfrei"
                     android:id="@+id/btnFehlerfrei"
                     android:background="@drawable/a"
-                    android:layout_weight="0.25"
+                    android:layout_weight="0.1"
                     android:layout_marginBottom="15dp"
                     android:layout_gravity="center"
                     android:textSize="30dp"
@@ -68,11 +67,18 @@
                     android:text="Zeit"
                     android:id="@+id/btnZeit"
                     android:background="#5180bc"
-                    android:layout_weight="0.25"
-                    android:layout_marginBottom="15dp"
+                    android:layout_weight="0.1"
+                    android:layout_marginBottom="60dp"
                     android:layout_gravity="center"
                     android:textSize="30dp"
                     android:onClick="showZeit"/>
+
+                <Button
+                    android:layout_width="64dp"
+                    android:layout_height="58dp"
+                    android:id="@+id/button"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/info" />
 
             </LinearLayout>
 
