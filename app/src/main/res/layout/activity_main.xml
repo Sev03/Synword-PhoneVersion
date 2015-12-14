@@ -48,7 +48,7 @@
                     android:textSize="35dp"
                     android:textColor="#ffffff"
                     android:layout_weight="0.25"
-                    android:layout_marginBottom="25dp" />
+                    android:layout_marginBottom="20dp" />
 
                 <Button
                     android:layout_width="280dp"
@@ -57,7 +57,7 @@
                     android:id="@+id/btnPlay"
                     android:background="@drawable/a"
                     android:layout_weight="0.25"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_gravity="center"
                     android:textSize="30dp"
                     android:layout_marginTop="20dp"
@@ -68,21 +68,36 @@
                     android:layout_height="25dp"
                     android:text="Highscore"
                     android:id="@+id/btnScore"
-                    android:background="@drawable/b"
+                    android:background="#5180bc"
                     android:layout_weight="0.25"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="15dp"
                     android:layout_gravity="center"
                     android:textSize="30dp"
                     android:onClick="showHighscore"/>
 
                 <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="49dp"
-                    android:layout_height="45dp"
-                    android:id="@+id/btnInfo"
-                    android:layout_gravity="right"
-                    android:background="@drawable/info"
-                    android:layout_marginTop="80dp" />
+                    android:layout_width="280dp"
+                    android:layout_height="25dp"
+                    android:text="Help"
+                    android:id="@+id/btnHelp"
+                    android:background="@drawable/a"
+                    android:layout_weight="0.25"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:onClick="showHelp"/>
+
+                <Button
+                    android:layout_width="280dp"
+                    android:layout_height="25dp"
+                    android:text="Credits"
+                    android:id="@+id/btnCredits"
+                    android:background="#5180bc"
+                    android:layout_weight="0.25"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:onClick="showCredits"
+                    android:layout_marginBottom="20dp" />
 
             </LinearLayout>
 
