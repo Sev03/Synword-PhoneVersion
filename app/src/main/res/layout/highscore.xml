@@ -1,42 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:weightSum="1"
-    android:orientation="vertical">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="112dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="SynWord"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="75dp"
-        android:textColor="#ffffffff"
-        android:layout_gravity="center"
-        android:layout_marginTop="25dp" />
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Highscore"
-            android:id="@+id/textView"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textSize="35dp"
-            android:textColor="#ff000000"
-            android:layout_margin="20dp"
-            android:layout_gravity="center" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="SynWord"
+                    android:id="@+id/textView"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="60dp"
+                    android:textColor="#ffffffff"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Highscore"
+                    android:id="@+id/textView6"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="35dp"
+                    android:textColor="#ffffff"
+                    android:layout_marginBottom="75dp" />
+
+                <TextView
+                    android:layout_width="302dp"
+                    android:layout_height="280dp"
+                    android:text="1. Sev - 25.11.15 - 234 \n2. Flo - 26.11.15 - 233 \n3. Anel - 20.11.15 - 230 \n3. Flo - 21.11.15 - 230"
+                    android:id="@+id/viewHighscore"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:paddingLeft="50dp"
+                    android:background="@android:color/holo_blue_dark"
+                    android:textStyle="bold"
+                    android:layout_weight="0.15"
+                    android:paddingTop="15dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
-
 </LinearLayout>

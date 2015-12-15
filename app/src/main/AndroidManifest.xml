@@ -16,6 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HighscoreActivity"
+            android:label="Highscore" >
+        </activity>
+        <activity
+            android:name=".gamemodeActivity"
+            android:label="Gamemode" >
+        </activity>
+        <activity
+            android:name=".gamescreenActivity"
+            android:label="Gamescreen" >
+        </activity>
+
     </application>
 
 </manifest>

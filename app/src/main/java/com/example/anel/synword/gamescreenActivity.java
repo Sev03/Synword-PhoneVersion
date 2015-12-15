@@ -1,20 +1,19 @@
 package com.example.anel.synword;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.*;
-import android.content.Intent;
-import android.widget.Button;
 
-
-public class MainActivity extends ActionBarActivity {
+/**
+ * Created by Anel on 14.12.2015.
+ */
+public class gamescreenActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.gamescreen);
     }
 
 
@@ -38,19 +37,5 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void showPlay(View view) {
-        // Do something in response to button
-        //((Button) view).setEnabled( false );
-        Intent intent = new Intent(this, gamemodeActivity.class);
-        startActivity(intent);
-    }
-
-    public void showHighscore(View view) {
-        // Do something in response to button
-
-        Intent intent = new Intent(this, HighscoreActivity.class);
-        startActivity(intent);
     }
 }
