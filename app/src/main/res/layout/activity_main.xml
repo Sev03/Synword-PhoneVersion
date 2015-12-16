@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:weightSum="1"
-    android:orientation="vertical"
-    android:stretchColumns="0,1,2">
+    android:orientation="vertical">
 
     <LinearLayout
         android:orientation="horizontal"

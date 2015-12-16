@@ -40,7 +40,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Highscore"
+                    android:text="Rangliste"
                     android:id="@+id/textView6"
                     android:layout_gravity="center_horizontal"
                     android:textSize="35dp"

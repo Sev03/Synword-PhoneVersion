@@ -30,8 +30,16 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/txtPunkte"
                 android:text="Punkte: "
+                android:layout_column="28"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/points"
                 android:layout_column="2"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.2"
+                android:numeric="integer" />
         </TableRow>
 
     </TableLayout>
@@ -117,7 +125,9 @@
                             android:textSize="20dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="5dp" />
+                            android:layout_marginBottom="5dp"
+                            android:clickable="true"
+                            android:onClick="onClick1"/>
 
                         <Button
                             android:layout_width="100dp"
@@ -132,7 +142,9 @@
                             android:textSize="20dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="5dp" />
+                            android:layout_marginBottom="5dp"
+                            android:clickable="true"
+                            android:onClick="onClick2"/>
                     </TableRow>
 
                     <TableRow
@@ -153,7 +165,9 @@
                             android:textSize="20dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="5dp"/>
+                            android:layout_marginBottom="5dp"
+                            android:clickable="true"
+                            android:onClick="onClick3"/>
 
                         <Button
                             android:layout_width="100dp"
@@ -168,7 +182,9 @@
                             android:textSize="20dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="5dp"/>
+                            android:layout_marginBottom="5dp"
+                            android:clickable="true"
+                            android:onClick="onClick4"/>
                     </TableRow>
 
                     <TableRow
@@ -189,7 +205,9 @@
                             android:textSize="20dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="5dp"/>
+                            android:layout_marginBottom="5dp"
+                            android:clickable="true"
+                            android:onClick="onClick5"/>
 
                         <Button
                             android:layout_width="100dp"
@@ -204,7 +222,9 @@
                             android:textSize="20dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginBottom="5dp"/>
+                            android:layout_marginBottom="5dp"
+                            android:clickable="true"
+                            android:onClick="onClick6"/>
                     </TableRow>
 
                 </TableLayout>

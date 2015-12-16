@@ -48,10 +48,10 @@ public class gamemodeActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    /*public void showZeit(View view) {
+    public void showZeit(View view) {
         // Do something in response to button
 
         Intent intent = new Intent(this, gamescreenActivity.class);
         startActivity(intent);
-    }*/
+    }
 }
