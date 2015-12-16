@@ -16,9 +16,6 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         View decorView = getWindow().getDecorView();
-         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-         decorView.setSystemUiVisibility(uiOptions);
     }
 
 

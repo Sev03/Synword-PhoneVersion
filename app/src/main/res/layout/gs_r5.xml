@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:stretchColumns="0,1">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Runde 5/10"
+                android:id="@+id/txtRunde"
+                android:layout_weight="0.5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/txtPunkte"
+                android:text="Punkte: "
+                android:layout_column="2"
+                android:layout_weight="0.5" />
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="476dp"
+        >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBar"
+                        android:background="#b2b2b2" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Markiere Wörter mit \ngleicher Bedeutung"
+                    android:id="@+id/textView"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20dp"
+                    android:textColor="#ff000000"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Hund"
+                    android:id="@+id/txtWord"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="35dp"
+                    android:textColor="#FF000000"
+                    android:layout_marginBottom="25dp" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.5">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="15dp">
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="75dp"
+                            android:text="Rüde"
+                            android:id="@+id/btnWord1"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:background="@drawable/bl"
+                            android:layout_columnWeight="0.5"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp" />
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="75dp"
+                            android:text="WOlf"
+                            android:id="@+id/btnWord2"
+                            android:layout_row="0"
+                            android:layout_column="1"
+                            android:background="@drawable/bl"
+                            android:layout_columnWeight="0.5"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="15dp">
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="75dp"
+                            android:text="Hyäne"
+                            android:id="@+id/btnWord3"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:background="@drawable/bl"
+                            android:layout_columnWeight="0.5"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"/>
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="75dp"
+                            android:text="Welpe"
+                            android:id="@+id/btnWord4"
+                            android:layout_row="0"
+                            android:layout_column="1"
+                            android:background="@drawable/bl"
+                            android:layout_columnWeight="0.5"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="15dp">
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="75dp"
+                            android:text="Luchs"
+                            android:id="@+id/btnWord5"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:background="@drawable/bl"
+                            android:layout_columnWeight="0.5"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"/>
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="75dp"
+                            android:text="Fuchs"
+                            android:id="@+id/btnWord6"
+                            android:layout_row="0"
+                            android:layout_column="1"
+                            android:background="@drawable/bl"
+                            android:layout_columnWeight="0.5"
+                            android:layout_weight="1"
+                            android:textSize="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="5dp"/>
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

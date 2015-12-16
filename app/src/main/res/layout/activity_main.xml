@@ -52,7 +52,7 @@
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Play"
+                    android:text="Spielen"
                     android:id="@+id/btnPlay"
                     android:background="@drawable/a"
                     android:layout_weight="0.25"
@@ -65,7 +65,7 @@
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Highscore"
+                    android:text="Rangliste"
                     android:id="@+id/btnScore"
                     android:background="#5180bc"
                     android:layout_weight="0.25"
@@ -77,7 +77,7 @@
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Help"
+                    android:text="Hilfe"
                     android:id="@+id/btnHelp"
                     android:background="@drawable/a"
                     android:layout_weight="0.25"
