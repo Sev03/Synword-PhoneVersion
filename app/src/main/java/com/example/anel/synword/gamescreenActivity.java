@@ -29,7 +29,7 @@ public class gamescreenActivity extends ActionBarActivity {
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
-    static Points pointcounter = new Points();
+    Points pointcounter = new Points();
 
 
     @Override

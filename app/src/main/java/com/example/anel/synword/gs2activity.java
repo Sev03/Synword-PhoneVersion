@@ -27,6 +27,8 @@ public class gs2activity extends ActionBarActivity {
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
+
+
     Intent intent = getIntent();
     Points pointcounter = (Points)intent.getSerializableExtra("points");
     TextView tempview =(TextView) findViewById(R.id.points);

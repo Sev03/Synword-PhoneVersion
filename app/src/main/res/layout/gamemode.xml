@@ -49,7 +49,7 @@
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Fehlerfrei"
+                    android:text="Vermeide Fehler"
                     android:id="@+id/btnFehlerfrei"
                     android:background="@drawable/a"
                     android:layout_weight="0.1"
@@ -62,7 +62,7 @@
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Zeit"
+                    android:text="Sei möglichst schnell"
                     android:id="@+id/btnZeit"
                     android:background="#5180bc"
                     android:layout_weight="0.1"
@@ -74,9 +74,9 @@
                 <Button
                     android:layout_width="64dp"
                     android:layout_height="58dp"
-                    android:id="@+id/button"
+                    android:id="@+id/btnInfo"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/info" />
+                    android:background="@drawable/info"/>
 
             </LinearLayout>
 

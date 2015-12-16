@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.PopupWindow;
 
 /**
  * Created by Anel on 14.12.2015.
@@ -17,6 +19,7 @@ public class gamemodeActivity extends ActionBarActivity {
         setContentView(R.layout.gamemode);
         getSupportActionBar().hide();
     }
+
 
 
     @Override
@@ -54,4 +57,5 @@ public class gamemodeActivity extends ActionBarActivity {
         Intent intent = new Intent(this, gamescreenActivity.class);
         startActivity(intent);
     }
+
 }
