@@ -13,6 +13,7 @@ public class helpActivity extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.help);
+        getSupportActionBar().hide();
     }
 
 

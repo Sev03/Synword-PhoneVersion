@@ -13,6 +13,7 @@ public class creditsActivity extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.credits);
+        getSupportActionBar().hide();
     }
 
 

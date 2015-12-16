@@ -13,6 +13,7 @@ public class gs5activity extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gs_r5);
+        getSupportActionBar().hide();
     }
 
 

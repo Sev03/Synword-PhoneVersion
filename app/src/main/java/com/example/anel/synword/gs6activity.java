@@ -13,6 +13,7 @@ public class gs6activity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gs_r6);
+        getSupportActionBar().hide();
     }
 
 

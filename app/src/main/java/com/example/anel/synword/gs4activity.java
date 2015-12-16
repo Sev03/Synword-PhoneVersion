@@ -13,6 +13,7 @@ public class gs4activity extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gs_r4);
+        getSupportActionBar().hide();
     }
 
 
