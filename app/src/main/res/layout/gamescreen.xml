@@ -30,7 +30,7 @@
                 android:id="@+id/txtPunkte"
                 android:text="Punkte: "
                 android:layout_column="28"
-                android:layout_weight="0.05" />
+                android:layout_weight="0.05"/>
 
             <TextView
                 android:layout_width="wrap_content"

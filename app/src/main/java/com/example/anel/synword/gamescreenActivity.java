@@ -21,13 +21,15 @@ public class gamescreenActivity extends ActionBarActivity {
         setContentView(R.layout.gamescreen);
         getSupportActionBar().hide();
     }
+
+
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
     boolean btn3isclicked = false;
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
-    int pointcounter = 0;
+    static Points pointcounter = new Points();
 
 
     @Override
@@ -59,7 +61,7 @@ public class gamescreenActivity extends ActionBarActivity {
             view.setBackgroundColor(Color.parseColor("#FF3798D9"));
             if (btn1isclicked == false) {
                 pressed++;
-                pointcounter +=5;
+                pointcounter.setPointcounter(5);
                 btn1isclicked = true;
             }
             if (pressed == 2) {
@@ -81,7 +83,7 @@ public class gamescreenActivity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn3isclicked == false) {
             pressed++;
-            pointcounter +=5;
+            pointcounter.setPointcounter(5);
             btn3isclicked = true;
         }
         if (pressed == 2){
@@ -126,8 +128,9 @@ public class gamescreenActivity extends ActionBarActivity {
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, gs2activity.class);
+        pointcounter.setRound(1);
+        intent.putExtra("points", pointcounter);
         startActivity(intent);
-        TextView tempview = (TextView)findViewById(R.id.points);
-        //tempview.setText(pointcounter);
+
     }
 }

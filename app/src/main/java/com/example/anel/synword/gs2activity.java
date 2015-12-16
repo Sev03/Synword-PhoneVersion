@@ -27,7 +27,11 @@ public class gs2activity extends ActionBarActivity {
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
-    int pointcounter = 10;
+    Intent intent = getIntent();
+    Points pointcounter = (Points)intent.getSerializableExtra("points");
+    TextView tempview =(TextView) findViewById(R.id.points);
+    int temppoints = pointcounter.getPointcounter();
+    //tempview.setText(temppoints);
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,6 +67,7 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn1isclicked == false) {
             pressed++;
+            pointcounter.setPointcounter(5);
             btn1isclicked = true;
         }
         if (pressed == 2) {
@@ -73,7 +78,7 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn2isclicked == false) {
             pressed++;
-            pointcounter +=5;
+
             btn2isclicked = true;
         }
         if (pressed == 2){
@@ -96,7 +101,7 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn4isclicked == false) {
             pressed++;
-            pointcounter +=5;
+
             btn4isclicked = true;
         }
         if (pressed == 2){
@@ -131,7 +136,6 @@ public class gs2activity extends ActionBarActivity {
         // Do something in response to button
         Intent intent = new Intent(this, gs3activity.class);
         startActivity(intent);
-        TextView tempview = (TextView)findViewById(R.id.points);
-        //tempview.setText(pointcounter);
+        pointcounter.setRound(2);
     }
 }
