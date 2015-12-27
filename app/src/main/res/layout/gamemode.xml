@@ -72,11 +72,12 @@
                     android:onClick="showZeit"/>
 
                 <Button
-                    android:layout_width="64dp"
-                    android:layout_height="58dp"
+                    android:layout_width="56dp"
+                    android:layout_height="43dp"
                     android:id="@+id/btnInfo"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/info" />
+                    android:layout_weight="0.01"
+                    android:text="Info" />
 
             </LinearLayout>
 

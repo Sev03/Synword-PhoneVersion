@@ -48,8 +48,8 @@
                     android:layout_marginBottom="75dp" />
 
                 <TextView
-                    android:layout_width="302dp"
-                    android:layout_height="280dp"
+                    android:layout_width="284dp"
+                    android:layout_height="match_parent"
                     android:text="1. Sev - 25.11.15 - 234 \n2. Flo - 26.11.15 - 233 \n3. Anel - 20.11.15 - 230 \n3. Flo - 21.11.15 - 230"
                     android:id="@+id/viewHighscore"
                     android:layout_gravity="center_horizontal"
@@ -58,7 +58,6 @@
                     android:paddingLeft="50dp"
                     android:background="@android:color/holo_blue_dark"
                     android:textStyle="bold"
-                    android:layout_weight="0.15"
                     android:paddingTop="15dp" />
 
             </LinearLayout>
