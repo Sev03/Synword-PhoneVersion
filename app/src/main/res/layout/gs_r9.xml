@@ -115,7 +115,7 @@
                         <Button
                             android:layout_width="100dp"
                             android:layout_height="75dp"
-                            android:text="Wolf"
+                            android:text="Dingo"
                             android:id="@+id/btnWord1"
                             android:layout_row="0"
                             android:layout_column="0"
@@ -132,7 +132,7 @@
                         <Button
                             android:layout_width="100dp"
                             android:layout_height="75dp"
-                            android:text="Welpe"
+                            android:text="Köter"
                             android:id="@+id/btnWord2"
                             android:layout_row="0"
                             android:layout_column="1"

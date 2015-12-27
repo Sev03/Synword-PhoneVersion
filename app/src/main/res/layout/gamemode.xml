@@ -76,7 +76,7 @@
                     android:layout_height="58dp"
                     android:id="@+id/btnInfo"
                     android:layout_gravity="center_horizontal"
-                    android:background="@drawable/info"/>
+                    android:background="@drawable/info" />
 
             </LinearLayout>
 

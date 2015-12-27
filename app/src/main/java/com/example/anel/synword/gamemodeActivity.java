@@ -1,5 +1,6 @@
 package com.example.anel.synword;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -18,9 +19,9 @@ public class gamemodeActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamemode);
         getSupportActionBar().hide();
+
+
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,5 +58,19 @@ public class gamemodeActivity extends ActionBarActivity {
         Intent intent = new Intent(this, gamescreenActivity.class);
         startActivity(intent);
     }
+
+    /*Button bm1 = (Button) findViewById(R.id.btnInfo);
+    bm1.setOnClickListener(new View.OnClickListener() {
+
+
+        public void onClick(View v) {
+            // TODO Auto-generated method stub
+            AlertDialog.Builder alert = new AlertDialog.Builder(popup.this);
+            alert.setTitle("Help");
+            alert.setMessage("message");
+            alert.setPositiveButton("OK", null);
+            alert.show();
+        }
+    }*/
 
 }

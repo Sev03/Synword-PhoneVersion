@@ -29,11 +29,11 @@ public class gs2activity extends ActionBarActivity {
     boolean btn6isclicked = false;
 
 
-    Intent intent = getIntent();
+    /*Intent intent = getIntent();
     Points pointcounter = (Points)intent.getSerializableExtra("points");
     TextView tempview =(TextView) findViewById(R.id.points);
     int temppoints = pointcounter.getPointcounter();
-    //tempview.setText(temppoints);
+    //tempview.setText(temppoints);*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -69,7 +69,7 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn1isclicked == false) {
             pressed++;
-            pointcounter.setPointcounter(5);
+            //pointcounter.setPointcounter(5);
             btn1isclicked = true;
         }
         if (pressed == 2) {
@@ -138,6 +138,6 @@ public class gs2activity extends ActionBarActivity {
         // Do something in response to button
         Intent intent = new Intent(this, gs3activity.class);
         startActivity(intent);
-        pointcounter.setRound(2);
+        //pointcounter.setRound(2);
     }
 }
