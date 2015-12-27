@@ -1,11 +1,14 @@
 package com.example.anel.synword;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.PopupWindow;
 
 /**
  * Created by Anel on 14.12.2015.
@@ -15,8 +18,23 @@ public class gamemodeActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamemode);
+        getSupportActionBar().hide();
+
+        Button b = (Button) findViewById(R.id.btnInfo);
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(gamemodeActivity.this,Pop.class));
+            }
+        });
+
     }
 
+    public void onBackPressed(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -47,10 +65,25 @@ public class gamemodeActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    /*public void showZeit(View view) {
+    public void showZeit(View view) {
         // Do something in response to button
 
         Intent intent = new Intent(this, gamescreenActivity.class);
         startActivity(intent);
+    }
+
+    /*Button bm1 = (Button) findViewById(R.id.btnInfo);
+    bm1.setOnClickListener(new View.OnClickListener() {
+
+
+        public void onClick(View v) {
+            // TODO Auto-generated method stub
+            AlertDialog.Builder alert = new AlertDialog.Builder(popup.this);
+            alert.setTitle("Help");
+            alert.setMessage("message");
+            alert.setPositiveButton("OK", null);
+            alert.show();
+        }
     }*/
+
 }

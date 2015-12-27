@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:weightSum="1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:stretchColumns="0,1">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Runde 1/10"
+                android:text="Runde 7/10"
                 android:id="@+id/txtRunde"
                 android:layout_weight="0.5" />
 
@@ -30,7 +31,7 @@
                 android:id="@+id/txtPunkte"
                 android:text="Punkte: "
                 android:layout_column="28"
-                android:layout_weight="0.05"/>
+                android:layout_weight="0.05" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -78,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Markiere Begriffe, die dem Wort \n           am ähnlichsten sind."
+                    android:text="Markiere Wörter mit \ngleicher Bedeutung"
                     android:id="@+id/textView"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
@@ -114,7 +115,7 @@
                         <Button
                             android:layout_width="100dp"
                             android:layout_height="75dp"
-                            android:text="Rüde"
+                            android:text="Luchs"
                             android:id="@+id/btnWord1"
                             android:layout_row="0"
                             android:layout_column="0"
@@ -131,7 +132,7 @@
                         <Button
                             android:layout_width="100dp"
                             android:layout_height="75dp"
-                            android:text="Dingo"
+                            android:text="Hyäne"
                             android:id="@+id/btnWord2"
                             android:layout_row="0"
                             android:layout_column="1"
@@ -154,7 +155,7 @@
                         <Button
                             android:layout_width="100dp"
                             android:layout_height="75dp"
-                            android:text="Hyäne"
+                            android:text="rüde"
                             android:id="@+id/btnWord3"
                             android:layout_row="0"
                             android:layout_column="0"
@@ -171,7 +172,7 @@
                         <Button
                             android:layout_width="100dp"
                             android:layout_height="75dp"
-                            android:text="Köter"
+                            android:text="Dingo"
                             android:id="@+id/btnWord4"
                             android:layout_row="0"
                             android:layout_column="1"
@@ -194,7 +195,7 @@
                         <Button
                             android:layout_width="100dp"
                             android:layout_height="75dp"
-                            android:text="Luchs"
+                            android:text="Fuchs"
                             android:id="@+id/btnWord5"
                             android:layout_row="0"
                             android:layout_column="0"
@@ -211,7 +212,7 @@
                         <Button
                             android:layout_width="100dp"
                             android:layout_height="75dp"
-                            android:text="Fuchs"
+                            android:text="Köter"
                             android:id="@+id/btnWord6"
                             android:layout_row="0"
                             android:layout_column="1"

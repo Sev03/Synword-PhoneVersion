@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:weightSum="1"
-    android:orientation="vertical"
-    android:stretchColumns="0,1,2">
+    android:orientation="vertical">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -36,8 +35,7 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginRight="25dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="0.25" />
+                    android:layout_marginBottom="5dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -53,7 +51,7 @@
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Play"
+                    android:text="Spielen"
                     android:id="@+id/btnPlay"
                     android:background="@drawable/a"
                     android:layout_weight="0.25"
@@ -66,7 +64,7 @@
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Highscore"
+                    android:text="Rangliste"
                     android:id="@+id/btnScore"
                     android:background="#5180bc"
                     android:layout_weight="0.25"
@@ -78,15 +76,14 @@
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Help"
+                    android:text="Hilfe"
                     android:id="@+id/btnHelp"
                     android:background="@drawable/a"
                     android:layout_weight="0.25"
                     android:layout_marginBottom="15dp"
                     android:layout_gravity="center"
                     android:textSize="30dp"
-                    android:onClick="showHelp"/>
-
+                    android:onClick="showHelp" />
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"

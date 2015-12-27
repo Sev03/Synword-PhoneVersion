@@ -2,8 +2,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:shrinkColumns="*"
-    android:stretchColumns="*"
     android:background="@drawable/background"
     android:weightSum="1">
 
@@ -46,16 +44,15 @@
                     android:layout_gravity="center_horizontal"
                     android:textSize="35dp"
                     android:textColor="#ffffff"
-                    android:layout_marginBottom="20dp"
-                    android:layout_weight="0.25" />
+                    android:layout_marginBottom="20dp" />
 
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Fehlerfrei"
+                    android:text="Vermeide Fehler"
                     android:id="@+id/btnFehlerfrei"
                     android:background="@drawable/a"
-                    android:layout_weight="0.25"
+                    android:layout_weight="0.1"
                     android:layout_marginBottom="15dp"
                     android:layout_gravity="center"
                     android:textSize="30dp"
@@ -65,14 +62,22 @@
                 <Button
                     android:layout_width="280dp"
                     android:layout_height="25dp"
-                    android:text="Zeit"
+                    android:text="Sei möglichst schnell"
                     android:id="@+id/btnZeit"
                     android:background="#5180bc"
-                    android:layout_weight="0.25"
-                    android:layout_marginBottom="15dp"
+                    android:layout_weight="0.1"
+                    android:layout_marginBottom="60dp"
                     android:layout_gravity="center"
                     android:textSize="30dp"
                     android:onClick="showZeit"/>
+
+                <Button
+                    android:layout_width="56dp"
+                    android:layout_height="43dp"
+                    android:id="@+id/btnInfo"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.01"
+                    android:text="Info" />
 
             </LinearLayout>
 

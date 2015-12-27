@@ -9,10 +9,9 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -29,6 +28,66 @@
             android:label="Gamescreen" >
         </activity>
 
-    </application>
+        <activity
+            android:name=".creditsActivity"
+            android:label="Credits" >
+        </activity>
 
+        <activity
+            android:name=".helpActivity"
+            android:label="Help" >
+        </activity>
+
+        <activity
+            android:name=".gs2activity"
+            android:label="Gamescreen Runde 2" >
+        </activity>
+
+        <activity
+            android:name=".gs3activity"
+            android:label="Gamescreen Runde 3" >
+        </activity>
+
+        <activity
+            android:name=".gs4activity"
+            android:label="Gamescreen Runde 4" >
+        </activity>
+
+        <activity
+            android:name=".gs5activity"
+            android:label="Gamescreen Runde 5" >
+        </activity>
+
+        <activity
+            android:name=".gs6activity"
+            android:label="Gamescreen Runde 6" >
+        </activity>
+
+        <activity
+            android:name=".gs7activity"
+            android:label="Gamescreen Runde 7" >
+        </activity>
+
+        <activity
+            android:name=".gs8activity"
+            android:label="Gamescreen Runde 8" >
+        </activity>
+
+        <activity
+            android:name=".gs9activity"
+            android:label="Gamescreen Runde 9" >
+        </activity>
+
+        <activity
+            android:name=".gs10activity"
+            android:label="Gamescreen Runde 10" >
+        </activity>
+
+        <activity android:name=".Pop"
+            android:theme="@style/AppTheme.CustomTheme">
+        </activity>
+
+
+
+    </application>
 </manifest>

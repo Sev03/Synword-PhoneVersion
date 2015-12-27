@@ -8,11 +8,11 @@ import android.view.MenuItem;
 /**
  * Created by Anel on 14.12.2015.
  */
-public class HighscoreActivity extends ActionBarActivity {
-    @Override
+public class creditsActivity extends ActionBarActivity{
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.highscore);
+        setContentView(R.layout.credits);
         getSupportActionBar().hide();
     }
 
@@ -38,5 +38,4 @@ public class HighscoreActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }

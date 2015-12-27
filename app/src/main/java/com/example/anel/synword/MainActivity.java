@@ -15,6 +15,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
     }
 
 
@@ -51,6 +52,20 @@ public class MainActivity extends ActionBarActivity {
         // Do something in response to button
 
         Intent intent = new Intent(this, HighscoreActivity.class);
+        startActivity(intent);
+    }
+
+    public void showHelp(View view) {
+        // Do something in response to button
+
+        Intent intent = new Intent(this, helpActivity.class);
+        startActivity(intent);
+    }
+
+    public void showCredits(View view) {
+        // Do something in response to button
+
+        Intent intent = new Intent(this, creditsActivity.class);
         startActivity(intent);
     }
 }

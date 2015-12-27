@@ -8,29 +8,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
-import android.widget.TextView;
 
 /**
  * Created by Anel on 14.12.2015.
  */
-public class gamescreenActivity extends ActionBarActivity {
+public class gs10activity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gamescreen);
+        setContentView(R.layout.gs_r10);
         getSupportActionBar().hide();
     }
-
-
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
     boolean btn3isclicked = false;
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
-    //Points pointcounter = new Points();
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, gamemodeActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -58,15 +59,14 @@ public class gamescreenActivity extends ActionBarActivity {
     int pressed = 0;
 
     public void onClick1 (View view){
-            view.setBackgroundColor(Color.parseColor("#FF3798D9"));
-            if (btn1isclicked == false) {
-                pressed++;
-                //pointcounter.setPointcounter(5);
-                btn1isclicked = true;
-            }
-            if (pressed == 2) {
-                showNextScreen(view);
-           }
+        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+        if (btn1isclicked == false) {
+            pressed++;
+            btn1isclicked = true;
+        }
+        if (pressed == 2) {
+            showNextScreen(view);
+        }
     }
     public void onClick2 (View view){
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
@@ -83,7 +83,6 @@ public class gamescreenActivity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn3isclicked == false) {
             pressed++;
-            //pointcounter.setPointcounter(5);
             btn3isclicked = true;
         }
         if (pressed == 2){
@@ -127,10 +126,7 @@ public class gamescreenActivity extends ActionBarActivity {
 
     public void showNextScreen(View view) {
         // Do something in response to button
-        Intent intent = new Intent(this, gs2activity.class);
-        /*pointcounter.setRound(1);
-        intent.putExtra("points", pointcounter);*/
+        Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
-
     }
 }
