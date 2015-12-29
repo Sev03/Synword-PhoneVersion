@@ -20,7 +20,20 @@ public class gamemodeActivity extends ActionBarActivity {
         setContentView(R.layout.gamemode);
         getSupportActionBar().hide();
 
+        Button b = (Button) findViewById(R.id.btnInfo);
 
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(gamemodeActivity.this,Pop.class));
+            }
+        });
+
+    }
+
+    public void onBackPressed(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override
