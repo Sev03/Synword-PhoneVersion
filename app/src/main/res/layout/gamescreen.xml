@@ -35,7 +35,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/points"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/viewPoints"
                 android:layout_column="2"
                 android:layout_weight="0.2"
                 android:numeric="integer" />

@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by Anel on 14.12.2015.
@@ -19,6 +20,15 @@ public class gs4activity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gs_r4);
         getSupportActionBar().hide();
+
+        Intent intent = getIntent();
+        int points = ((Points) intent.getExtras().get("message")).getPointcounter();
+        int round = ((Points) intent.getExtras().get("message")).getRound();
+
+        TextView test = (TextView) this.findViewById(R.id.viewPoints);
+        test.setText("" + points);
+        test = (TextView) findViewById(R.id.txtRunde);
+        test.setText("Runde: " + (round + 1) + "/10");
     }
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -26,6 +36,7 @@ public class gs4activity extends ActionBarActivity {
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
+    Points pointcounter = new Points();
 
     @Override
     public void onBackPressed(){
@@ -62,6 +73,7 @@ public class gs4activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn1isclicked == false) {
             pressed++;
+            pointcounter.setPointcounter(5);
             btn1isclicked = true;
         }
         if (pressed == 2) {
@@ -83,6 +95,7 @@ public class gs4activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn3isclicked == false) {
             pressed++;
+            pointcounter.setPointcounter(5);
             btn3isclicked = true;
         }
         if (pressed == 2){
@@ -127,6 +140,8 @@ public class gs4activity extends ActionBarActivity {
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, gs5activity.class);
+        intent.putExtra("message", pointcounter);
+        pointcounter.setRound(4);
         startActivity(intent);
     }
 }

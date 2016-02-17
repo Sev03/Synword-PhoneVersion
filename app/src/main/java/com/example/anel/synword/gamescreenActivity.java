@@ -29,7 +29,7 @@ public class gamescreenActivity extends ActionBarActivity {
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
-    //Points pointcounter = new Points();
+    Points pointcounter = new Points();
 
 
     @Override
@@ -61,7 +61,7 @@ public class gamescreenActivity extends ActionBarActivity {
             view.setBackgroundColor(Color.parseColor("#FF3798D9"));
             if (btn1isclicked == false) {
                 pressed++;
-                //pointcounter.setPointcounter(5);
+                pointcounter.setPointcounter(5);
                 btn1isclicked = true;
             }
             if (pressed == 2) {
@@ -83,7 +83,7 @@ public class gamescreenActivity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn3isclicked == false) {
             pressed++;
-            //pointcounter.setPointcounter(5);
+            pointcounter.setPointcounter(5);
             btn3isclicked = true;
         }
         if (pressed == 2){
@@ -128,8 +128,8 @@ public class gamescreenActivity extends ActionBarActivity {
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, gs2activity.class);
-        /*pointcounter.setRound(1);
-        intent.putExtra("points", pointcounter);*/
+        intent.putExtra("message", pointcounter);
+        pointcounter.setRound(1);
         startActivity(intent);
 
     }

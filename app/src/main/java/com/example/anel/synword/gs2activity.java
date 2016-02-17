@@ -14,12 +14,23 @@ import android.widget.TextView;
  * Created by Anel on 14.12.2015.
  */
 public class gs2activity extends ActionBarActivity {
-
+    int points;
+    int round;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gs_r2);
         getSupportActionBar().hide();
+
+        Intent intent = getIntent();
+        points = ((Points) intent.getExtras().get("message")).getPointcounter();
+        round = ((Points) intent.getExtras().get("message")).getRound();
+
+        TextView test = (TextView) this.findViewById(R.id.viewPoints);
+        test.setText( "" + points );
+        test = (TextView) findViewById(R.id.txtRunde);
+        test.setText( "Runde: " + (round + 1) + "/10" );
+
     }
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -27,13 +38,9 @@ public class gs2activity extends ActionBarActivity {
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
+    Points pointcounter = new Points();
 
 
-    /*Intent intent = getIntent();
-    Points pointcounter = (Points)intent.getSerializableExtra("points");
-    TextView tempview =(TextView) findViewById(R.id.points);
-    int temppoints = pointcounter.getPointcounter();
-    //tempview.setText(temppoints);*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -69,7 +76,7 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn1isclicked == false) {
             pressed++;
-            //pointcounter.setPointcounter(5);
+            pointcounter.setPointcounter(5);
             btn1isclicked = true;
         }
         if (pressed == 2) {
@@ -80,7 +87,7 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn2isclicked == false) {
             pressed++;
-
+            pointcounter.setPointcounter(5);
             btn2isclicked = true;
         }
         if (pressed == 2){
@@ -103,7 +110,7 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn4isclicked == false) {
             pressed++;
-
+            pointcounter.setPointcounter(5);
             btn4isclicked = true;
         }
         if (pressed == 2){
@@ -115,6 +122,7 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn5isclicked == false) {
             pressed++;
+            pointcounter.setPointcounter(5);
             btn5isclicked = true;
         }
         if (pressed == 2){
@@ -137,7 +145,8 @@ public class gs2activity extends ActionBarActivity {
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, gs3activity.class);
+        intent.putExtra("message", pointcounter);
+        pointcounter.setRound(2);
         startActivity(intent);
-        //pointcounter.setRound(2);
     }
 }
