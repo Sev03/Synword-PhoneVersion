@@ -39,7 +39,8 @@
                 android:id="@+id/viewPoints"
                 android:layout_column="2"
                 android:layout_weight="0.2"
-                android:numeric="integer" />
+                android:numeric="integer"
+                android:text="0" />
         </TableRow>
 
     </TableLayout>

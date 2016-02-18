@@ -14,8 +14,8 @@ import android.widget.TextView;
  * Created by Anel on 14.12.2015.
  */
 public class gs2activity extends ActionBarActivity {
-    int points;
-    int round;
+    public int points;
+    public int round;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +27,7 @@ public class gs2activity extends ActionBarActivity {
         round = ((Points) intent.getExtras().get("message")).getRound();
 
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
-        test.setText( "" + points );
+        test.setText("" + points);
         test = (TextView) findViewById(R.id.txtRunde);
         test.setText( "Runde: " + (round + 1) + "/10" );
 
@@ -39,7 +39,6 @@ public class gs2activity extends ActionBarActivity {
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
     Points pointcounter = new Points();
-
 
 
     @Override
@@ -110,7 +109,6 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn4isclicked == false) {
             pressed++;
-            pointcounter.setPointcounter(5);
             btn4isclicked = true;
         }
         if (pressed == 2){
@@ -122,7 +120,6 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn5isclicked == false) {
             pressed++;
-            pointcounter.setPointcounter(5);
             btn5isclicked = true;
         }
         if (pressed == 2){
@@ -143,7 +140,7 @@ public class gs2activity extends ActionBarActivity {
     }
 
     public void showNextScreen(View view) {
-        // Do something in response to button
+        // Do something in response to buttons
         Intent intent = new Intent(this, gs3activity.class);
         intent.putExtra("message", pointcounter);
         pointcounter.setRound(2);

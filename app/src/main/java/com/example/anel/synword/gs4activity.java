@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
-import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -30,6 +29,7 @@ public class gs4activity extends ActionBarActivity {
         test = (TextView) findViewById(R.id.txtRunde);
         test.setText("Runde: " + (round + 1) + "/10");
     }
+
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
     boolean btn3isclicked = false;
@@ -84,6 +84,7 @@ public class gs4activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn2isclicked == false) {
             pressed++;
+            pointcounter.setPointcounter(5);
             btn2isclicked = true;
         }
         if (pressed == 2){

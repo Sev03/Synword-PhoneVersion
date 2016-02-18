@@ -14,6 +14,15 @@ import android.widget.TextView;
  * Created by Anel on 14.12.2015.
  */
 public class gs3activity extends ActionBarActivity {
+    public int points;
+    public int round;
+    public String ankerword;
+    public String syn1;
+    public String syn2;
+    public String nosyn1;
+    public String nosyn2;
+    public String nosyn3;
+    public String nosyn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +32,16 @@ public class gs3activity extends ActionBarActivity {
 
         Intent intent = getIntent();
 
-        int points = ((Points) intent.getExtras().get("message")).getPointcounter();
-        int round = ((Points) intent.getExtras().get("message")).getRound();
+        points = ((Points) intent.getExtras().get("message")).getPointcounter();
+        round = ((Points) intent.getExtras().get("message")).getRound();
 
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
-        test.setText("" + points);
+        test.setText(""+points);
         test = (TextView) findViewById(R.id.txtRunde);
         test.setText("Runde: " + (round + 1) + "/10");
+
+
+
     }
 
     boolean btn1isclicked = false;
@@ -39,6 +51,7 @@ public class gs3activity extends ActionBarActivity {
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
     Points pointcounter = new Points();
+
 
     @Override
     public void onBackPressed(){
@@ -135,6 +148,7 @@ public class gs3activity extends ActionBarActivity {
         }
         if (pressed == 2){
             showNextScreen(view);
+
         }
 
     }

@@ -11,7 +11,8 @@
         android:layout_marginTop="42dp"
         android:textSize="30dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,11 +66,11 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:layout_width="75dp"
+        android:layout_width="100dp"
         android:layout_height="40dp"
         android:id="@+id/editText"
         android:layout_marginTop="47dp"
-        android:maxLength="6"
+        android:maxLength="8"
         android:layout_below="@+id/textView9"
         android:layout_centerHorizontal="true"
         android:background="#ffffff"
@@ -79,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="(max. 6 Zeichen)"
+        android:text="(max. 8 Zeichen)"
         android:id="@+id/textView10"
         android:layout_below="@+id/textView9"
         android:layout_centerHorizontal="true" />

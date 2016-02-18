@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:text="Spielbedingungen"
         android:id="@+id/textView3"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="10dp"
         android:textSize="25dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -19,7 +19,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Vermeide Fehler:"
         android:id="@+id/textView4"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         android:textSize="20dp"
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
