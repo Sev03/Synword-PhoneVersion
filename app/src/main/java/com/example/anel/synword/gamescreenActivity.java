@@ -19,7 +19,7 @@ public class gamescreenActivity extends ActionBarActivity {
 
     public int points;
     public int round;
-    public String ankerword = "angriff";
+    public String ankerword = "Angriff";
     public String syn1 = "offensive";
     public String syn2 = "attacke";
     public String nosyn1 = "attentat";
@@ -49,9 +49,6 @@ public class gamescreenActivity extends ActionBarActivity {
         setContentView(R.layout.gamescreen);
         getSupportActionBar().hide();
 
-        Random r = new Random();
-        int i1 = r.nextInt(7 - 1) + 1;
-
         //stringarray mit den synonymen und nichtsynonymen
         String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
         Button b1 = (Button) findViewById(R.id.btnWord1);
@@ -61,6 +58,8 @@ public class gamescreenActivity extends ActionBarActivity {
         Button b5 = (Button) findViewById(R.id.btnWord5);
         Button b6 = (Button) findViewById(R.id.btnWord6);
 
+        TextView test = (TextView) this.findViewById(R.id.txtWord);
+        test.setText(ankerword);
         //array für positionen
         int[] array = {0,1,2,3,4,5};
         //aufruf shufflefunktion

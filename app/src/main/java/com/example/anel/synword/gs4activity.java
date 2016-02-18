@@ -7,13 +7,40 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
+import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.Random;
 
 /**
  * Created by Anel on 14.12.2015.
  */
 public class gs4activity extends ActionBarActivity {
+    public int points;
+    public int round;
+    public String ankerword = "Angriff";
+    public String syn1 = "offensive";
+    public String syn2 = "attacke";
+    public String nosyn1 = "attentat";
+    public String nosyn2 = "unfall";
+    public String nosyn3 = "schuss";
+    public String nosyn4 = "hieb";
 
+    private void ShuffleArray(int[] array)
+    {
+        int index;
+        Random random = new Random();
+        for (int i = array.length - 1; i > 0; i--)
+        {
+            index = random.nextInt(i + 1);
+            if (index != i)
+            {
+                array[index] ^= array[i];
+                array[i] ^= array[index];
+                array[index] ^= array[i];
+            }
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +48,35 @@ public class gs4activity extends ActionBarActivity {
         getSupportActionBar().hide();
 
         Intent intent = getIntent();
-        int points = ((Points) intent.getExtras().get("message")).getPointcounter();
-        int round = ((Points) intent.getExtras().get("message")).getRound();
+        points = ((Points) intent.getExtras().get("message")).getPointcounter();
+        round = ((Points) intent.getExtras().get("message")).getRound();
 
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
         test.setText("" + points);
         test = (TextView) findViewById(R.id.txtRunde);
-        test.setText("Runde: " + (round + 1) + "/10");
+        test.setText( "Runde: " + (round + 1) + "/10" );
+
+        //stringarray mit den synonymen und nichtsynonymen
+        String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
+        Button b1 = (Button) findViewById(R.id.btnWord1);
+        Button b2 = (Button) findViewById(R.id.btnWord2);
+        Button b3 = (Button) findViewById(R.id.btnWord3);
+        Button b4 = (Button) findViewById(R.id.btnWord4);
+        Button b5 = (Button) findViewById(R.id.btnWord5);
+        Button b6 = (Button) findViewById(R.id.btnWord6);
+
+        TextView hauptwort = (TextView) this.findViewById(R.id.txtWord);
+        hauptwort.setText(ankerword);
+        //array für positionen
+        int[] array = {0,1,2,3,4,5};
+        //aufruf shufflefunktion
+        ShuffleArray(array);
+        b1.setText(arr[array[0]]);
+        b2.setText(arr[array[1]]);
+        b3.setText(arr[array[2]]);
+        b4.setText(arr[array[3]]);
+        b5.setText(arr[array[4]]);
+        b6.setText(arr[array[5]]);
     }
 
     boolean btn1isclicked = false;
