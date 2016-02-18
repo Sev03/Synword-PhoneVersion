@@ -29,8 +29,8 @@ public class gs10activity extends ActionBarActivity {
         test.setText("" + points);
         test = (TextView) findViewById(R.id.txtRunde);
         test.setText("Runde: " + (round + 1) + "/10");
-
     }
+
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
     boolean btn3isclicked = false;
@@ -136,11 +136,12 @@ public class gs10activity extends ActionBarActivity {
             showNextScreen(view);
         }
 
+
     }
 
     public void showNextScreen(View view) {
         // Do something in response to button
-        Intent intent = new Intent(this, gamemodeActivity.class);
+        Intent intent = new Intent(this, pophighscore.class);
         intent.putExtra("message", pointcounter);
         pointcounter.setRound(10);
         startActivity(intent);

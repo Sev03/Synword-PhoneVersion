@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by Florian on 16.12.2015.
  */
-public class Points{
+public class Points implements Serializable{
 
     int pointcounter = 0;
     int round = 0;

@@ -83,8 +83,14 @@
             android:label="Gamescreen Runde 10" >
         </activity>
 
-        <activity android:name=".Pop"
+        <activity
+            android:name=".Pop"
             android:theme="@style/AppTheme.CustomTheme">
+        </activity>
+
+        <activity
+            android:name=".pophighscore"
+            android:theme="@style/AppTheme.CustomTheme2">
         </activity>
 
 
