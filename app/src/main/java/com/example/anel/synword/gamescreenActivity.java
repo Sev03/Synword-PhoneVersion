@@ -15,6 +15,16 @@ import android.widget.TextView;
  */
 public class gamescreenActivity extends ActionBarActivity {
 
+    public int points;
+    public int round;
+    public String ankerword = "angriff";
+    public String syn1 = "offensive";
+    public String syn2 = "attacke";
+    public String nosyn1 = "attentat";
+    public String nosyn2 = "unfall";
+    public String nosyn3 = "schuss";
+    public String nosyn4 = "hieb";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
