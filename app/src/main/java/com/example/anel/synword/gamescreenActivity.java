@@ -27,6 +27,13 @@ public class gamescreenActivity extends ActionBarActivity {
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
 
+    Button b1 = (Button) findViewById(R.id.btnWord1);
+    Button b2 = (Button) findViewById(R.id.btnWord2);
+    Button b3 = (Button) findViewById(R.id.btnWord3);
+    Button b4 = (Button) findViewById(R.id.btnWord4);
+    Button b5 = (Button) findViewById(R.id.btnWord5);
+    Button b6 = (Button) findViewById(R.id.btnWord6);
+
     private void ShuffleArray(int[] array)
     {
         int index;
@@ -51,12 +58,6 @@ public class gamescreenActivity extends ActionBarActivity {
 
         //stringarray mit den synonymen und nichtsynonymen
         String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
-        Button b1 = (Button) findViewById(R.id.btnWord1);
-        Button b2 = (Button) findViewById(R.id.btnWord2);
-        Button b3 = (Button) findViewById(R.id.btnWord3);
-        Button b4 = (Button) findViewById(R.id.btnWord4);
-        Button b5 = (Button) findViewById(R.id.btnWord5);
-        Button b6 = (Button) findViewById(R.id.btnWord6);
 
         TextView test = (TextView) this.findViewById(R.id.txtWord);
         test.setText(ankerword);
@@ -113,22 +114,26 @@ public class gamescreenActivity extends ActionBarActivity {
             view.setBackgroundColor(Color.parseColor("#FF3798D9"));
             if (btn1isclicked == false) {
                 pressed++;
-                pointcounter.setPointcounter(5);
                 btn1isclicked = true;
+
             }
             if (pressed == 2) {
                 showNextScreen(view);
            }
+
+
     }
     public void onClick2 (View view){
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn2isclicked == false) {
             pressed++;
             btn2isclicked = true;
+
         }
         if (pressed == 2){
             showNextScreen(view);
         }
+
 
     }
     public void onClick3 (View view){
@@ -137,10 +142,12 @@ public class gamescreenActivity extends ActionBarActivity {
             pressed++;
             pointcounter.setPointcounter(5);
             btn3isclicked = true;
+
         }
         if (pressed == 2){
             showNextScreen(view);
         }
+
 
     }
     public void onClick4 (View view){
@@ -148,10 +155,12 @@ public class gamescreenActivity extends ActionBarActivity {
         if (btn4isclicked == false) {
             pressed++;
             btn4isclicked = true;
+
         }
         if (pressed == 2){
             showNextScreen(view);
         }
+
 
     }
     public void onClick5 (View view){
@@ -159,10 +168,12 @@ public class gamescreenActivity extends ActionBarActivity {
         if (btn5isclicked == false) {
             pressed++;
             btn5isclicked = true;
+
         }
         if (pressed == 2){
             showNextScreen(view);
         }
+
 
     }
     public void onClick6 (View view){
@@ -170,10 +181,12 @@ public class gamescreenActivity extends ActionBarActivity {
         if (btn6isclicked == false) {
             pressed++;
             btn6isclicked = true;
+
         }
         if (pressed == 2){
             showNextScreen(view);
         }
+
 
     }
 
