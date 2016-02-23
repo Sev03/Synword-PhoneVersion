@@ -124,7 +124,7 @@ public class gamescreenActivity extends ActionBarActivity {
             btn1isclicked = true;
         }
         if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
             if (pressed == 2) {
@@ -141,7 +141,7 @@ public class gamescreenActivity extends ActionBarActivity {
         }
 
         if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
@@ -161,7 +161,7 @@ public class gamescreenActivity extends ActionBarActivity {
         }
 
         if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
         if (pressed == 2){
@@ -181,7 +181,7 @@ public class gamescreenActivity extends ActionBarActivity {
         }
 
         if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
@@ -202,7 +202,7 @@ public class gamescreenActivity extends ActionBarActivity {
         }
 
         if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
@@ -222,7 +222,7 @@ public class gamescreenActivity extends ActionBarActivity {
         }
 
         if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
@@ -234,6 +234,7 @@ public class gamescreenActivity extends ActionBarActivity {
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, gs2activity.class);
+        //ointcounter.setPointcounter(points);
         intent.putExtra("message", pointcounter);
         pointcounter.setRound(1);
         startActivity(intent);

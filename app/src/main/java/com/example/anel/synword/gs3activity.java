@@ -32,6 +32,7 @@ public class gs3activity extends ActionBarActivity {
     public Button b4;
     public Button b5;
     public Button b6;
+    Points pointcounter = new Points();
 
     private void ShuffleArray(int[] array)
     {
@@ -65,12 +66,12 @@ public class gs3activity extends ActionBarActivity {
 
         //stringarray mit den synonymen und nichtsynonymen
         String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
-        Button b1 = (Button) findViewById(R.id.btnWord1);
-        Button b2 = (Button) findViewById(R.id.btnWord2);
-        Button b3 = (Button) findViewById(R.id.btnWord3);
-        Button b4 = (Button) findViewById(R.id.btnWord4);
-        Button b5 = (Button) findViewById(R.id.btnWord5);
-        Button b6 = (Button) findViewById(R.id.btnWord6);
+        b1 = (Button) findViewById(R.id.btnWord1);
+        b2 = (Button) findViewById(R.id.btnWord2);
+        b3 = (Button) findViewById(R.id.btnWord3);
+        b4 = (Button) findViewById(R.id.btnWord4);
+        b5 = (Button) findViewById(R.id.btnWord5);
+        b6 = (Button) findViewById(R.id.btnWord6);
 
         TextView hauptwort = (TextView) this.findViewById(R.id.txtWord);
         hauptwort.setText(ankerword);
@@ -84,6 +85,7 @@ public class gs3activity extends ActionBarActivity {
         b4.setText(arr[array[3]]);
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
+        pointcounter.setPointcounter(points);
     }
 
     boolean btn1isclicked = false;
@@ -92,14 +94,9 @@ public class gs3activity extends ActionBarActivity {
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
-    Points pointcounter = new Points();
 
 
-    @Override
-    public void onBackPressed(){
-        Intent intent = new Intent(this, gamemodeActivity.class);
-        startActivity(intent);
-    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -108,6 +105,11 @@ public class gs3activity extends ActionBarActivity {
         return true;
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, gamemodeActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -133,7 +135,7 @@ public class gs3activity extends ActionBarActivity {
             btn1isclicked = true;
         }
         if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
         if (pressed == 2) {
@@ -150,7 +152,7 @@ public class gs3activity extends ActionBarActivity {
         }
 
         if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
@@ -170,7 +172,7 @@ public class gs3activity extends ActionBarActivity {
         }
 
         if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
         if (pressed == 2){
@@ -190,7 +192,7 @@ public class gs3activity extends ActionBarActivity {
         }
 
         if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
@@ -211,7 +213,7 @@ public class gs3activity extends ActionBarActivity {
         }
 
         if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
@@ -231,7 +233,7 @@ public class gs3activity extends ActionBarActivity {
         }
 
         if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
-            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
