@@ -11,7 +11,7 @@ public  class Points implements Serializable{
     int round = 0;
 
     public void setPointcounter(int pointcounter) {
-        this.pointcounter += pointcounter;
+        this.pointcounter = pointcounter;
     }
 
     public void setRound(int round) {

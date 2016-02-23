@@ -27,34 +27,26 @@ public class gamescreenActivity extends ActionBarActivity {
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
 
-    Button b1 = (Button) findViewById(R.id.btnWord1);
-    Button b2 = (Button) findViewById(R.id.btnWord2);
-    Button b3 = (Button) findViewById(R.id.btnWord3);
-    Button b4 = (Button) findViewById(R.id.btnWord4);
-    Button b5 = (Button) findViewById(R.id.btnWord5);
-    Button b6 = (Button) findViewById(R.id.btnWord6);
+    public Button b1;
+    public Button b2;
+    public Button b3;
+    public Button b4;
+    public Button b5;
+    public Button b6;
 
-    private void ShuffleArray(int[] array)
-    {
-        int index;
-        Random random = new Random();
-        for (int i = array.length - 1; i > 0; i--)
-        {
-            index = random.nextInt(i + 1);
-            if (index != i)
-            {
-                array[index] ^= array[i];
-                array[i] ^= array[index];
-                array[index] ^= array[i];
-            }
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamescreen);
         getSupportActionBar().hide();
+
+        b1 = (Button) findViewById(R.id.btnWord1);
+        b2 = (Button) findViewById(R.id.btnWord2);
+        b3 = (Button) findViewById(R.id.btnWord3);
+        b4 = (Button) findViewById(R.id.btnWord4);
+        b5 = (Button) findViewById(R.id.btnWord5);
+        b6 = (Button) findViewById(R.id.btnWord6);
 
         //stringarray mit den synonymen und nichtsynonymen
         String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
@@ -72,9 +64,24 @@ public class gamescreenActivity extends ActionBarActivity {
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
 
-
     }
 
+
+    private void ShuffleArray(int[] array)
+    {
+        int index;
+        Random random = new Random();
+        for (int i = array.length - 1; i > 0; i--)
+        {
+            index = random.nextInt(i + 1);
+            if (index != i)
+            {
+                array[index] ^= array[i];
+                array[i] ^= array[index];
+                array[index] ^= array[i];
+            }
+        }
+    }
 
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -111,15 +118,18 @@ public class gamescreenActivity extends ActionBarActivity {
     int pressed = 0;
 
     public void onClick1 (View view){
-            view.setBackgroundColor(Color.parseColor("#FF3798D9"));
-            if (btn1isclicked == false) {
-                pressed++;
-                btn1isclicked = true;
+        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+        if (btn1isclicked == false) {
+            pressed++;
+            btn1isclicked = true;
+        }
+        if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
 
-            }
             if (pressed == 2) {
-                showNextScreen(view);
-           }
+            showNextScreen(view);
+        }
 
 
     }
@@ -128,11 +138,17 @@ public class gamescreenActivity extends ActionBarActivity {
         if (btn2isclicked == false) {
             pressed++;
             btn2isclicked = true;
-
         }
-        if (pressed == 2){
+
+        if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
+
+            if (pressed == 2){
             showNextScreen(view);
         }
+
 
 
     }
@@ -140,13 +156,19 @@ public class gamescreenActivity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn3isclicked == false) {
             pressed++;
-            pointcounter.setPointcounter(5);
             btn3isclicked = true;
 
         }
+
+        if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
         if (pressed == 2){
             showNextScreen(view);
         }
+
+
 
 
     }
@@ -157,9 +179,17 @@ public class gamescreenActivity extends ActionBarActivity {
             btn4isclicked = true;
 
         }
-        if (pressed == 2){
+
+        if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
+
+            if (pressed == 2){
             showNextScreen(view);
         }
+
+
 
 
     }
@@ -170,9 +200,16 @@ public class gamescreenActivity extends ActionBarActivity {
             btn5isclicked = true;
 
         }
-        if (pressed == 2){
+
+        if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
+
+            if (pressed == 2){
             showNextScreen(view);
         }
+
 
 
     }
@@ -183,11 +220,15 @@ public class gamescreenActivity extends ActionBarActivity {
             btn6isclicked = true;
 
         }
-        if (pressed == 2){
-            showNextScreen(view);
+
+        if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
         }
 
 
+            if (pressed == 2){
+            showNextScreen(view);
+        }
     }
 
     public void showNextScreen(View view) {

@@ -27,6 +27,13 @@ public class gs8activity extends ActionBarActivity {
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
 
+    public Button b1;
+    public Button b2;
+    public Button b3;
+    public Button b4;
+    public Button b5;
+    public Button b6;
+
     private void ShuffleArray(int[] array)
     {
         int index;
@@ -128,15 +135,30 @@ public class gs8activity extends ActionBarActivity {
         if (pressed == 2) {
             showNextScreen(view);
         }
+
+        if(b1.getText().toString()==syn1){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+        if(b1.getText().toString()==syn2){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
     }
     public void onClick2 (View view){
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn2isclicked == false) {
             pressed++;
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
             btn2isclicked = true;
         }
         if (pressed == 2){
             showNextScreen(view);
+        }
+
+        if(b2.getText().toString()==syn1){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+        if(b2.getText().toString()==syn2){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
         }
 
     }
@@ -144,11 +166,21 @@ public class gs8activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn3isclicked == false) {
             pressed++;
+            pointcounter.setPointcounter(5);
             btn3isclicked = true;
+
         }
         if (pressed == 2){
             showNextScreen(view);
         }
+
+        if(b3.getText().toString()==syn1){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+        if(b3.getText().toString()==syn2){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
 
     }
     public void onClick4 (View view){
@@ -156,10 +188,19 @@ public class gs8activity extends ActionBarActivity {
         if (btn4isclicked == false) {
             pressed++;
             btn4isclicked = true;
+
         }
         if (pressed == 2){
             showNextScreen(view);
         }
+
+        if(b4.getText().toString()==syn1){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+        if(b4.getText().toString()==syn2){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
 
     }
     public void onClick5 (View view){
@@ -167,9 +208,17 @@ public class gs8activity extends ActionBarActivity {
         if (btn5isclicked == false) {
             pressed++;
             btn5isclicked = true;
+
         }
         if (pressed == 2){
             showNextScreen(view);
+        }
+
+        if(b5.getText().toString()==syn1){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+        if(b5.getText().toString()==syn2){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
         }
 
     }
@@ -178,12 +227,21 @@ public class gs8activity extends ActionBarActivity {
         if (btn6isclicked == false) {
             pressed++;
             btn6isclicked = true;
+
         }
         if (pressed == 2){
             showNextScreen(view);
         }
 
+        if(b6.getText().toString()==syn1){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+        if(b6.getText().toString()==syn2){
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
     }
+
 
     public void showNextScreen(View view) {
         // Do something in response to button

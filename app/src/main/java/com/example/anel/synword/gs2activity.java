@@ -26,6 +26,13 @@ public class gs2activity extends ActionBarActivity {
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
 
+    public Button b1;
+    public Button b2;
+    public Button b3;
+    public Button b4;
+    public Button b5;
+    public Button b6;
+
     private void ShuffleArray(int[] array)
     {
         int index;
@@ -122,23 +129,35 @@ public class gs2activity extends ActionBarActivity {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn1isclicked == false) {
             pressed++;
-            pointcounter.setPointcounter(5);
             btn1isclicked = true;
         }
+        if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
         if (pressed == 2) {
             showNextScreen(view);
         }
+
+
     }
     public void onClick2 (View view){
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn2isclicked == false) {
             pressed++;
-            pointcounter.setPointcounter(5);
             btn2isclicked = true;
         }
+
+        if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
+
         if (pressed == 2){
             showNextScreen(view);
         }
+
+
 
     }
     public void onClick3 (View view){
@@ -146,10 +165,19 @@ public class gs2activity extends ActionBarActivity {
         if (btn3isclicked == false) {
             pressed++;
             btn3isclicked = true;
+
         }
+
+        if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
         if (pressed == 2){
             showNextScreen(view);
         }
+
+
+
 
     }
     public void onClick4 (View view){
@@ -157,10 +185,20 @@ public class gs2activity extends ActionBarActivity {
         if (btn4isclicked == false) {
             pressed++;
             btn4isclicked = true;
+
         }
+
+        if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
+
         if (pressed == 2){
             showNextScreen(view);
         }
+
+
+
 
     }
     public void onClick5 (View view){
@@ -168,10 +206,19 @@ public class gs2activity extends ActionBarActivity {
         if (btn5isclicked == false) {
             pressed++;
             btn5isclicked = true;
+
         }
+
+        if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
+
         if (pressed == 2){
             showNextScreen(view);
         }
+
+
 
     }
     public void onClick6 (View view){
@@ -179,12 +226,19 @@ public class gs2activity extends ActionBarActivity {
         if (btn6isclicked == false) {
             pressed++;
             btn6isclicked = true;
+
         }
+
+        if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
+            pointcounter.setPointcounter(pointcounter.getPointcounter() + 5);
+        }
+
+
         if (pressed == 2){
             showNextScreen(view);
         }
-
     }
+
 
     public void showNextScreen(View view) {
         // Do something in response to buttons
