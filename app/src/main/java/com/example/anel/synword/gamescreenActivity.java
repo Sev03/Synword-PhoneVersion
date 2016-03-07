@@ -3,6 +3,7 @@ package com.example.anel.synword;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,6 +11,21 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -17,6 +33,9 @@ import java.util.Random;
  */
 public class gamescreenActivity extends ActionBarActivity {
 
+    InputStream is;
+    ArrayList<String> results = new ArrayList<String>();
+    JSONObject json_data;
     public int points;
     public int round;
     public String ankerword = "Angriff";
@@ -40,6 +59,7 @@ public class gamescreenActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamescreen);
         getSupportActionBar().hide();
+        getData();
 
         b1 = (Button) findViewById(R.id.btnWord1);
         b2 = (Button) findViewById(R.id.btnWord2);
@@ -66,6 +86,48 @@ public class gamescreenActivity extends ActionBarActivity {
 
     }
 
+    public void getData() {
+        String result = "";
+        ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+
+        try{
+        HttpClient httpclient = new DefaultHttpClient();
+            // TODO SERVER EINFÜGEN
+        HttpPost httppost = new HttpPost("http://deinehomepage.de/deinephpDatei.php");
+        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+        HttpResponse response = httpclient.execute(httppost);
+        HttpEntity entity = response.getEntity();
+        is = entity.getContent();
+        }catch(Exception e){
+            Log.e("log_tag", "Fehler bei der http Verbindung " + e.toString());
+            }
+
+        try{
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + "n");
+                }
+            is.close();
+            result=sb.toString();
+            }catch(Exception e){
+            Log.e("log_tag", "Error converting result "+e.toString());
+            }
+
+        try{
+            JSONArray jArray = new JSONArray(result);
+            for(int i=0;i<jArray.length();i++){
+                json_data = jArray.getJSONObject(i);
+
+                // TODO Ankerword, Syn1, Syn2, NoSyn1, NoSyn2, NoSyn3, NoSyn4,
+                results.add((String) json_data.get("id") + " "+ json_data.get("name"));
+                }
+            }
+        catch(JSONException e){
+            Log.e("log_tag", "Error parsing data "+e.toString());
+            }
+    }
 
     private void ShuffleArray(int[] array)
     {
