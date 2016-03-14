@@ -52,7 +52,7 @@ public class gs2activity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gs_r2);
+        setContentView(R.layout.gamescreen);
         getSupportActionBar().hide();
 
         Intent intent = getIntent();

@@ -53,7 +53,7 @@ public class gs5activity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gs_r5);
+        setContentView(R.layout.gamescreen);
         getSupportActionBar().hide();
 
         Intent intent = getIntent();
