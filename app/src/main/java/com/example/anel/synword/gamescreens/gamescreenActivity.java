@@ -1,8 +1,9 @@
-package com.example.anel.synword;
+package com.example.anel.synword.gamescreens;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,12 +11,34 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.anel.synword.Points;
+import com.example.anel.synword.R;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * Created by Anel on 14.12.2015.
  */
-public class gs4activity extends ActionBarActivity {
+public class gamescreenActivity extends ActionBarActivity {
+
+    InputStream is;
+    ArrayList<String> results = new ArrayList<String>();
+    JSONObject json_data;
     public int points;
     public int round;
     public String ankerword = "Angriff";
@@ -32,7 +55,82 @@ public class gs4activity extends ActionBarActivity {
     public Button b4;
     public Button b5;
     public Button b6;
-    Points pointcounter = new Points();
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.gamescreen);
+        getSupportActionBar().hide();
+        getData();
+
+        b1 = (Button) findViewById(R.id.btnWord1);
+        b2 = (Button) findViewById(R.id.btnWord2);
+        b3 = (Button) findViewById(R.id.btnWord3);
+        b4 = (Button) findViewById(R.id.btnWord4);
+        b5 = (Button) findViewById(R.id.btnWord5);
+        b6 = (Button) findViewById(R.id.btnWord6);
+
+        //stringarray mit den synonymen und nichtsynonymen
+        String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
+
+        TextView test = (TextView) this.findViewById(R.id.txtWord);
+        test.setText(ankerword);
+        //array für positionen
+        int[] array = {0,1,2,3,4,5};
+        //aufruf shufflefunktion
+        ShuffleArray(array);
+        b1.setText(arr[array[0]]);
+        b2.setText(arr[array[1]]);
+        b3.setText(arr[array[2]]);
+        b4.setText(arr[array[3]]);
+        b5.setText(arr[array[4]]);
+        b6.setText(arr[array[5]]);
+
+    }
+
+    public void getData() {
+        String result = "";
+        ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+
+        try{
+        HttpClient httpclient = new DefaultHttpClient();
+            // TODO SERVER EINFÜGEN
+        HttpPost httppost = new HttpPost("http://deinehomepage.de/deinephpDatei.php");
+        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+        HttpResponse response = httpclient.execute(httppost);
+        HttpEntity entity = response.getEntity();
+        is = entity.getContent();
+        }catch(Exception e){
+            Log.e("log_tag", "Fehler bei der http Verbindung " + e.toString());
+            }
+
+        try{
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + "n");
+                }
+            is.close();
+            result=sb.toString();
+            }catch(Exception e){
+            Log.e("log_tag", "Error converting result "+e.toString());
+            }
+
+        try{
+            JSONArray jArray = new JSONArray(result);
+            for(int i=0;i<jArray.length();i++){
+                json_data = jArray.getJSONObject(i);
+
+                // TODO Ankerword, Syn1, Syn2, NoSyn1, NoSyn2, NoSyn3, NoSyn4,
+                results.add((String) json_data.get("id") + " "+ json_data.get("name"));
+                }
+            }
+        catch(JSONException e){
+            Log.e("log_tag", "Error parsing data "+e.toString());
+            }
+    }
 
     private void ShuffleArray(int[] array)
     {
@@ -49,44 +147,6 @@ public class gs4activity extends ActionBarActivity {
             }
         }
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.gamescreen);
-        getSupportActionBar().hide();
-
-        Intent intent = getIntent();
-        points = ((Points) intent.getExtras().get("message")).getPointcounter();
-        round = ((Points) intent.getExtras().get("message")).getRound();
-
-        TextView test = (TextView) this.findViewById(R.id.viewPoints);
-        test.setText("" + points);
-        test = (TextView) findViewById(R.id.txtRunde);
-        test.setText( "Runde: " + (round + 1) + "/10" );
-
-        //stringarray mit den synonymen und nichtsynonymen
-        String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
-        b1 = (Button) findViewById(R.id.btnWord1);
-        b2 = (Button) findViewById(R.id.btnWord2);
-        b3 = (Button) findViewById(R.id.btnWord3);
-        b4 = (Button) findViewById(R.id.btnWord4);
-        b5 = (Button) findViewById(R.id.btnWord5);
-        b6 = (Button) findViewById(R.id.btnWord6);
-
-        TextView hauptwort = (TextView) this.findViewById(R.id.txtWord);
-        hauptwort.setText(ankerword);
-        //array für positionen
-        int[] array = {0,1,2,3,4,5};
-        //aufruf shufflefunktion
-        ShuffleArray(array);
-        b1.setText(arr[array[0]]);
-        b2.setText(arr[array[1]]);
-        b3.setText(arr[array[2]]);
-        b4.setText(arr[array[3]]);
-        b5.setText(arr[array[4]]);
-        b6.setText(arr[array[5]]);
-        pointcounter.setPointcounter(points);
-    }
 
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -94,8 +154,7 @@ public class gs4activity extends ActionBarActivity {
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
-
-
+    Points pointcounter = new Points();
 
 
     @Override
@@ -105,11 +164,6 @@ public class gs4activity extends ActionBarActivity {
         return true;
     }
 
-    @Override
-    public void onBackPressed(){
-        Intent intent = new Intent(this, gamemodeActivity.class);
-        startActivity(intent);
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -138,7 +192,7 @@ public class gs4activity extends ActionBarActivity {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-        if (pressed == 2) {
+            if (pressed == 2) {
             showNextScreen(view);
         }
 
@@ -156,7 +210,7 @@ public class gs4activity extends ActionBarActivity {
         }
 
 
-        if (pressed == 2){
+            if (pressed == 2){
             showNextScreen(view);
         }
 
@@ -196,7 +250,7 @@ public class gs4activity extends ActionBarActivity {
         }
 
 
-        if (pressed == 2){
+            if (pressed == 2){
             showNextScreen(view);
         }
 
@@ -217,7 +271,7 @@ public class gs4activity extends ActionBarActivity {
         }
 
 
-        if (pressed == 2){
+            if (pressed == 2){
             showNextScreen(view);
         }
 
@@ -237,17 +291,18 @@ public class gs4activity extends ActionBarActivity {
         }
 
 
-        if (pressed == 2){
+            if (pressed == 2){
             showNextScreen(view);
         }
     }
 
-
     public void showNextScreen(View view) {
         // Do something in response to button
-        Intent intent = new Intent(this, gs5activity.class);
+        Intent intent = new Intent(this, gs2activity.class);
+        //ointcounter.setPointcounter(points);
         intent.putExtra("message", pointcounter);
-        pointcounter.setRound(4);
+        pointcounter.setRound(1);
         startActivity(intent);
+
     }
 }

@@ -1,6 +1,5 @@
 package com.example.anel.synword;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -8,7 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.PopupWindow;
+
+import com.example.anel.synword.gamescreens.gamescreenActivity;
+import com.example.anel.synword.timescreens.timescreen;
 
 /**
  * Created by Anel on 14.12.2015.
@@ -68,7 +69,7 @@ public class gamemodeActivity extends ActionBarActivity {
     public void showZeit(View view) {
         // Do something in response to button
 
-        Intent intent = new Intent(this, timescreenActivity.class);
+        Intent intent = new Intent(this, timescreen.class);
         startActivity(intent);
     }
 

@@ -1,4 +1,4 @@
-package com.example.anel.synword;
+package com.example.anel.synword.gamescreens;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,12 +10,17 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.anel.synword.Points;
+import com.example.anel.synword.R;
+import com.example.anel.synword.gamemodeActivity;
+
 import java.util.Random;
 
 /**
  * Created by Anel on 14.12.2015.
  */
-public class gs3activity extends ActionBarActivity {
+public class gs7activity extends ActionBarActivity {
+
     public int points;
     public int round;
     public String ankerword = "Angriff";
@@ -242,11 +247,12 @@ public class gs3activity extends ActionBarActivity {
         }
     }
 
+
     public void showNextScreen(View view) {
         // Do something in response to button
-        Intent intent = new Intent(this, gs4activity.class);
+        Intent intent = new Intent(this, gs8activity.class);
         intent.putExtra("message", pointcounter);
-        pointcounter.setRound(3);
+        pointcounter.setRound(7);
         startActivity(intent);
     }
 }

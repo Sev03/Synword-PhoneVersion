@@ -1,4 +1,4 @@
-package com.example.anel.synword;
+package com.example.anel.synword.gamescreens;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,6 +9,10 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.anel.synword.Points;
+import com.example.anel.synword.R;
+import com.example.anel.synword.gamemodeActivity;
 
 import java.util.Random;
 
