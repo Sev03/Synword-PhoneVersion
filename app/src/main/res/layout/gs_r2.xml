@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Markiere Wörter mit \ngleicher Bedeutung"
+                    android:text="Markiere 2 Begriffe, die dem Wort \n           am ähnlichsten sind."
                     android:id="@+id/textView"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
