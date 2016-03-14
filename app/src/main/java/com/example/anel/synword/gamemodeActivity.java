@@ -68,7 +68,7 @@ public class gamemodeActivity extends ActionBarActivity {
     public void showZeit(View view) {
         // Do something in response to button
 
-        Intent intent = new Intent(this, gamescreenActivity.class);
+        Intent intent = new Intent(this, timescreenActivity.class);
         startActivity(intent);
     }
 

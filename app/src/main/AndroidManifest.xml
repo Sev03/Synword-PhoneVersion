@@ -79,8 +79,18 @@
         </activity>
 
         <activity
-            android:name=".gs10activity"
-            android:label="Gamescreen Runde 10" >
+        android:name=".gs10activity"
+        android:label="Gamescreen Runde 10" >
+        </activity>
+
+        <activity
+            android:name=".timescreenActivity"
+            android:label="Timesceen Runde 1" >
+        </activity>
+
+        <activity
+            android:name=".ts2"
+            android:label="Timesceen Runde 2" >
         </activity>
 
         <activity
