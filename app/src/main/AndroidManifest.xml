@@ -93,7 +93,7 @@
             android:theme="@style/AppTheme.CustomTheme2">
         </activity>
 
-
+        <uses-permission android:name="android.permission.INTERNET" />
 
     </application>
 </manifest>
