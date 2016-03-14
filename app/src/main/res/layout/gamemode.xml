@@ -56,9 +56,9 @@
                     android:layout_gravity="center"
                     android:textSize="30dp"
                     android:onClick="showFehlerfrei"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="35dp" />
+                    android:layout_marginTop="43dp"
+                    android:layout_below="@+id/textView6"
+                    android:layout_centerHorizontal="true" />
 
                 <Button
                     android:layout_width="270dp"
@@ -81,10 +81,13 @@
                     android:id="@+id/btnInfo"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="0.01"
-                    android:text="Info"
+                    android:text="Spielanleitung"
                     android:layout_marginBottom="15dp"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_alignRight="@+id/textView"
+                    android:layout_alignEnd="@+id/textView"
+                    android:layout_alignLeft="@+id/textView"
+                    android:layout_alignStart="@+id/textView" />
 
 
 </RelativeLayout>
