@@ -89,6 +89,11 @@
         </activity>
 
         <activity
+            android:name=".timescreens.ts2"
+            android:label="Timescreen Runde 1" >
+        </activity>
+
+        <activity
             android:name=".timescreens.ts3"
             android:label="Timescreen Runde 3" >
         </activity>
