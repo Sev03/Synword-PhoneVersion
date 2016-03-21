@@ -95,8 +95,7 @@ public class gamescreenActivity extends ActionBarActivity {
 
         try{
         HttpClient httpclient = new DefaultHttpClient();
-            // TODO SERVER EINFÜGEN
-        HttpPost httppost = new HttpPost("http://deinehomepage.de/deinephpDatei.php");
+        HttpPost httppost = new HttpPost("http://felf.ga:25571/Synword_php.php");
         httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
         HttpResponse response = httpclient.execute(httppost);
         HttpEntity entity = response.getEntity();
@@ -123,8 +122,12 @@ public class gamescreenActivity extends ActionBarActivity {
             for(int i=0;i<jArray.length();i++){
                 json_data = jArray.getJSONObject(i);
 
-                // TODO Ankerword, Syn1, Syn2, NoSyn1, NoSyn2, NoSyn3, NoSyn4,
-                results.add((String) json_data.get("id") + " "+ json_data.get("name"));
+                // Hier werden Ankerword, Syn1, Syn2, NoSyn1, NoSyn2, NoSyn3, NoSyn4 in die ArrayList
+                // gespeichert
+                results.add((String) json_data.get("Ankerword") + " "+ json_data.get("Syn1")
+                        + " "+ json_data.get("Syn2") + " "+ json_data.get("NoSyn1")
+                        + " "+ json_data.get("NoSyn2")+ " "+ json_data.get("NoSyn3")
+                        + " "+ json_data.get("NoSyn4"));
                 }
             }
         catch(JSONException e){
