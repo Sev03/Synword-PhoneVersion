@@ -67,7 +67,7 @@ public class ts10 extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gamescreen);
+        setContentView(R.layout.timescreen);
         getSupportActionBar().hide();
 
         Intent intent = getIntent();

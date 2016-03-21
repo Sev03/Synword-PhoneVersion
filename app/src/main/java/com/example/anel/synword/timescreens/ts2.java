@@ -72,6 +72,7 @@ public class ts2 extends ActionBarActivity {
         points = ((Points) intent.getExtras().get("message")).getPointcounter();
         round = ((Points) intent.getExtras().get("message")).getRound();
 
+        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
         test.setText("" + points);
         test = (TextView) findViewById(R.id.txtRunde);
@@ -101,7 +102,6 @@ public class ts2 extends ActionBarActivity {
 
         pointcounter.setPointcounter(points);
 
-        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         intervallBar.setProgress(100);
 
         Runnable runnable = new Runnable() {
