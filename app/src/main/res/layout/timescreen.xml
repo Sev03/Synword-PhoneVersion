@@ -71,10 +71,11 @@
                     <ProgressBar
                         android:id="@+id/intervallBar"
                         style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:indeterminate="false" />
+                        android:layout_width="fill_parent"
+                        android:layout_height="20dp"
+                        android:visibility="visible"
+                        android:indeterminate="false"
+                        android:progress="100" />
 
                 </LinearLayout>
 
