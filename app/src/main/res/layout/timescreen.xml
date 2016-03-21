@@ -69,20 +69,13 @@
                     android:layout_gravity="center_horizontal">
 
                     <ProgressBar
-                        android:id="@+id/firstBar"
+                        android:id="@+id/intervallBar"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:visibility="gone"
-                    />
+                        android:indeterminate="false" />
 
-                    <ProgressBar
-                        android:id="@+id/secondBar"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                    />
                 </LinearLayout>
 
                 <TextView

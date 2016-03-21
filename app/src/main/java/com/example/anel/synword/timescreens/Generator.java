@@ -9,4 +9,5 @@ public class Generator extends Thread {
     public Generator (int interval){
         this.interval = interval;
     }
+
 }

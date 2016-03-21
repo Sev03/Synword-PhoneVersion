@@ -57,11 +57,8 @@ public class timescreen extends ActionBarActivity {
     public Button b5;
     public Button b6;
 
-    ProgressBar firstBar;
-    ProgressBar secondBar;
-    static final int INTERVAL = 20;
-    static final int UID = 35;
-    static final int LENGTH = 4;
+    ProgressBar intervallBar;
+    static final int INTERVAL = 1;
 
 
     @Override
@@ -71,8 +68,7 @@ public class timescreen extends ActionBarActivity {
         getSupportActionBar().hide();
         getData();
 
-        firstBar = (ProgressBar) findViewById(R.id.firstBar);
-        secondBar = (ProgressBar) findViewById(R.id.secondBar);
+        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         b1 = (Button) findViewById(R.id.btnWord1);
         b2 = (Button) findViewById(R.id.btnWord2);
         b3 = (Button) findViewById(R.id.btnWord3);
@@ -96,8 +92,8 @@ public class timescreen extends ActionBarActivity {
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
 
-        Generator countdown = new Generator (INTERVAL);
-        countdown.start();
+        intervallBar.setProgress(15 - INTERVAL);
+
 
     }
 
