@@ -29,7 +29,7 @@ public class pophighscore extends Activity{
         getWindow().setLayout((int)(width*.8),(int) (height*.8));
 
         Intent intent = getIntent();
-        int points = ((Points) intent.getExtras().get("message")).getPointcounter();
+        double points = ((Points) intent.getExtras().get("message")).getPointcounter();
         int round = ((Points) intent.getExtras().get("message")).getRound();
 
         TextView test = (TextView) this.findViewById(R.id.txtPunkte);

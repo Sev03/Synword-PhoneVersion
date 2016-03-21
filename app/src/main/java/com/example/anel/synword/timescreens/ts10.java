@@ -2,12 +2,15 @@ package com.example.anel.synword.timescreens;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.anel.synword.Points;
@@ -22,7 +25,7 @@ import java.util.Random;
  */
 public class ts10 extends ActionBarActivity {
 
-    public int points;
+    public double points;
     public int round;
     public String ankerword = "Angriff";
     public String syn1 = "offensive";
@@ -39,6 +42,12 @@ public class ts10 extends ActionBarActivity {
     public Button b5;
     public Button b6;
     Points pointcounter = new Points();
+
+    ProgressBar intervallBar;
+    // Interval <= 10 möglich
+    static final int INTERVAL = 10;
+
+    Handler countdown = new Handler();
 
     private void ShuffleArray(int[] array)
     {
@@ -92,6 +101,24 @@ public class ts10 extends ActionBarActivity {
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
         pointcounter.setPointcounter(points);
+
+
+        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
+        intervallBar.setProgress(100);
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                intervallBar.setProgress(intervallBar.getProgress() - 10 / INTERVAL);
+                if (intervallBar.getProgress() == 0) {
+                    countdown.removeCallbacks(this);
+                    Log.e("THREAD", "CANCELED");
+                    return;
+                }
+                countdown.postDelayed(this, 1000 / INTERVAL);
+            }
+        };
+        countdown.postDelayed(runnable, 1000 / INTERVAL);
     }
 
     boolean btn1isclicked = false;

@@ -7,10 +7,10 @@ import java.io.Serializable;
  */
 public  class Points implements Serializable{
 
-    double pointcounter = 0;
+    int pointcounter = 0;
     int round = 0;
 
-    public void setPointcounter(double pointcounter) {
+    public void setPointcounter(int pointcounter) {
         this.pointcounter = pointcounter;
     }
 
@@ -18,7 +18,7 @@ public  class Points implements Serializable{
         this.round += round;
     }
 
-    public double getPointcounter (){
+    public int getPointcounter (){
         return this.pointcounter;
     }
 
