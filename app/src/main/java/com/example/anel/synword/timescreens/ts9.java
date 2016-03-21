@@ -23,6 +23,7 @@ import java.util.Random;
  * Created by Anel on 14.12.2015.
  */
 public class ts9 extends ActionBarActivity {
+
     public int points;
     public int round;
     public String ankerword = "Angriff";
@@ -118,6 +119,10 @@ public class ts9 extends ActionBarActivity {
         };
         countdown.postDelayed(runnable, 1000 / INTERVAL);
 
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     boolean btn1isclicked = false;

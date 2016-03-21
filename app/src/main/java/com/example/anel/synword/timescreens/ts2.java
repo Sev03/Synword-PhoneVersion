@@ -118,6 +118,10 @@ public class ts2 extends ActionBarActivity {
         };
         countdown.postDelayed(runnable, 1000 / INTERVAL);
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;

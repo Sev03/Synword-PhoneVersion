@@ -120,6 +120,11 @@ public class ts4 extends ActionBarActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
     boolean btn3isclicked = false;

@@ -120,6 +120,10 @@ public class ts10 extends ActionBarActivity {
         };
         countdown.postDelayed(runnable, 1000 / INTERVAL);
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -277,7 +281,6 @@ public class ts10 extends ActionBarActivity {
 
 
     public void showNextScreen(View view) {
-        // Do something in response to button
         Intent intent = new Intent(this, pophighscore.class);
         intent.putExtra("message", pointcounter);
         pointcounter.setRound(10);
