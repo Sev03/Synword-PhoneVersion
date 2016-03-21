@@ -217,10 +217,6 @@ public class timescreen extends ActionBarActivity {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-        if (b1.getText().toString() != syn1 || b1.getText().toString() != syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() - 5);
-        }
-
         if (pressed == 2) {
             showNextScreen(view);
         }
@@ -237,10 +233,6 @@ public class timescreen extends ActionBarActivity {
 
         if (b2.getText().toString() == syn1 || b2.getText().toString() == syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
-        }
-
-        if (b2.getText().toString() != syn1 || b2.getText().toString() != syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() - 5);
         }
 
         if (pressed == 2) {
@@ -262,10 +254,6 @@ public class timescreen extends ActionBarActivity {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-        if (b4.getText().toString() != syn1 || b4.getText().toString() != syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() - 5);
-        }
-
         if (pressed == 2) {
             showNextScreen(view);
         }
@@ -284,11 +272,6 @@ public class timescreen extends ActionBarActivity {
         if (b4.getText().toString() == syn1 || b4.getText().toString() == syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
-
-        if (b4.getText().toString() != syn1 || b4.getText().toString() != syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() - 5);
-        }
-
 
         if (pressed == 2) {
             showNextScreen(view);
@@ -309,10 +292,6 @@ public class timescreen extends ActionBarActivity {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-        if (b5.getText().toString() != syn1 || b5.getText().toString() != syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() - 5);
-        }
-
         if (pressed == 2) {
             showNextScreen(view);
         }
@@ -330,10 +309,6 @@ public class timescreen extends ActionBarActivity {
 
         if (b6.getText().toString() == syn1 || b6.getText().toString() == syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
-        }
-
-        if (b6.getText().toString() != syn1 || b6.getText().toString() != syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() - 5);
         }
 
 
