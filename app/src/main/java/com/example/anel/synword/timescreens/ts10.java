@@ -25,7 +25,7 @@ import java.util.Random;
  */
 public class ts10 extends ActionBarActivity {
 
-    public double points;
+    public int points;
     public int round;
     public String ankerword = "Angriff";
     public String syn1 = "offensive";

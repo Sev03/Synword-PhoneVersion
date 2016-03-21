@@ -23,7 +23,7 @@ import java.util.Random;
  * Created by Anel on 14.12.2015.
  */
 public class ts9 extends ActionBarActivity {
-    public double points;
+    public int points;
     public int round;
     public String ankerword = "Angriff";
     public String syn1 = "offensive";
