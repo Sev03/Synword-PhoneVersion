@@ -74,18 +74,4 @@ public class gamemodeActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    /*Button bm1 = (Button) findViewById(R.id.btnInfo);
-    bm1.setOnClickListener(new View.OnClickListener() {
-
-
-        public void onClick(View v) {
-            // TODO Auto-generated method stub
-            AlertDialog.Builder alert = new AlertDialog.Builder(popup.this);
-            alert.setTitle("Help");
-            alert.setMessage("message");
-            alert.setPositiveButton("OK", null);
-            alert.show();
-        }
-    }*/
-
 }

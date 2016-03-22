@@ -13,7 +13,6 @@ import com.example.anel.synword.Points;
 import com.example.anel.synword.R;
 import com.example.anel.synword.gamemodeActivity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
