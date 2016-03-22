@@ -264,7 +264,6 @@ public class gamescreenActivity extends ActionBarActivity {
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, gs2activity.class);
-        //ointcounter.setPointcounter(points);
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(1);

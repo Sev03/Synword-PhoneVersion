@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="*Wähle 2 Synonyme aus 6 Wörtern \n*10 Punkte pro Runde \n*10 Runden pro Spiel"
+        android:text="*Wähle 2 Synonyme aus 6 Wörtern \n*5 Punkte pro richtigem Wort \n*10 Runden pro Spiel"
         android:id="@+id/textView5"
         android:layout_below="@+id/textView4"
         android:layout_alignLeft="@+id/textView4"

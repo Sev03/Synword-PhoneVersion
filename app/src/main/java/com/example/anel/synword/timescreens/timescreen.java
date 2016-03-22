@@ -15,21 +15,9 @@ import android.widget.TextView;
 
 import com.example.anel.synword.Points;
 import com.example.anel.synword.R;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -38,11 +26,9 @@ import java.util.Random;
  */
 public class timescreen extends ActionBarActivity {
 
-    InputStream is;
-    ArrayList<String> results = new ArrayList<String>();
-    JSONObject json_data;
     public int points;
     public int round;
+    // Default Werte für die Buttons
     public String ankerword = "Angriff";
     public String syn1 = "offensive";
     public String syn2 = "attacke";
@@ -50,6 +36,7 @@ public class timescreen extends ActionBarActivity {
     public String nosyn2 = "unfall";
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
+    ArrayList<String> wordlist = new ArrayList<String>();
 
     public Button b1;
     public Button b2;
@@ -69,7 +56,9 @@ public class timescreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timescreen);
         getSupportActionBar().hide();
-        getData();
+        Intent intent = getIntent();
+        wordlist = intent.getStringArrayListExtra("words");
+        fillInWords(wordlist);
 
         intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         b1 = (Button) findViewById(R.id.btnWord1);
@@ -113,51 +102,18 @@ public class timescreen extends ActionBarActivity {
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
+    private void   fillInWords(ArrayList<String> results) {
+        String firstrow = results.get(0);
+        String[] wordsplit = firstrow.split("\\s+");
 
-    public void getData() {
-        String result = "";
-        ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+        this.ankerword = wordsplit[0];
+        this.syn1 = wordsplit[1];
+        this.syn2 = wordsplit[2];
+        this.nosyn1 = wordsplit[3];
+        this.nosyn2 = wordsplit[4];
+        this.nosyn3 = wordsplit[5];
+        this.nosyn4 = wordsplit[6];
 
-        try {
-            HttpClient httpclient = new DefaultHttpClient();
-            // TODO SERVER EINFÜGEN
-            HttpPost httppost = new HttpPost("http://deinehomepage.de/deinephpDatei.php");
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-            HttpResponse response = httpclient.execute(httppost);
-            HttpEntity entity = response.getEntity();
-            is = entity.getContent();
-        } catch (Exception e) {
-            Log.e("log_tag", "Fehler bei der http Verbindung " + e.toString());
-        }
-
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
-            StringBuilder sb = new StringBuilder();
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line + "n");
-            }
-            is.close();
-            result = sb.toString();
-        } catch (Exception e) {
-            Log.e("log_tag", "Error converting result " + e.toString());
-        }
-
-        try {
-            JSONArray jArray = new JSONArray(result);
-            for (int i = 0; i < jArray.length(); i++) {
-                json_data = jArray.getJSONObject(i);
-
-                // TODO Ankerword, Syn1, Syn2, NoSyn1, NoSyn2, NoSyn3, NoSyn4,
-                results.add((String) json_data.get("id") + " " + json_data.get("name"));
-            }
-        } catch (JSONException e) {
-            Log.e("log_tag", "Error parsing data " + e.toString());
-        }
     }
 
     private void ShuffleArray(int[] array) {
@@ -321,6 +277,7 @@ public class timescreen extends ActionBarActivity {
         // Do something in response to button
         Intent intent = new Intent(this, ts2.class);
         intent.putExtra("message", pointcounter);
+        intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(1);
         startActivity(intent);
 
