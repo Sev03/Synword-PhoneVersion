@@ -3,44 +3,28 @@ package com.example.anel.synword.gamescreens;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.example.anel.synword.Points;
 import com.example.anel.synword.R;
+import com.example.anel.synword.gamemodeActivity;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * Created by Anel on 14.12.2015.
  */
-public class gamescreenActivity extends ActionBarActivity {
 
-    InputStream is;
-    ArrayList<String> results = new ArrayList<String>();
-    JSONObject json_data;
+public class gamescreenActivity extends ActionBarActivity {
     public int points;
     public int round;
+    // Default Werte für die Buttons
     public String ankerword = "Angriff";
     public String syn1 = "offensive";
     public String syn2 = "attacke";
@@ -48,6 +32,7 @@ public class gamescreenActivity extends ActionBarActivity {
     public String nosyn2 = "unfall";
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
+    ArrayList<String> wordlist = new ArrayList<String>();
 
     public Button b1;
     public Button b2;
@@ -59,10 +44,13 @@ public class gamescreenActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamescreen);
         getSupportActionBar().hide();
-        getData();
+        Intent intent = getIntent();
+        wordlist = intent.getStringArrayListExtra("words");
+        fillInWords(wordlist);
 
         b1 = (Button) findViewById(R.id.btnWord1);
         b2 = (Button) findViewById(R.id.btnWord2);
@@ -86,53 +74,20 @@ public class gamescreenActivity extends ActionBarActivity {
         b4.setText(arr[array[3]]);
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
-
     }
 
-    public void getData() {
-        String result = "";
-        ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+    private void   fillInWords(ArrayList<String> results) {
+        String firstrow = results.get(0);
+        String[] wordsplit = firstrow.split("\\s+");
+        
+        this.ankerword = wordsplit[0];
+        this.syn1 = wordsplit[1];
+        this.syn2 = wordsplit[2];
+        this.nosyn1 = wordsplit[3];
+        this.nosyn2 = wordsplit[4];
+        this.nosyn3 = wordsplit[5];
+        this.nosyn4 = wordsplit[6];
 
-        try{
-        HttpClient httpclient = new DefaultHttpClient();
-        HttpPost httppost = new HttpPost("http://felf.ga:25571/Synword_php.php");
-        httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-        HttpResponse response = httpclient.execute(httppost);
-        HttpEntity entity = response.getEntity();
-        is = entity.getContent();
-        }catch(Exception e){
-            Log.e("log_tag", "Fehler bei der http Verbindung " + e.toString());
-            }
-
-        try{
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
-            StringBuilder sb = new StringBuilder();
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line + "n");
-                }
-            is.close();
-            result=sb.toString();
-            }catch(Exception e){
-            Log.e("log_tag", "Error converting result "+e.toString());
-            }
-
-        try{
-            JSONArray jArray = new JSONArray(result);
-            for(int i=0;i<jArray.length();i++){
-                json_data = jArray.getJSONObject(i);
-
-                // Hier werden Ankerword, Syn1, Syn2, NoSyn1, NoSyn2, NoSyn3, NoSyn4 in die ArrayList
-                // gespeichert
-                results.add((String) json_data.get("Ankerword") + " "+ json_data.get("Syn1")
-                        + " "+ json_data.get("Syn2") + " "+ json_data.get("NoSyn1")
-                        + " "+ json_data.get("NoSyn2")+ " "+ json_data.get("NoSyn3")
-                        + " "+ json_data.get("NoSyn4"));
-                }
-            }
-        catch(JSONException e){
-            Log.e("log_tag", "Error parsing data "+e.toString());
-            }
     }
 
     private void ShuffleArray(int[] array)
@@ -299,13 +254,22 @@ public class gamescreenActivity extends ActionBarActivity {
         }
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, gamemodeActivity.class);
+        startActivity(intent);
+    }
+
+
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, gs2activity.class);
         //ointcounter.setPointcounter(points);
         intent.putExtra("message", pointcounter);
+        intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(1);
         startActivity(intent);
 
     }
+
 }

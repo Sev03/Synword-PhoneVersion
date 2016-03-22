@@ -30,6 +30,12 @@
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
+            android:name=".gamescreens.loadscreenActivity"
+            android:label="loadscreen"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+        <activity
             android:name=".gamescreens.gamescreenActivity"
             android:label="Gamescreen"
             android:screenOrientation="portrait"

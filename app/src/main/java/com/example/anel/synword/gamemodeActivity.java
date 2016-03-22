@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.anel.synword.gamescreens.gamescreenActivity;
+import com.example.anel.synword.gamescreens.loadscreenActivity;
 import com.example.anel.synword.timescreens.timescreen;
 
 /**
@@ -62,7 +63,7 @@ public class gamemodeActivity extends ActionBarActivity {
     public void showFehlerfrei(View view) {
         // Do something in response to button
 
-        Intent intent = new Intent(this, gamescreenActivity.class);
+        Intent intent = new Intent(this, loadscreenActivity.class);
         startActivity(intent);
     }
 

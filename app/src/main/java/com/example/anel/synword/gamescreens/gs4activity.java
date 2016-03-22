@@ -14,6 +14,7 @@ import com.example.anel.synword.Points;
 import com.example.anel.synword.R;
 import com.example.anel.synword.gamemodeActivity;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -29,6 +30,7 @@ public class gs4activity extends ActionBarActivity {
     public String nosyn2 = "unfall";
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
+    ArrayList<String> wordlist = new ArrayList<String>();
 
     public Button b1;
     public Button b2;
@@ -38,21 +40,14 @@ public class gs4activity extends ActionBarActivity {
     public Button b6;
     Points pointcounter = new Points();
 
-    private void ShuffleArray(int[] array)
-    {
-        int index;
-        Random random = new Random();
-        for (int i = array.length - 1; i > 0; i--)
-        {
-            index = random.nextInt(i + 1);
-            if (index != i)
-            {
-                array[index] ^= array[i];
-                array[i] ^= array[index];
-                array[index] ^= array[i];
-            }
-        }
-    }
+    boolean btn1isclicked = false;
+    boolean btn2isclicked = false;
+    boolean btn3isclicked = false;
+    boolean btn4isclicked = false;
+    boolean btn5isclicked = false;
+    boolean btn6isclicked = false;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +57,9 @@ public class gs4activity extends ActionBarActivity {
         Intent intent = getIntent();
         points = ((Points) intent.getExtras().get("message")).getPointcounter();
         round = ((Points) intent.getExtras().get("message")).getRound();
+
+        wordlist = intent.getStringArrayListExtra("words");
+        fillInWords(wordlist);
 
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
         test.setText("" + points);
@@ -92,15 +90,35 @@ public class gs4activity extends ActionBarActivity {
         pointcounter.setPointcounter(points);
     }
 
-    boolean btn1isclicked = false;
-    boolean btn2isclicked = false;
-    boolean btn3isclicked = false;
-    boolean btn4isclicked = false;
-    boolean btn5isclicked = false;
-    boolean btn6isclicked = false;
 
+    private void   fillInWords(ArrayList<String> results) {
+        String firstrow = results.get(4);
+        String[] wordsplit = firstrow.split("\\s+");
 
+        this.ankerword = wordsplit[0];
+        this.syn1 = wordsplit[1];
+        this.syn2 = wordsplit[2];
+        this.nosyn1 = wordsplit[3];
+        this.nosyn2 = wordsplit[4];
+        this.nosyn3 = wordsplit[5];
+        this.nosyn4 = wordsplit[6];
 
+    }
+    private void ShuffleArray(int[] array)
+    {
+        int index;
+        Random random = new Random();
+        for (int i = array.length - 1; i > 0; i--)
+        {
+            index = random.nextInt(i + 1);
+            if (index != i)
+            {
+                array[index] ^= array[i];
+                array[i] ^= array[index];
+                array[index] ^= array[i];
+            }
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -251,6 +269,7 @@ public class gs4activity extends ActionBarActivity {
         // Do something in response to button
         Intent intent = new Intent(this, gs5activity.class);
         intent.putExtra("message", pointcounter);
+        intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(4);
         startActivity(intent);
     }
