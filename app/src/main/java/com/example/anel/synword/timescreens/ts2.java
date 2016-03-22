@@ -2,12 +2,15 @@ package com.example.anel.synword.timescreens;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.anel.synword.Points;
@@ -38,6 +41,12 @@ public class ts2 extends ActionBarActivity {
     public Button b6;
     Points pointcounter = new Points();
 
+    ProgressBar intervallBar;
+    // Interval <= 10 möglich
+    static final int INTERVAL = 10;
+
+    Handler countdown = new Handler();
+
     private void ShuffleArray(int[] array)
     {
         int index;
@@ -63,6 +72,7 @@ public class ts2 extends ActionBarActivity {
         points = ((Points) intent.getExtras().get("message")).getPointcounter();
         round = ((Points) intent.getExtras().get("message")).getRound();
 
+        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
         test.setText("" + points);
         test = (TextView) findViewById(R.id.txtRunde);
@@ -91,6 +101,26 @@ public class ts2 extends ActionBarActivity {
         b6.setText(arr[array[5]]);
 
         pointcounter.setPointcounter(points);
+
+        intervallBar.setProgress(100);
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                intervallBar.setProgress(intervallBar.getProgress() - 10 / INTERVAL);
+                if (intervallBar.getProgress() == 0) {
+                    countdown.removeCallbacks(this);
+                    Log.e("THREAD", "CANCELED");
+                    return;
+                }
+                countdown.postDelayed(this, 1000 / INTERVAL);
+            }
+        };
+        countdown.postDelayed(runnable, 1000 / INTERVAL);
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     boolean btn1isclicked = false;

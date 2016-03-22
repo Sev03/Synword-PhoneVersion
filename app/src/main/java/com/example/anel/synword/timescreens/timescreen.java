@@ -3,6 +3,7 @@ package com.example.anel.synword.timescreens;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -58,8 +59,10 @@ public class timescreen extends ActionBarActivity {
     public Button b6;
 
     ProgressBar intervallBar;
-    static final int INTERVAL = 1;
+    // Interval <= 10 möglich
+    static final int INTERVAL = 10;
 
+    Handler countdown = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +85,7 @@ public class timescreen extends ActionBarActivity {
         TextView test = (TextView) this.findViewById(R.id.txtWord);
         test.setText(ankerword);
         //array für positionen
-        int[] array = {0,1,2,3,4,5};
+        int[] array = {0, 1, 2, 3, 4, 5};
         //aufruf shufflefunktion
         ShuffleArray(array);
         b1.setText(arr[array[0]]);
@@ -92,16 +95,34 @@ public class timescreen extends ActionBarActivity {
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
 
-        intervallBar.setProgress(15 - INTERVAL);
+        intervallBar.setProgress(100);
 
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                intervallBar.setProgress(intervallBar.getProgress() - 10 / INTERVAL);
+                if (intervallBar.getProgress() == 0) {
+                    countdown.removeCallbacks(this);
+                    Log.e("THREAD", "CANCELED");
+                    return;
+                }
+                countdown.postDelayed(this, 1000 / INTERVAL);
+            }
+        };
+        countdown.postDelayed(runnable, 1000 / INTERVAL);
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     public void getData() {
         String result = "";
         ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 
-        try{
+        try {
             HttpClient httpclient = new DefaultHttpClient();
             // TODO SERVER EINFÜGEN
             HttpPost httppost = new HttpPost("http://deinehomepage.de/deinephpDatei.php");
@@ -109,46 +130,42 @@ public class timescreen extends ActionBarActivity {
             HttpResponse response = httpclient.execute(httppost);
             HttpEntity entity = response.getEntity();
             is = entity.getContent();
-        }catch(Exception e){
+        } catch (Exception e) {
             Log.e("log_tag", "Fehler bei der http Verbindung " + e.toString());
         }
 
-        try{
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
             StringBuilder sb = new StringBuilder();
             String line = null;
             while ((line = reader.readLine()) != null) {
                 sb.append(line + "n");
             }
             is.close();
-            result=sb.toString();
-        }catch(Exception e){
-            Log.e("log_tag", "Error converting result "+e.toString());
+            result = sb.toString();
+        } catch (Exception e) {
+            Log.e("log_tag", "Error converting result " + e.toString());
         }
 
-        try{
+        try {
             JSONArray jArray = new JSONArray(result);
-            for(int i=0;i<jArray.length();i++){
+            for (int i = 0; i < jArray.length(); i++) {
                 json_data = jArray.getJSONObject(i);
 
                 // TODO Ankerword, Syn1, Syn2, NoSyn1, NoSyn2, NoSyn3, NoSyn4,
-                results.add((String) json_data.get("id") + " "+ json_data.get("name"));
+                results.add((String) json_data.get("id") + " " + json_data.get("name"));
             }
-        }
-        catch(JSONException e){
-            Log.e("log_tag", "Error parsing data "+e.toString());
+        } catch (JSONException e) {
+            Log.e("log_tag", "Error parsing data " + e.toString());
         }
     }
 
-    private void ShuffleArray(int[] array)
-    {
+    private void ShuffleArray(int[] array) {
         int index;
         Random random = new Random();
-        for (int i = array.length - 1; i > 0; i--)
-        {
+        for (int i = array.length - 1; i > 0; i--) {
             index = random.nextInt(i + 1);
-            if (index != i)
-            {
+            if (index != i) {
                 array[index] ^= array[i];
                 array[i] ^= array[index];
                 array[index] ^= array[i];
@@ -190,13 +207,13 @@ public class timescreen extends ActionBarActivity {
 
     int pressed = 0;
 
-    public void onClick1 (View view){
+    public void onClick1(View view) {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn1isclicked == false) {
             pressed++;
             btn1isclicked = true;
         }
-        if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
+        if (b1.getText().toString() == syn1 || b1.getText().toString() == syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
@@ -206,26 +223,26 @@ public class timescreen extends ActionBarActivity {
 
 
     }
-    public void onClick2 (View view){
+
+    public void onClick2(View view) {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn2isclicked == false) {
             pressed++;
             btn2isclicked = true;
         }
 
-        if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
+        if (b2.getText().toString() == syn1 || b2.getText().toString() == syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-
-        if (pressed == 2){
+        if (pressed == 2) {
             showNextScreen(view);
         }
 
 
-
     }
-    public void onClick3 (View view){
+
+    public void onClick3(View view) {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn3isclicked == false) {
             pressed++;
@@ -233,19 +250,18 @@ public class timescreen extends ActionBarActivity {
 
         }
 
-        if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
+        if (b3.getText().toString() == syn1 || b3.getText().toString() == syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-        if (pressed == 2){
+        if (pressed == 2) {
             showNextScreen(view);
         }
 
 
-
-
     }
-    public void onClick4 (View view){
+
+    public void onClick4(View view) {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn4isclicked == false) {
             pressed++;
@@ -253,20 +269,18 @@ public class timescreen extends ActionBarActivity {
 
         }
 
-        if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
+        if (b4.getText().toString() == syn1 || b4.getText().toString() == syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-
-        if (pressed == 2){
+        if (pressed == 2) {
             showNextScreen(view);
         }
 
 
-
-
     }
-    public void onClick5 (View view){
+
+    public void onClick5(View view) {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn5isclicked == false) {
             pressed++;
@@ -274,19 +288,18 @@ public class timescreen extends ActionBarActivity {
 
         }
 
-        if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
+        if (b5.getText().toString() == syn1 || b5.getText().toString() == syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-
-        if (pressed == 2){
+        if (pressed == 2) {
             showNextScreen(view);
         }
 
 
-
     }
-    public void onClick6 (View view){
+
+    public void onClick6(View view) {
         view.setBackgroundColor(Color.parseColor("#FF3798D9"));
         if (btn6isclicked == false) {
             pressed++;
@@ -294,12 +307,12 @@ public class timescreen extends ActionBarActivity {
 
         }
 
-        if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
+        if (b6.getText().toString() == syn1 || b6.getText().toString() == syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
-        if (pressed == 2){
+        if (pressed == 2) {
             showNextScreen(view);
         }
     }

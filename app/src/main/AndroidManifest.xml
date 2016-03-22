@@ -191,14 +191,14 @@
             android:name=".timescreens.ts10"
             android:label="Timescreen Runde 10"
             android:screenOrientation="portrait"
-            android:configChanges="orientation|screenSize">
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
             android:name=".pophighscore"
             android:theme="@style/AppTheme.CustomTheme2"
             android:screenOrientation="portrait"
-            android:configChanges="orientation|screenSize">
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <uses-permission android:name="android.permission.INTERNET" />
