@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.anel.synword.gamescreens.gamescreenActivity;
-import com.example.anel.synword.gamescreens.loadscreenActivity;
 import com.example.anel.synword.timescreens.timescreen;
 
 /**
@@ -63,7 +62,7 @@ public class gamemodeActivity extends ActionBarActivity {
     public void showFehlerfrei(View view) {
         // Do something in response to button
 
-        Intent intent = new Intent(this, loadscreenActivity.class);
+        Intent intent = new Intent(this, gamescreenActivity.class);
         startActivity(intent);
     }
 
@@ -73,5 +72,19 @@ public class gamemodeActivity extends ActionBarActivity {
         Intent intent = new Intent(this, timescreen.class);
         startActivity(intent);
     }
+
+    /*Button bm1 = (Button) findViewById(R.id.btnInfo);
+    bm1.setOnClickListener(new View.OnClickListener() {
+
+
+        public void onClick(View v) {
+            // TODO Auto-generated method stub
+            AlertDialog.Builder alert = new AlertDialog.Builder(popup.this);
+            alert.setTitle("Help");
+            alert.setMessage("message");
+            alert.setPositiveButton("OK", null);
+            alert.show();
+        }
+    }*/
 
 }
