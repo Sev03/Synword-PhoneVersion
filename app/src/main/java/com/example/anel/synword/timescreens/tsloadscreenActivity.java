@@ -28,7 +28,7 @@ import java.util.ArrayList;
 /**
  * Created by Florian on 22.03.2016.
  */
-public class loadscreenActivity extends ActionBarActivity {
+public class tsloadscreenActivity extends ActionBarActivity {
 
     ArrayList<String> results = new ArrayList<String>();
     LoadscreenSub task = new LoadscreenSub();

@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -62,6 +63,11 @@ public class pophighscore extends Activity{
         username = tempusername.getText().toString();
     }
 
+    public void insert(View view){
+
+        insertToDatabase(username,highscorenumber);
+    }
+
     private void insertToDatabase(String name, String add){
     class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
         @Override
@@ -69,13 +75,13 @@ public class pophighscore extends Activity{
             String paramUsername = params[0];
             String paramAddress = params[1];
 
-            String add = username;
-            String name = highscorenumber;
+            String name = username;
+            String hs = highscorenumber;
 
 
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-            nameValuePairs.add(new BasicNameValuePair("username", username));
-            nameValuePairs.add(new BasicNameValuePair("highscorenumber", highscorenumber));
+            nameValuePairs.add(new BasicNameValuePair("username", name));
+            nameValuePairs.add(new BasicNameValuePair("highscorenumber", hs));
 
             try {
                 HttpClient httpClient = new DefaultHttpClient();
@@ -101,6 +107,9 @@ public class pophighscore extends Activity{
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
+            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+            TextView textViewResult = (TextView) findViewById(R.id.btnClose);
+            textViewResult.setText("Gespeichert!");
         }
     }
     SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
