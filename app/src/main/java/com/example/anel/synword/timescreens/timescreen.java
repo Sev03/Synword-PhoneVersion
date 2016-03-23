@@ -15,7 +15,9 @@ import android.widget.TextView;
 
 import com.example.anel.synword.Points;
 import com.example.anel.synword.R;
+
 import org.json.JSONObject;
+
 import java.io.InputStream;
 
 import java.util.ArrayList;
@@ -102,7 +104,7 @@ public class timescreen extends ActionBarActivity {
 
     }
 
-    private void   fillInWords(ArrayList<String> results) {
+    private void fillInWords(ArrayList<String> results) {
         String firstrow = results.get(0);
         String[] wordsplit = firstrow.split("\\s+");
 
