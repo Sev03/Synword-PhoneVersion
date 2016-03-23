@@ -1,175 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.anel.synword">
-
+    package="com.example.anel.synword" >
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".HighscoreActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Highscore"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
         <activity
             android:name=".gamemodeActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Gamemode"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".gamescreens.loadscreenActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="loadscreen"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
         <activity
             android:name=".gamescreens.gamescreenActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Gamescreen"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".creditsActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Credits"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".helpActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Help"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".gamescreens.gs2activity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Gamescreen Runde 2"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".gamescreens.gs3activity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Gamescreen Runde 3"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".gamescreens.gs4activity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Gamescreen Runde 4"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".gamescreens.gs5activity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Gamescreen Runde 5"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".gamescreens.gs6activity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Gamescreen Runde 6"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".gamescreens.gs7activity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Gamescreen Runde 7"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".gamescreens.gs8activity"
-            android:label="Gamescreen Runde 8"></activity>
+            android:label="Gamescreen Runde 8" >
+        </activity>
+
         <activity
             android:name=".gamescreens.gs9activity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Gamescreen Runde 9"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
-            android:name=".gamescreens.gs10activity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="Gamescreen Runde 10"
-            android:screenOrientation="portrait"></activity>
+        android:name=".gamescreens.gs10activity"
+        android:label="Gamescreen Runde 10"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.timescreen"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 1"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.ts2"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 2"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.ts3"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 3"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.ts4"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 4"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.ts5"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 5"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".Pop"
-            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.CustomTheme"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.CustomTheme"></activity>
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.ts6"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 6"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.ts7"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 7"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.ts8"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 8"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.ts9"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 9"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".timescreens.ts10"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="Timescreen Runde 10"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name=".timescreens.loadscreenActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="loadscreen"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
         <activity
             android:name=".pophighscore"
-            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.CustomTheme2"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.CustomTheme2"></activity>
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
 
         <uses-permission android:name="android.permission.INTERNET" />
 
-        <receiver android:name=".AutoResizeButton">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/auto_resize_button_info" />
-        </receiver>
     </application>
-
 </manifest>
