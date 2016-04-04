@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="SynWord"
+                    android:id="@+id/textView"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="60dp"
+                    android:textColor="#ffffffff"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Das Synonymspiel"
+                    android:id="@+id/textView6"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="35dp"
+                    android:textColor="#ffffff"
+                    android:layout_weight="0.25"
+                    android:layout_marginBottom="20dp" />
+
+                <Button
+                    android:layout_width="280dp"
+                    android:layout_height="25dp"
+                    android:text="Spielen"
+                    android:id="@+id/btnPlay"
+                    android:background="@drawable/a"
+                    android:layout_weight="0.25"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:layout_marginTop="20dp"
+                    android:onClick="showPlay"/>
+
+                <Button
+                    android:layout_width="280dp"
+                    android:layout_height="25dp"
+                    android:text="Rangliste"
+                    android:id="@+id/btnScore"
+                    android:background="#5180bc"
+                    android:layout_weight="0.25"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:onClick="showHighscore"/>
+
+                <Button
+                    android:layout_width="280dp"
+                    android:layout_height="25dp"
+                    android:text="Hilfe"
+                    android:id="@+id/btnHelp"
+                    android:background="@drawable/a"
+                    android:layout_weight="0.25"
+                    android:layout_marginBottom="15dp"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:onClick="showHelp" />
+                <Button
+                    android:layout_width="280dp"
+                    android:layout_height="25dp"
+                    android:text="Credits"
+                    android:id="@+id/btnCredits"
+                    android:background="#5180bc"
+                    android:layout_weight="0.25"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:onClick="showCredits"
+                    android:layout_marginBottom="20dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

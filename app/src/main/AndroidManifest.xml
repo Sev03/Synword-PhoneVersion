@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.anel.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
@@ -18,178 +18,196 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HighscoreActivity"
+            android:name="com.example.anel.HighscoreActivity"
             android:label="Highscore"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name=".gamemodeActivity"
+            android:name="com.example.anel.gamemodeActivity"
             android:label="Gamemode"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name=".gamescreens.gamescreenActivity"
+            android:name="com.example.anel.highscoreLoadscreen"
+            android:label="Loadscreenhighscore"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+        <activity
+            android:name="com.example.anel.gamescreens.loadscreenActivity"
+            android:label="loadscreen"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+        <activity
+            android:name="com.example.anel.timescreens.tsloadscreenActivity"
+            android:label="loadscreen"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+        <activity
+            android:name="com.example.anel.gamescreens.gamescreenActivity"
             android:label="Gamescreen"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".creditsActivity"
+            android:name="com.example.anel.creditsActivity"
             android:label="Credits"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".helpActivity"
+            android:name="com.example.anel.helpActivity"
             android:label="Help"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".gamescreens.gs2activity"
+            android:name="com.example.anel.gamescreens.gs2activity"
             android:label="Gamescreen Runde 2"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".gamescreens.gs3activity"
+            android:name="com.example.anel.gamescreens.gs3activity"
             android:label="Gamescreen Runde 3"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".gamescreens.gs4activity"
+            android:name="com.example.anel.gamescreens.gs4activity"
             android:label="Gamescreen Runde 4"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".gamescreens.gs5activity"
+            android:name="com.example.anel.gamescreens.gs5activity"
             android:label="Gamescreen Runde 5"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".gamescreens.gs6activity"
+            android:name="com.example.anel.gamescreens.gs6activity"
             android:label="Gamescreen Runde 6"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".gamescreens.gs7activity"
+            android:name="com.example.anel.gamescreens.gs7activity"
             android:label="Gamescreen Runde 7"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".gamescreens.gs8activity"
+            android:name="com.example.anel.gamescreens.gs8activity"
             android:label="Gamescreen Runde 8" >
         </activity>
 
         <activity
-            android:name=".gamescreens.gs9activity"
+            android:name="com.example.anel.gamescreens.gs9activity"
             android:label="Gamescreen Runde 9"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-        android:name=".gamescreens.gs10activity"
-        android:label="Gamescreen Runde 10"
+            android:name="com.example.anel.gamescreens.gs10activity"
+            android:label="Gamescreen Runde 10"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.timescreen"
+            android:name="com.example.anel.timescreens.timescreen"
             android:label="Timescreen Runde 1"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.ts2"
+            android:name="com.example.anel.timescreens.ts2"
             android:label="Timescreen Runde 2"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.ts3"
+            android:name="com.example.anel.timescreens.ts3"
             android:label="Timescreen Runde 3"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.ts4"
+            android:name="com.example.anel.timescreens.ts4"
             android:label="Timescreen Runde 4"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.ts5"
+            android:name="com.example.anel.timescreens.ts5"
             android:label="Timescreen Runde 5"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".Pop"
+            android:name="com.example.anel.Pop"
             android:theme="@style/AppTheme.CustomTheme"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.ts6"
+            android:name="com.example.anel.timescreens.ts6"
             android:label="Timescreen Runde 6"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.ts7"
+            android:name="com.example.anel.timescreens.ts7"
             android:label="Timescreen Runde 7"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.ts8"
+            android:name="com.example.anel.timescreens.ts8"
             android:label="Timescreen Runde 8"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.ts9"
+            android:name="com.example.anel.timescreens.ts9"
             android:label="Timescreen Runde 9"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".timescreens.ts10"
+            android:name="com.example.anel.timescreens.ts10"
             android:label="Timescreen Runde 10"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name=".pophighscore"
+            android:name="com.example.anel.pophighscore"
             android:theme="@style/AppTheme.CustomTheme2"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
