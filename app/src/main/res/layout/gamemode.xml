@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/hintergrund"
     android:weightSum="1">
 
 
@@ -51,7 +51,7 @@
                     android:layout_height="75dp"
                     android:text="Vermeide Fehler"
                     android:id="@+id/btnFehlerfrei"
-                    android:background="@drawable/a"
+                    android:background="#32bb26"
                     android:layout_weight="0.1"
                     android:layout_gravity="center"
                     android:textSize="30dp"
@@ -65,7 +65,7 @@
                     android:layout_height="75dp"
                     android:text="Sei möglichst schnell"
                     android:id="@+id/btnZeit"
-                    android:background="#5180bc"
+                    android:background="#ffffff"
                     android:layout_weight="0.1"
                     android:layout_gravity="center"
                     android:textSize="30dp"
@@ -73,21 +73,20 @@
                     android:layout_marginTop="28dp"
                     android:layout_below="@+id/btnFehlerfrei"
                     android:layout_alignLeft="@+id/btnFehlerfrei"
-                    android:layout_alignStart="@+id/btnFehlerfrei" />
+                    android:layout_alignStart="@+id/btnFehlerfrei"
+                    android:textColor="#000000" />
 
                 <Button
-                    android:layout_width="70dp"
-                    android:layout_height="60dp"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
                     android:id="@+id/btnInfo"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="0.01"
                     android:text="Spielanleitung"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="#32bb26"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignRight="@+id/textView"
-                    android:layout_alignEnd="@+id/textView"
-                    android:layout_alignLeft="@+id/textView"
-                    android:layout_alignStart="@+id/textView" />
+                    android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
