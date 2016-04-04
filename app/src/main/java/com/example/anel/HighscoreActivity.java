@@ -31,7 +31,7 @@ public class HighscoreActivity extends ActionBarActivity {
         fillInHighscore(rangliste);
 
         TextView scoreView = (TextView)findViewById(R.id.highscorelist);
-        scoreView.setText(username + " - " + score);
+        scoreView.setText(username + " - " + score + " - " + gamemode);
     }
 
     private void   fillInHighscore(ArrayList<String> results) {
