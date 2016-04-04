@@ -162,13 +162,13 @@ public class timescreen extends ActionBarActivity {
 
     int pressed = 0;
 
-    public void onClick1(View view) {
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+    public void onClick1 (View view){
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn1isclicked == false) {
             pressed++;
             btn1isclicked = true;
         }
-        if (b1.getText().toString() == syn1 || b1.getText().toString() == syn2) {
+        if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
@@ -178,96 +178,100 @@ public class timescreen extends ActionBarActivity {
 
 
     }
-
-    public void onClick2(View view) {
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+    public void onClick2 (View view){
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn2isclicked == false) {
             pressed++;
             btn2isclicked = true;
         }
 
-        if (b2.getText().toString() == syn1 || b2.getText().toString() == syn2) {
+        if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-        if (pressed == 2) {
+
+        if (pressed == 2){
             showNextScreen(view);
         }
 
 
-    }
 
-    public void onClick3(View view) {
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+    }
+    public void onClick3 (View view){
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn3isclicked == false) {
             pressed++;
             btn3isclicked = true;
 
         }
 
-        if (b3.getText().toString() == syn1 || b3.getText().toString() == syn2) {
+        if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-        if (pressed == 2) {
+        if (pressed == 2){
             showNextScreen(view);
         }
 
 
-    }
 
-    public void onClick4(View view) {
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+
+    }
+    public void onClick4 (View view){
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn4isclicked == false) {
             pressed++;
             btn4isclicked = true;
 
         }
 
-        if (b4.getText().toString() == syn1 || b4.getText().toString() == syn2) {
+        if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-        if (pressed == 2) {
+
+        if (pressed == 2){
             showNextScreen(view);
         }
 
 
-    }
 
-    public void onClick5(View view) {
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+
+    }
+    public void onClick5 (View view){
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn5isclicked == false) {
             pressed++;
             btn5isclicked = true;
 
         }
 
-        if (b5.getText().toString() == syn1 || b5.getText().toString() == syn2) {
+        if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
-        if (pressed == 2) {
+
+        if (pressed == 2){
             showNextScreen(view);
         }
 
 
-    }
 
-    public void onClick6(View view) {
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+    }
+    public void onClick6 (View view){
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn6isclicked == false) {
             pressed++;
             btn6isclicked = true;
 
         }
 
-        if (b6.getText().toString() == syn1 || b6.getText().toString() == syn2) {
+        if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
 
 
-        if (pressed == 2) {
+        if (pressed == 2){
             showNextScreen(view);
         }
     }

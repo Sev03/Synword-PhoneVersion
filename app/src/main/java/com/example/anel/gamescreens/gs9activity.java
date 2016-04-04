@@ -152,7 +152,7 @@ public class gs9activity extends ActionBarActivity {
     int pressed = 0;
 
     public void onClick1 (View view){
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn1isclicked == false) {
             pressed++;
             btn1isclicked = true;
@@ -168,7 +168,7 @@ public class gs9activity extends ActionBarActivity {
 
     }
     public void onClick2 (View view){
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn2isclicked == false) {
             pressed++;
             btn2isclicked = true;
@@ -187,7 +187,7 @@ public class gs9activity extends ActionBarActivity {
 
     }
     public void onClick3 (View view){
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn3isclicked == false) {
             pressed++;
             btn3isclicked = true;
@@ -207,7 +207,7 @@ public class gs9activity extends ActionBarActivity {
 
     }
     public void onClick4 (View view){
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn4isclicked == false) {
             pressed++;
             btn4isclicked = true;
@@ -228,7 +228,7 @@ public class gs9activity extends ActionBarActivity {
 
     }
     public void onClick5 (View view){
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn5isclicked == false) {
             pressed++;
             btn5isclicked = true;
@@ -248,7 +248,7 @@ public class gs9activity extends ActionBarActivity {
 
     }
     public void onClick6 (View view){
-        view.setBackgroundColor(Color.parseColor("#FF3798D9"));
+        view.setBackgroundResource(R.drawable.buttongreen);
         if (btn6isclicked == false) {
             pressed++;
             btn6isclicked = true;
@@ -264,7 +264,6 @@ public class gs9activity extends ActionBarActivity {
             showNextScreen(view);
         }
     }
-
 
     public void showNextScreen(View view) {
         // Do something in response to button
