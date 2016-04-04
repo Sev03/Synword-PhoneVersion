@@ -35,14 +35,16 @@ public class HighscoreActivity extends ActionBarActivity {
     }
 
     private void   fillInHighscore(ArrayList<String> results) {
-        for (int i=0; i <= results.size(); i++) {
+        int i=0;
+           while (i<results.size()){
             String firstrow = results.get(i);
             String[] wordsplit = firstrow.split("\\s+");
 
             this.username = wordsplit[0];
             this.score = wordsplit[1];
             this.gamemode = wordsplit[2];
-        }
+               i++;
+       }
 
     }
 
