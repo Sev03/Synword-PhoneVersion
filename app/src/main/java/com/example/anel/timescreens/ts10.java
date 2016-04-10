@@ -91,7 +91,7 @@ public class ts10 extends ActionBarActivity {
         round = ((Points) intent.getExtras().get("message")).getRound();
         wordlist = intent.getStringArrayListExtra("words");
         fillInWords(wordlist);
-
+        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
         test.setText("" + points);
         test = (TextView) findViewById(R.id.txtRunde);
@@ -299,8 +299,12 @@ public class ts10 extends ActionBarActivity {
 
 
     public void showNextScreen(View view) {
+
+        String gamemodus = "Zeit";
         Intent intent = new Intent(this, pophighscore.class);
         intent.putExtra("message", pointcounter);
+        intent.putStringArrayListExtra("words", wordlist);
+        intent.putExtra("modi", gamemodus);
         pointcounter.setRound(10);
         startActivity(intent);
     }

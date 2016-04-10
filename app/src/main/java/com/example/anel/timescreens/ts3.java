@@ -1,7 +1,6 @@
 package com.example.anel.timescreens;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
@@ -89,6 +88,7 @@ public class ts3 extends ActionBarActivity {
         round = ((Points) intent.getExtras().get("message")).getRound();
         wordlist = intent.getStringArrayListExtra("words");
         fillInWords(wordlist);
+        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
         test.setText("" + points);
         test = (TextView) findViewById(R.id.txtRunde);
@@ -136,10 +136,7 @@ public class ts3 extends ActionBarActivity {
         countdown.postDelayed(runnable, 1000 / INTERVAL);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
+
 
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -300,6 +297,7 @@ public class ts3 extends ActionBarActivity {
         // Do something in response to buttons
         Intent intent = new Intent(this, ts4.class);
         intent.putExtra("message", pointcounter);
+        intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(3);
         startActivity(intent);
     }

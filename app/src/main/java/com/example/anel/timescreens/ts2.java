@@ -1,7 +1,6 @@
 package com.example.anel.timescreens;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
@@ -300,6 +299,7 @@ public class ts2 extends ActionBarActivity {
         // Do something in response to buttons
         Intent intent = new Intent(this, ts3.class);
         intent.putExtra("message", pointcounter);
+        intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(2);
         startActivity(intent);
     }

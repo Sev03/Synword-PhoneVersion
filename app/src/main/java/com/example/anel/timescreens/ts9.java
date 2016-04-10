@@ -90,7 +90,7 @@ public class ts9 extends ActionBarActivity {
         round = ((Points) intent.getExtras().get("message")).getRound();
         wordlist = intent.getStringArrayListExtra("words");
         fillInWords(wordlist);
-
+        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
         test.setText("" + points);
         test = (TextView) findViewById(R.id.txtRunde);
@@ -301,6 +301,7 @@ public class ts9 extends ActionBarActivity {
         // Do something in response to buttons
         Intent intent = new Intent(this, ts10.class);
         intent.putExtra("message", pointcounter);
+        intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(9);
         startActivity(intent);
     }
