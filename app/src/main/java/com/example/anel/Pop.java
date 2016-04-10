@@ -1,8 +1,11 @@
 package com.example.anel;
 
 import android.app.Activity;
+import android.graphics.Outline;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
 import com.example.anel.synword.R;
 
@@ -23,6 +26,8 @@ public class Pop extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.8),(int) (height*.7));
+        getWindow().setLayout((int) (width * .9), (int) (height * .8));
+
+
     }
 }

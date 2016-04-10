@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.anel.synword.R;
 
@@ -31,6 +33,8 @@ public class loadscreenActivity extends ActionBarActivity {
 
     ArrayList<String> results = new ArrayList<String>();
     LoadscreenSub task = new LoadscreenSub();
+    private ProgressBar spinner;
+
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -38,7 +42,8 @@ public class loadscreenActivity extends ActionBarActivity {
         setContentView(R.layout.loadscreen);
         getSupportActionBar().hide();
         task.execute();
-
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.VISIBLE);
     }
 
     public void goToNextScreenWhenFinished(){
@@ -107,7 +112,7 @@ public class loadscreenActivity extends ActionBarActivity {
             catch(JSONException e){
                 Log.e("log_tag", "Error parsing data "+e.toString());
             }
-
+        spinner.setVisibility(View.GONE);
 
         }
     }
