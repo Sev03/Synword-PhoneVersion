@@ -273,7 +273,7 @@ public class gs10activity extends ActionBarActivity {
 
 
     public void showNextScreen(View view) {
-        // Do something in response to button
+
         TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
         mngr.getDeviceId();
         String gamemodus = "Fehlerfrei";

@@ -1,10 +1,12 @@
 package com.example.anel.timescreens;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -299,7 +301,8 @@ public class ts10 extends ActionBarActivity {
 
 
     public void showNextScreen(View view) {
-
+        TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        mngr.getDeviceId();
         String gamemodus = "Zeit";
         Intent intent = new Intent(this, pophighscore.class);
         intent.putExtra("message", pointcounter);
