@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.anel.ConnectionDetector;
 import com.example.anel.Points;
 import com.example.anel.synword.R;
 import com.example.anel.gamemodeActivity;
@@ -33,6 +34,8 @@ public class gs10activity extends ActionBarActivity {
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
     ArrayList<String> wordlist = new ArrayList<String>();
+    ConnectionDetector cd;
+    Boolean isInternetPresent = false;
 
     public Button b1;
     public Button b2;

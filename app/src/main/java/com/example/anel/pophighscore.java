@@ -67,6 +67,9 @@ public class pophighscore extends Activity{
 
         tempusername = (EditText)findViewById(R.id.editText);
         tempusername.setGravity(Gravity.CENTER);
+
+
+
     }
 
     private void insertToDatabase(String name, String hs, String modi){
@@ -75,6 +78,7 @@ public class pophighscore extends Activity{
         String result=null;
         String line=null;
         int code;
+
         @Override
         protected String doInBackground(String... params) {
             String paramUsername = params[0];
@@ -138,13 +142,13 @@ public class pophighscore extends Activity{
 
                 if(code==1)
                 {
-                    Toast.makeText(getBaseContext(), "Inserted Successfully",
+                    Toast.makeText(getBaseContext(), "Erfolgreich gespeichert",
                             Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    Toast.makeText(getBaseContext(), "Sorry, Try Again",
-                            Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Es ist ein Fehler aufgetreten",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
             catch(Exception e)
@@ -162,6 +166,8 @@ public class pophighscore extends Activity{
         // Do something in response to button
         username = tempusername.getText().toString();
         insertToDatabase(username, highscorenumber, gamemode);
+        Toast.makeText(getBaseContext(), "Erfolgreich gespeichert",
+                Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
 
