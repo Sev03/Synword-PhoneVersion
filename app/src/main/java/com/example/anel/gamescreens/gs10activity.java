@@ -1,9 +1,11 @@
 package com.example.anel.gamescreens;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -269,6 +271,8 @@ public class gs10activity extends ActionBarActivity {
 
     public void showNextScreen(View view) {
         // Do something in response to button
+        TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        mngr.getDeviceId();
         String gamemodus = "Fehlerfrei";
         Intent intent = new Intent(this, pophighscore.class);
         intent.putExtra("message", pointcounter);
