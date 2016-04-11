@@ -25,18 +25,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="das Synonymspiel"
+        android:text="Hauptmenü"
         android:id="@+id/textView6"
         android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:textColor="#ffffff"
         android:layout_weight="0.25"
-        android:layout_below="@+id/textView"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_marginTop="-20dp"
         android:textStyle="italic"
-        android:layout_marginRight="15dp" />
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="220dp"
@@ -54,7 +51,7 @@
 
     <Button
         android:layout_width="220dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:text="Rangliste"
         android:id="@+id/btnScore"
         android:background="@drawable/buttongrey"
@@ -65,11 +62,11 @@
         android:textColor="#000000"
         android:layout_below="@+id/btnPlay"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="10dp" />
 
     <Button
         android:layout_width="220dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:text="Hilfe"
         android:id="@+id/btnHelp"
         android:background="@drawable/buttongreen"
@@ -79,10 +76,10 @@
         android:onClick="showHelp"
         android:layout_below="@+id/btnScore"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="10dp" />
     <Button
         android:layout_width="220dp"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:text="Credits"
         android:id="@+id/btnCredits"
         android:background="@drawable/buttongrey"
@@ -93,6 +90,9 @@
         android:textColor="#000000"
         android:layout_below="@+id/btnHelp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp" />
+
+
 
 </RelativeLayout>

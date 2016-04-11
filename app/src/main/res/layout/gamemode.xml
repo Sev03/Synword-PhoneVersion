@@ -42,10 +42,11 @@
                     android:text="Spielmodi"
                     android:id="@+id/textView6"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="35dp"
+                    android:textSize="25dp"
                     android:textColor="#ffffff"
                     android:layout_below="@+id/textView"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="italic" />
 
                 <Button
                     android:text="Richtigkeit"

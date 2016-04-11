@@ -55,9 +55,12 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/txtPunkte"
-        android:layout_alignBottom="@+id/txtGesamtpunkte"
+        android:layout_alignTop="@+id/txtGesamtpunkte"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="29dp" />
+        android:textSize="35dp"
+        android:text="2345"
+        android:textColor="#990000"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
