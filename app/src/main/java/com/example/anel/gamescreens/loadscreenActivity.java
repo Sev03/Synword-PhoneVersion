@@ -95,7 +95,7 @@ public class loadscreenActivity extends ActionBarActivity {
                 } catch (Exception e) {
                     Log.e("log_tag", "Error converting result " + e.toString());
                 }
-            }else {
+            }else if(sprache == "DE"){
                 try {
                     HttpClient httpclient = new DefaultHttpClient();
                     HttpPost httppost = new HttpPost("");
