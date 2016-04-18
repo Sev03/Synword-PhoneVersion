@@ -87,7 +87,8 @@
                     android:layout_alignStart="@+id/btnFehlerfrei"
                     android:layout_marginTop="20dp" />
 
-                <Button
+
+    <Button
                     android:text="Spielanleitung"
                     android:textColor="#ffffff"
                     android:textSize="15dp"
@@ -105,6 +106,14 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="15dp" />
 
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sprache:"
+        android:id="@+id/switch1"
+        android:layout_below="@+id/btnZeit"
+        android:layout_centerHorizontal="true"
+        android:checked="false" />
 
 </RelativeLayout>
 
