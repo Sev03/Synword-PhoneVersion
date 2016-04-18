@@ -34,6 +34,7 @@ public class loadscreenActivity extends ActionBarActivity {
     ArrayList<String> results = new ArrayList<String>();
     LoadscreenSub task = new LoadscreenSub();
     private ProgressBar spinner;
+    private String sprache = "";
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,8 @@ public class loadscreenActivity extends ActionBarActivity {
         setContentView(R.layout.loadscreen);
         getSupportActionBar().hide();
         task.execute();
+        Intent intent = getIntent();
+        sprache = intent.getStringExtra("sprache");
         spinner = (ProgressBar)findViewById(R.id.progressBar1);
         spinner.setVisibility(View.VISIBLE);
     }
@@ -67,7 +70,15 @@ public class loadscreenActivity extends ActionBarActivity {
 
                 try{
                     HttpClient httpclient = new DefaultHttpClient();
-                    HttpPost httppost = new HttpPost("http://felf.ga:25571/SynWord1_php.php");
+                    HttpPost httppost = new HttpPost("");
+                    if (sprache == "DE"){
+                     httppost = new HttpPost("http://felf.ga:25571/SynWord1_php.php");
+                    }
+                    else {
+                        if (sprache == "EN") {
+                            httppost = new HttpPost("http://felf.ga:25571/SynWordEnglisch_php.php");
+                        }
+                    }
                     httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     HttpResponse response = httpclient.execute(httppost);
                     HttpEntity entity = response.getEntity();
