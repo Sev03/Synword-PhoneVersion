@@ -93,7 +93,7 @@
                     android:textColor="#ffffff"
                     android:textSize="15dp"
                     android:layout_width="170dp"
-                    android:layout_height="75dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/buttongrey"
                     android:id="@+id/btnInfo"
                     android:shadowColor="#A8A8A8"
@@ -113,7 +113,10 @@
         android:id="@+id/switch1"
         android:layout_below="@+id/btnZeit"
         android:layout_centerHorizontal="true"
-        android:checked="false" />
+        android:checked="false"
+        android:textOn="DE"
+        android:textOff="EN"
+        android:layout_marginTop="15dp" />
 
 </RelativeLayout>
 
