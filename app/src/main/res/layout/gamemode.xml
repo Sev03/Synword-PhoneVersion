@@ -109,8 +109,8 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sprache:"
-        android:id="@+id/switch1"
+        android:text="Sprache"
+        android:id="@+id/switchLang"
         android:layout_below="@+id/btnZeit"
         android:layout_centerHorizontal="true"
         android:checked="false"

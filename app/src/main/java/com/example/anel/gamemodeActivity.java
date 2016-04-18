@@ -7,6 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.example.anel.synword.R;
 import com.example.anel.gamescreens.loadscreenActivity;
@@ -15,13 +19,20 @@ import com.example.anel.timescreens.tsloadscreenActivity;
 /**
  * Created by Anel on 14.12.2015.
  */
-public class gamemodeActivity extends ActionBarActivity {
+public class gamemodeActivity extends ActionBarActivity implements CompoundButton.OnCheckedChangeListener{
+
+    Switch switchLang;
+    String sprache = "DE";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gamemode);
         getSupportActionBar().hide();
 
+        switchLang = (Switch) findViewById(R.id.switchLang);
+        switchLang.setOnCheckedChangeListener(this);
         Button b = (Button) findViewById(R.id.btnInfo);
 
         b.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +43,21 @@ public class gamemodeActivity extends ActionBarActivity {
         });
 
     }
+
+
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (isChecked) {
+            sprache = "EN";
+            Toast.makeText(getApplicationContext(), "Sprache ist "+sprache, Toast.LENGTH_SHORT).show();
+
+        } else {
+            sprache = "DE";
+            Toast.makeText(getApplicationContext(), "Sprache ist "+sprache, Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+
 
     public void onBackPressed(){
         Intent intent = new Intent(this, MainActivity.class);
@@ -62,15 +88,17 @@ public class gamemodeActivity extends ActionBarActivity {
 
     public void showFehlerfrei(View view) {
         // Do something in response to button
-
+        Toast.makeText(getApplicationContext(), "Sprache ist "+sprache, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, loadscreenActivity.class);
+        intent.putExtra("sprache", sprache);
         startActivity(intent);
     }
 
     public void showZeit(View view) {
         // Do something in response to button
-
+        Toast.makeText(getApplicationContext(), "Sprache ist "+sprache, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, tsloadscreenActivity.class);
+        intent.putExtra("sprache", sprache);
         startActivity(intent);
     }
 
