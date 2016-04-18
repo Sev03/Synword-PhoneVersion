@@ -114,8 +114,8 @@
         android:layout_below="@+id/btnZeit"
         android:layout_centerHorizontal="true"
         android:checked="false"
-        android:textOn="DE"
-        android:textOff="EN"
+        android:textOn="EN"
+        android:textOff="DE"
         android:layout_marginTop="15dp" />
 
 </RelativeLayout>
