@@ -32,24 +32,20 @@
                     android:layout_centerHorizontal="true" />
 
                 <TextView
-                    android:layout_width="275dp"
-                    android:layout_height="fill_parent"
-                    android:text="Entwickler: Anel Jusic und Florian Kropfitsch
-
-Version: 0.9.0
-
-Entwickelt im Zuge des Softwarepraktikum
-bei der Firma econob GmbH.
-"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Entwickler: Anel Jusic und Florian Kropfitsch  \nVersion: 0.9.0  \nEntwickelt im Zuge des \nSoftwarepraktikum bei der Firma \neconob GmbH. "
                     android:id="@+id/credits"
                     android:textColor="#ffffff"
-                    android:background="@drawable/buttongrey"
+                    android:background="@drawable/textgrey"
                     android:paddingTop="10dp"
                     android:paddingLeft="15dp"
                     android:textStyle="bold"
                     android:layout_below="@+id/textView6"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="15dp"
-                    android:layout_marginTop="30dp" />
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
 
 </RelativeLayout>

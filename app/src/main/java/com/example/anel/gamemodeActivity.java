@@ -88,7 +88,6 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
 
     public void showFehlerfrei(View view) {
         // Do something in response to button
-        Toast.makeText(getApplicationContext(), "Sprache ist "+sprache, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, loadscreenActivity.class);
         intent.putExtra("sprache", sprache);
         startActivity(intent);
@@ -96,7 +95,6 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
 
     public void showZeit(View view) {
         // Do something in response to button
-        Toast.makeText(getApplicationContext(), "Sprache ist "+sprache, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, tsloadscreenActivity.class);
         intent.putExtra("sprache", sprache);
         startActivity(intent);
