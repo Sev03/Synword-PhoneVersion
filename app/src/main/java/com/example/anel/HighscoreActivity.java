@@ -32,24 +32,21 @@ public class HighscoreActivity extends ActionBarActivity {
         fillInHighscore(rangliste);
 
         TextView scoreView = (TextView)findViewById(R.id.highscorelist);
-        for(int i = 0; i<10; i++) {
-            scoreView.setText("#" + platz + ": " + username + " - " + score + " - " + gamemode + "\n");
-        }
+        scoreView.setText("#" + platz + ": " + username + " - " + score + " - " + gamemode + "\n");
     }
 
     private void   fillInHighscore(ArrayList<String> results) {
         int i=0;
 
            while (i<results.size()){
-               platz = platz++;
-            String firstrow = results.get(i);
-            String[] wordsplit = firstrow.split("\\s+");
 
-            this.username = wordsplit[0];
-            this.score = wordsplit[1];
-            this.gamemode = wordsplit[2];
+               String firstrow = results.get(i);
+               String[] wordsplit = firstrow.split("\\s+");
+
+               this.username = wordsplit[0];
+               this.score = wordsplit[1];
+               this.gamemode = wordsplit[2];
                i++;
-
        }
 
     }
