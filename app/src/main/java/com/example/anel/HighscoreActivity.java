@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class HighscoreActivity extends ActionBarActivity {
 
     ArrayList<String> rangliste = new ArrayList<String>();
+    int platz = 1;
     String username;
     String score;
     String gamemode;
@@ -31,12 +32,16 @@ public class HighscoreActivity extends ActionBarActivity {
         fillInHighscore(rangliste);
 
         TextView scoreView = (TextView)findViewById(R.id.highscorelist);
-        scoreView.setText(username + " - " + score + " - " + gamemode);
+        for(int i = 0; i<10; i++) {
+            scoreView.setText("#" + platz + ": " + username + " - " + score + " - " + gamemode + "\n");
+        }
     }
 
     private void   fillInHighscore(ArrayList<String> results) {
         int i=0;
+
            while (i<results.size()){
+               platz = platz++;
             String firstrow = results.get(i);
             String[] wordsplit = firstrow.split("\\s+");
 
@@ -44,6 +49,7 @@ public class HighscoreActivity extends ActionBarActivity {
             this.score = wordsplit[1];
             this.gamemode = wordsplit[2];
                i++;
+
        }
 
     }

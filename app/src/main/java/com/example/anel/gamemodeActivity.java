@@ -48,11 +48,11 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if (isChecked) {
             sprache = "EN";
-            Toast.makeText(getApplicationContext(), "Sprache ist "+sprache, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Ausgewählte Sprache: Englisch", Toast.LENGTH_SHORT).show();
 
         } else {
             sprache = "DE";
-            Toast.makeText(getApplicationContext(), "Sprache ist "+sprache, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Ausgewählte Sprache: Deutsch ", Toast.LENGTH_SHORT).show();
 
         }
     }
