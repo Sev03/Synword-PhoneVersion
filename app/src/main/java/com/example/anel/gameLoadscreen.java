@@ -31,7 +31,7 @@ public class gameLoadscreen extends Activity {
                 public void run() {
                     try {
                         super.run();
-                        sleep(2000); //Delay of 5 seconds
+                        sleep(1500); //Delay of 1,5 seconds
                         spinner = (ProgressBar)findViewById(R.id.progressBar1);
                         spinner.setVisibility(View.VISIBLE);
                     } catch (Exception e) {

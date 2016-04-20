@@ -50,11 +50,10 @@
             android:id="@+id/credits"
             android:textColor="#ffffff"
             android:background="@drawable/textgrey"
-            android:paddingTop="10dp"
-            android:paddingLeft="15dp"
             android:textStyle="bold"
             android:layout_below="@+id/textView6"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:padding="15dp" />
     </ScrollView>
 
 </RelativeLayout>

@@ -38,14 +38,13 @@
                     android:id="@+id/credits"
                     android:textColor="#ffffff"
                     android:background="@drawable/textgrey"
-                    android:paddingTop="10dp"
-                    android:paddingLeft="15dp"
                     android:textStyle="bold"
                     android:layout_below="@+id/textView6"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="15dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp" />
+                    android:layout_marginRight="15dp"
+                    android:padding="15dp" />
 
 </RelativeLayout>
