@@ -68,64 +68,37 @@ public class loadscreenActivity extends ActionBarActivity {
         @Override
         protected String doInBackground(String... strings) {
 
-            if(sprache == "EN") {
-                try {
-                    HttpClient httpclient = new DefaultHttpClient();
-                    HttpPost httppost = new HttpPost("");
-                    httppost = new HttpPost("http://felf.ga:25571/SynWordEnglisch_php.php");
-
-
-                    httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                    HttpResponse response = httpclient.execute(httppost);
-                    HttpEntity entity = response.getEntity();
-                    is = entity.getContent();
-                } catch (Exception e) {
-                    Log.e("log_tag", "Fehler bei der http Verbindung " + e.toString());
-                }
-
-                try {
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
-                    StringBuilder sb = new StringBuilder();
-                    String line = null;
-                    while ((line = reader.readLine()) != null) {
-                        sb.append(line + "n");
-                    }
-                    is.close();
-                    result = sb.toString();
-                } catch (Exception e) {
-                    Log.e("log_tag", "Error converting result " + e.toString());
-                }
-            }else if(sprache == "DE"){
-                try {
-                    HttpClient httpclient = new DefaultHttpClient();
-                    HttpPost httppost = new HttpPost("");
+            try{
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpPost httppost = new HttpPost("");
+                if (sprache.contains("DE")){
                     httppost = new HttpPost("http://felf.ga:25571/SynWord1_php.php");
-
-
-
-                    httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                    HttpResponse response = httpclient.execute(httppost);
-                    HttpEntity entity = response.getEntity();
-                    is = entity.getContent();
-                } catch (Exception e) {
-                    Log.e("log_tag", "Fehler bei der http Verbindung " + e.toString());
                 }
-
-                try {
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
-                    StringBuilder sb = new StringBuilder();
-                    String line = null;
-                    while ((line = reader.readLine()) != null) {
-                        sb.append(line + "n");
+                else {
+                    if (sprache.contains("EN")) {
+                        httppost = new HttpPost("http://felf.ga:25571/SynWordEnglisch_php.php");
                     }
-                    is.close();
-                    result = sb.toString();
-                } catch (Exception e) {
-                    Log.e("log_tag", "Error converting result " + e.toString());
                 }
+                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+                HttpResponse response = httpclient.execute(httppost);
+                HttpEntity entity = response.getEntity();
+                is = entity.getContent();
+            }catch(Exception e){
+                Log.e("log_tag", "Fehler bei der http Verbindung " + e.toString());
             }
 
-
+                try {
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
+                    StringBuilder sb = new StringBuilder();
+                    String line = null;
+                    while ((line = reader.readLine()) != null) {
+                        sb.append(line + "n");
+                    }
+                    is.close();
+                    result = sb.toString();
+                } catch (Exception e) {
+                    Log.e("log_tag", "Error converting result " + e.toString());
+                }
 
             return result;
         }

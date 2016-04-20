@@ -178,4 +178,6 @@ public class pophighscore extends Activity{
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
     }
+
+
 }

@@ -102,14 +102,14 @@
                     android:shadowRadius="5"
                     android:clickable="true"
                     android:singleLine="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="15dp" />
+        android:layout_below="@+id/switchLang"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sprache"
+        android:text="Spielsprache"
         android:id="@+id/switchLang"
         android:layout_below="@+id/btnZeit"
         android:layout_centerHorizontal="true"

@@ -83,6 +83,7 @@
         android:layout_centerHorizontal="true"
         android:background="#ffffff"
         android:textAlignment="center"
+        android:imeOptions="actionDone"
         android:textColor="#000000" />
 
     <TextView
