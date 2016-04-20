@@ -275,12 +275,13 @@ public class gs10activity extends ActionBarActivity {
     public void showNextScreen(View view) {
 
         TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-        mngr.getDeviceId();
+        String phoneID = mngr.getDeviceId();
         String gamemodus = "Fehlerfrei";
         Intent intent = new Intent(this, pophighscore.class);
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
         intent.putExtra("modi", gamemodus);
+        intent.putExtra("phoneid", phoneID);
         pointcounter.setRound(10);
         startActivity(intent);
     }

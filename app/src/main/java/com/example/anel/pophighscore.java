@@ -40,6 +40,7 @@ public class pophighscore extends Activity{
     EditText tempusername;
     String highscorenumber;
     String gamemode;
+    String phoneID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,7 @@ public class pophighscore extends Activity{
         int round = ((Points) intent.getExtras().get("message")).getRound();
         highscorenumber = String.valueOf(points);
         gamemode = intent.getStringExtra("modi");
+        phoneID = intent.getStringExtra("phoneid");
 
 
         TextView punkte = (TextView) this.findViewById(R.id.txtPunkte);
@@ -72,7 +74,7 @@ public class pophighscore extends Activity{
 
     }
 
-    private void insertToDatabase(String name, String hs, String modi){
+    private void insertToDatabase(String name, String hs, String modi, String phonenumber){
     class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
         InputStream is;
         String result=null;
@@ -84,16 +86,18 @@ public class pophighscore extends Activity{
             String paramUsername = params[0];
             String paramAddress = params[1];
             String paramGamemodi = params[2];
+            String paramPhoneID = params[3];
 
             String name = username;
             String hs = highscorenumber;
             String gamemodi= gamemode;
-
+            String phoneid = phoneID;
 
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
             nameValuePairs.add(new BasicNameValuePair("username", name));
             nameValuePairs.add(new BasicNameValuePair("highscorenumber", hs));
             nameValuePairs.add(new BasicNameValuePair("modi", gamemodi));
+            nameValuePairs.add(new BasicNameValuePair("phoneid", phoneid));
 
             try {
                 HttpClient httpClient = new DefaultHttpClient();
@@ -159,13 +163,13 @@ public class pophighscore extends Activity{
         }
     }
     SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-    sendPostReqAsyncTask.execute(name, hs, modi);
+    sendPostReqAsyncTask.execute(name, hs, modi, phonenumber);
 }
 
     public void onDismiss(View view) {
         // Do something in response to button
         username = tempusername.getText().toString();
-        insertToDatabase(username, highscorenumber, gamemode);
+        insertToDatabase(username, highscorenumber, gamemode, phoneID);
         Toast.makeText(getBaseContext(), "Erfolgreich gespeichert",
                 Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, gamemodeActivity.class);
