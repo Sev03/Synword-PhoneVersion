@@ -31,24 +31,30 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="SynWord ist ein Spiel, in welchem du spielend Synonyme (Begriffe, die einem Wort in ihrer Bedeutung ähnlich sind) finden musst. Jedes richtig gefundene Wort bringt dir in einer Runde 5 Punkte, so kannst du pro Spiel maximal 100 Punkte erreichen.
-Unter Spielen kommst du zu den beiden Spielmodi, „Richtigkeit“ und „Zeitmodus“. In „Richtigkeit“ kannst du ohne Zeitdruck die 2 richtigen Synonyme aus den 6 vorgegeben Wörtern wählen.
-Im „Zeitmodus“ hast du 10 Sekunden Zeit, die 2 Begriffe zu finden, bevor das Spiel zum nächsten Spielrunde springt.
-Die Rangliste zeigt die besten 10 Spieler und den Spielmodus an."
-        android:id="@+id/credits"
-        android:textColor="#ffffff"
-        android:background="@drawable/textgrey"
-        android:paddingTop="10dp"
-        android:paddingLeft="15dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/textView6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="30dp"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="30dp"
+        android:fillViewport="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SynWord ist ein Spiel, in welchem du spielend Synonyme (Begriffe, die einem Wort in ihrer Bedeutung ähnlich sind) finden musst. \n\nJedes richtig gefundene Wort bringt dir in einer Runde 5 Punkte, so kannst du pro Spiel maximal 100 Punkte erreichen.\n\nUnter Spielen kommst du zu den beiden Spielmodi, „Richtigkeit“ und „Zeitmodus“. In „Richtigkeit“ kannst du ohne Zeitdruck die 2 richtigen Synonyme aus den 6 vorgegeben Wörtern wählen.\n\nIm „Zeitmodus“ hast du 10 Sekunden Zeit, die 2 Begriffe zu finden, bevor das Spiel zum nächsten Spielrunde springt.\n\nDie Rangliste zeigt die besten 10 Spieler und den Spielmodus an. "
+            android:id="@+id/credits"
+            android:textColor="#ffffff"
+            android:background="@drawable/textgrey"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView6"
+            android:layout_centerHorizontal="true"/>
+    </ScrollView>
 
 </RelativeLayout>

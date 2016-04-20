@@ -47,6 +47,8 @@ public class HighscoreActivity extends ActionBarActivity {
                this.score = wordsplit[1];
                this.gamemode = wordsplit[2];
                i++;
+               TextView scoreView = (TextView)findViewById(R.id.highscorelist);
+               scoreView.setText("#" + platz + ": " + username + " - " + score + " - " + gamemode + "\n");
        }
 
     }
