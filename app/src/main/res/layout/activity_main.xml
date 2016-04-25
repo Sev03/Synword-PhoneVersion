@@ -88,15 +88,15 @@
         android:background="@drawable/german"
         android:id="@+id/btnDE"
         android:onClick="clickDE"
-        android:layout_alignTop="@+id/btnEN"
-        android:layout_toRightOf="@+id/btnEN"
-        android:layout_toEndOf="@+id/btnEN"
+        android:layout_alignTop="@+id/btnLang"
+        android:layout_toRightOf="@+id/btnLang"
+        android:layout_toEndOf="@+id/btnLang"
         android:layout_marginLeft="5dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnEN"
+        android:id="@+id/btnLang"
         android:background="@drawable/uk"
         android:onClick="clickEN"
         android:layout_alignParentBottom="true"

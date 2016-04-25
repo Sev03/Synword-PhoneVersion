@@ -7,9 +7,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ToggleButton;
 
 import com.example.anel.synword.R;
 
@@ -20,13 +18,14 @@ public class MainActivity extends ActionBarActivity {
 
     private ImageButton btnDE;
     private ImageButton btnEN;
+    private ImageButton btnLang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-
-
+        btnEN = (ImageButton) findViewById(R.id.btnLang);
+        btnDE = (ImageButton) findViewById(R.id.btnDE);
 
     }
 
@@ -70,13 +69,14 @@ public class MainActivity extends ActionBarActivity {
 
 
     public void clickEN(View view) {
-        btnEN = (ImageButton) findViewById(R.id.btnEN);
+        btnEN = (ImageButton) findViewById(R.id.btnLang);
         Locale locale = new Locale("en_EN");
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
         getApplicationContext().getResources().updateConfiguration(config, null);
         recreate();
+
     }
 
 
@@ -88,6 +88,7 @@ public class MainActivity extends ActionBarActivity {
         config.locale = locale;
         getApplicationContext().getResources().updateConfiguration(config, null);
         recreate();
+
     }
 
     public void showHelp(View view) {
