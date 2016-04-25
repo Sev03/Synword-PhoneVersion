@@ -8,17 +8,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rangliste"
-        android:id="@+id/textView14"
-        android:layout_gravity="center_horizontal"
-        android:textSize="35dp"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/textView15"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="SynWord"
         android:id="@+id/textView15"
@@ -37,15 +26,30 @@
         android:layout_height="match_parent"
         android:id="@+id/highscorelist"
         android:background="@drawable/textgrey"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/textView14"
+        android:padding="15dp"
+        android:textSize="20dp"
+        android:text="#01: Flocki - 50 - 20.04.2016"
+        android:layout_below="@+id/textView15"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
-        android:padding="15dp"
-        android:textSize="20dp"
-        android:text="#01: Flocki - 50 - 20.04.2016" />
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rangliste"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25dp"
+        android:textColor="#ffffff"
+        android:layout_weight="0.25"
+        android:textStyle="italic"
+        android:layout_alignRight="@+id/textView15"
+        android:layout_alignEnd="@+id/textView15"
+        android:layout_below="@+id/textView15"
+        android:layout_marginTop="-25dp" />
 
 </RelativeLayout>

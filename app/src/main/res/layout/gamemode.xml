@@ -36,20 +36,8 @@
                     android:layout_marginRight="25dp"
                     android:layout_marginBottom="5dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Spielmodi"
-                    android:id="@+id/textView6"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="25dp"
-                    android:textColor="#ffffff"
-                    android:layout_below="@+id/textView"
-                    android:layout_centerHorizontal="true"
-                    android:textStyle="italic" />
-
-                <Button
-                    android:text="Richtigkeit"
+    <Button
+                    android:text="@string/gamemode1"
                     android:textColor="#ffffff"
                     android:textSize="20dp"
                     android:layout_width="220dp"
@@ -64,13 +52,13 @@
                     android:singleLine="true"
                     android:onClick="showFehlerfrei"
                     android:layout_marginTop="65dp"
-                    android:layout_below="@+id/textView6"
-                    android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
 
                 <Button
-                    android:text="Sei möglichst schnell"
+                    android:text="@string/gamemode2"
                     android:textColor="#ffffff"
-                    android:textSize="15dp"
+                    android:textSize="20dp"
                     android:layout_width="220dp"
                     android:layout_height="75dp"
                     android:background="@drawable/buttongreen"
@@ -89,7 +77,7 @@
 
 
     <Button
-                    android:text="Spielanleitung"
+                    android:text="@string/manual"
                     android:textColor="#ffffff"
                     android:textSize="15dp"
                     android:layout_width="170dp"
@@ -110,7 +98,7 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Spielsprache"
+        android:text="@string/clickLang"
         android:id="@+id/switchLang"
         android:layout_below="@+id/btnZeit"
         android:layout_centerHorizontal="true"

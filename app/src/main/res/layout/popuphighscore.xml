@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#1a6698">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Spiel beendet!"
-        android:id="@+id/textView3"
-        android:layout_marginTop="42dp"
-        android:textSize="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textColor="#FFFFFFFF" />
+    android:background="@drawable/textgrey">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Gesamtpunkte:"
+        android:text="Gesamtpunkte"
         android:id="@+id/textView4"
-        android:layout_marginTop="35dp"
-        android:textSize="25dp"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFFFF" />
+        android:layout_marginTop="90dp"
+        android:textSize="35dp"
+        android:textColor="#FFFFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,16 +27,16 @@
         android:layout_marginBottom="25dp" />
 
     <Button
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Speichern und Beenden"
+        android:text="Fertig"
         android:id="@+id/btnClose"
         android:onClick="onDismiss"
-        android:layout_marginTop="45dp"
         android:background="@drawable/buttongrey"
-        android:layout_below="@+id/editText"
+        android:textColor="#FFFFFFFF"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFFFF" />
+        android:layout_marginBottom="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,43 +45,36 @@
         android:id="@+id/txtPunkte"
         android:layout_alignTop="@+id/txtGesamtpunkte"
         android:layout_centerHorizontal="true"
-        android:textSize="35dp"
+        android:textSize="40dp"
         android:text="2345"
         android:textColor="#990000"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="25dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Highscore eintragen:"
+        android:text="Username"
         android:id="@+id/textView9"
         android:textSize="25dp"
-        android:layout_below="@+id/txtGesamtpunkte"
+        android:textColor="#FFFFFFFF"
+        android:layout_below="@+id/txtPunkte"
         android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFFFF" />
+        android:layout_marginTop="50dp" />
 
     <EditText
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:id="@+id/editText"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="10dp"
         android:maxLength="8"
         android:layout_below="@+id/textView9"
         android:layout_centerHorizontal="true"
         android:background="#ffffff"
         android:textAlignment="center"
+
         android:imeOptions="actionDone"
         android:textColor="#000000" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="(max. 8 Zeichen)"
-        android:id="@+id/textView10"
-        android:layout_below="@+id/textView9"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFFFFFFF" />
 
 </RelativeLayout>

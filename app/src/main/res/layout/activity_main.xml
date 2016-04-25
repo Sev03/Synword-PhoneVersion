@@ -22,52 +22,40 @@
         android:layout_marginRight="25dp"
         android:layout_marginBottom="5dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hauptmenü"
-        android:id="@+id/textView6"
-        android:layout_gravity="center_horizontal"
-        android:textSize="25dp"
-        android:textColor="#ffffff"
-        android:layout_weight="0.25"
-        android:textStyle="italic"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:layout_width="220dp"
         android:layout_height="70dp"
-        android:text="Spielen"
+        android:text="@string/playButton"
         android:id="@+id/btnPlay"
         android:background="@drawable/buttongreen"
         android:layout_weight="0.25"
         android:layout_gravity="center"
         android:textSize="30dp"
         android:onClick="showPlay"
-        android:layout_below="@+id/textView6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/btnScore"
+        android:layout_alignStart="@+id/btnScore"
+        android:layout_marginTop="65dp" />
 
     <Button
         android:layout_width="220dp"
         android:layout_height="70dp"
-        android:text="Rangliste"
+        android:text="@string/score"
         android:id="@+id/btnScore"
-        android:background="@drawable/buttongrey"
+        android:background="@drawable/buttongreen"
         android:layout_weight="0.25"
         android:layout_gravity="center"
         android:textSize="30dp"
         android:onClick="showHighscore"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:layout_below="@+id/btnPlay"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp" />
 
     <Button
         android:layout_width="220dp"
         android:layout_height="70dp"
-        android:text="Hilfe"
+        android:text="@string/help"
         android:id="@+id/btnHelp"
         android:background="@drawable/buttongreen"
         android:layout_weight="0.25"
@@ -76,23 +64,47 @@
         android:onClick="showHelp"
         android:layout_below="@+id/btnScore"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp" />
     <Button
-        android:layout_width="220dp"
-        android:layout_height="70dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:text="Credits"
         android:id="@+id/btnCredits"
         android:background="@drawable/buttongrey"
         android:layout_weight="0.25"
         android:layout_gravity="center"
-        android:textSize="30dp"
+        android:textSize="15dp"
         android:onClick="showCredits"
         android:textColor="#000000"
-        android:layout_below="@+id/btnHelp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="15dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp" />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/german"
+        android:id="@+id/btnDE"
+        android:onClick="clickDE"
+        android:layout_alignTop="@+id/btnEN"
+        android:layout_toRightOf="@+id/btnEN"
+        android:layout_toEndOf="@+id/btnEN"
+        android:layout_marginLeft="5dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEN"
+        android:background="@drawable/uk"
+        android:onClick="clickEN"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
 
 
 </RelativeLayout>
