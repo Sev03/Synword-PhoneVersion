@@ -45,7 +45,7 @@ public class tsloadscreenActivity extends ActionBarActivity {
     }
 
     public void goToNextScreenWhenFinished(){
-        Intent intent = new Intent(this, timescreen_test.class);
+        Intent intent = new Intent(this, timescreen.class);
         intent.putStringArrayListExtra("words", results);
         startActivity(intent);
 

@@ -23,7 +23,7 @@ import java.util.Random;
 /**
  * Created by Anel on 14.12.2015.
  */
-public class timescreen extends ActionBarActivity {
+public class    timescreen extends ActionBarActivity {
 
     public int points;
     public int round;

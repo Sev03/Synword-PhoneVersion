@@ -1,13 +1,19 @@
 package com.example.anel;
 
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.example.anel.synword.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -20,6 +26,10 @@ public class HighscoreActivity extends ActionBarActivity {
     String username;
     String score;
     String gamemode;
+    CharSequence rankText = "";
+    CharSequence scoreText = "";
+    CharSequence userText = "";
+    CharSequence modeText = "";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +40,14 @@ public class HighscoreActivity extends ActionBarActivity {
         rangliste = intent.getStringArrayListExtra("highscore");
         fillInHighscore(rangliste);
 
-        TextView scoreView = (TextView)findViewById(R.id.highscorelist);
-        scoreView.setText("#01:" +" " + username + " - " + score + " - " + gamemode + "\n");
+        TextView scoreView = (TextView)findViewById(R.id.txtRang);
+        scoreView.setText(rankText);
+        TextView userView = (TextView)findViewById(R.id.txtNickname);
+        userView.setText(userText);
+        TextView modeView = (TextView)findViewById(R.id.txtModus);
+        modeView.setText(modeText);
+//        TextView rankView = (TextView)findViewByID(R.id.txtGesamtscore);
+//        rankView.setText(scoreText);
     }
 
     private void   fillInHighscore(ArrayList<String> results) {
@@ -45,6 +61,14 @@ public class HighscoreActivity extends ActionBarActivity {
                this.username = wordsplit[0];
                this.score = wordsplit[1];
                this.gamemode = wordsplit[2];
+               this.rankText = this.rankText + "#" + (i+1) + ": " +"\n";
+               this.scoreText = this.scoreText + score +"\n";
+               this.userText = this.userText + username + "\n";
+               this.modeText = this.modeText + gamemode + "\n";
+
+//               this.text = this.text + "#" + (i+1) + ": " + getString(R.string.tab) + score + getString(R.string.tab) + " - " +
+//                       getString(R.string.tab) + username + getString(R.string.tab) + " - " +
+//                       getString(R.string.tab) + getString(R.string.tab) +  gamemode + "\n";
                i++;
 
        }
