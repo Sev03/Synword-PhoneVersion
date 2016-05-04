@@ -65,11 +65,11 @@ public class tsloadscreenActivity extends ActionBarActivity {
             try{
                 HttpClient httpclient = new DefaultHttpClient();
                 HttpPost httppost = new HttpPost("");
-                if (sprache.contains("DE")){
+                if (sprache == "DE"){
                     httppost = new HttpPost("http://felf.ga:25571/SynWord1_php.php");
                 }
                 else {
-                    if (sprache.contains("EN")) {
+                    if (sprache == "EN") {
                         httppost = new HttpPost("http://felf.ga:25571/SynWordEnglisch_php.php");
                     }
                 }

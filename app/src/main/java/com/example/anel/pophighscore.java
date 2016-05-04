@@ -54,7 +54,7 @@ public class pophighscore extends Activity{
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.8),(int) (height*.8));
+        getWindow().setLayout((int)(width*.85),(int) (height*.85));
 
         Intent intent = getIntent();
         points = ((Points) intent.getExtras().get("message")).getPointcounter();

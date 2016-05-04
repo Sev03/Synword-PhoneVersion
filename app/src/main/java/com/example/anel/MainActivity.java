@@ -24,9 +24,6 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        btnEN = (ImageButton) findViewById(R.id.btnLang);
-        btnDE = (ImageButton) findViewById(R.id.btnDE);
-
     }
 
 
@@ -69,26 +66,24 @@ public class MainActivity extends ActionBarActivity {
 
 
     public void clickEN(View view) {
-        btnEN = (ImageButton) findViewById(R.id.btnLang);
-        Locale locale = new Locale("en_EN");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getApplicationContext().getResources().updateConfiguration(config, null);
-        recreate();
-
+            btnEN = (ImageButton) findViewById(R.id.btnLang);
+            Locale locale = new Locale("en_EN");
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getApplicationContext().getResources().updateConfiguration(config, null);
+            recreate();
     }
 
 
     public void clickDE(View view) {
-        btnDE = (ImageButton) findViewById(R.id.btnDE);
-        Locale locale = new Locale("de_DE");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getApplicationContext().getResources().updateConfiguration(config, null);
-        recreate();
-
+            btnDE = (ImageButton) findViewById(R.id.btnDE);
+            Locale locale = new Locale("de_DE");
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getApplicationContext().getResources().updateConfiguration(config, null);
+            recreate();
     }
 
     public void showHelp(View view) {
