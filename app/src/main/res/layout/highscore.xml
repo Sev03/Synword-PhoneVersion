@@ -20,23 +20,6 @@
         android:layout_marginBottom="5dp" />
 
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/highscorelist"
-        android:background="@drawable/textgrey"
-        android:padding="15dp"
-        android:textSize="20dp"
-        android:text="#01: Flocki - 50 - 20.04.2016"
-        android:layout_below="@+id/textView15"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,5 +34,40 @@
         android:layout_alignEnd="@+id/textView15"
         android:layout_below="@+id/textView15"
         android:layout_marginTop="-25dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/textgrey"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:text="#10:"
+            android:id="@+id/txtRang"
+            android:layout_weight="0.2" />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="Nickname"
+            android:id="@+id/txtNickname"
+            android:layout_weight="0.4" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="Modus"
+            android:id="@+id/txtModus"
+            android:layout_weight="0.4" />
+    </LinearLayout>
 
 </RelativeLayout>
