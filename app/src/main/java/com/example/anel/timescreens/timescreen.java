@@ -83,7 +83,7 @@ public class timescreen extends ActionBarActivity {
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
 
-        intervallBar.setProgress(100);
+        intervallBar.setProgress(150);
 
         Runnable runnable = new Runnable() {
             @Override
@@ -94,10 +94,10 @@ public class timescreen extends ActionBarActivity {
                     Log.e("THREAD", "CANCELED");
                     return;
                 }
-                countdown.postDelayed(this, 1000 / INTERVAL);
+                countdown.postDelayed(this, 1500 / INTERVAL);
             }
         };
-        countdown.postDelayed(runnable, 1000 / INTERVAL);
+        countdown.postDelayed(runnable, 1500 / INTERVAL);
 
     }
 

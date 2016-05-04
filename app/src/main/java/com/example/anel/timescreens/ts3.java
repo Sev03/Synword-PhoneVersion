@@ -119,7 +119,7 @@ public class ts3 extends ActionBarActivity {
         pointcounter.setPointcounter(points);
 
         intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
-        intervallBar.setProgress(100);
+        intervallBar.setProgress(150);
 
         Runnable runnable = new Runnable() {
             @Override
@@ -130,10 +130,10 @@ public class ts3 extends ActionBarActivity {
                     Log.e("THREAD", "CANCELED");
                     return;
                 }
-                countdown.postDelayed(this, 1000 / INTERVAL);
+                countdown.postDelayed(this, 1500 / INTERVAL);
             }
         };
-        countdown.postDelayed(runnable, 1000 / INTERVAL);
+        countdown.postDelayed(runnable, 1500 / INTERVAL);
     }
 
 
