@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Gesamtpunkte"
+        android:text="@string/sumpoints"
         android:id="@+id/textView4"
         android:layout_marginTop="90dp"
         android:textSize="35dp"
@@ -29,7 +29,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Fertig"
+        android:text="@string/buttonpophighscore"
         android:id="@+id/btnClose"
         android:onClick="onDismiss"
         android:background="@drawable/buttongrey"

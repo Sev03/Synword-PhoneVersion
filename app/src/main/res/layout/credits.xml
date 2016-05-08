@@ -7,7 +7,7 @@
     <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Entwickler: Anel Jusic und Florian Kropfitsch\n\nVersion: 0.9.0\n\nEntwickelt im Zuge des \nSoftwarepraktikum bei der Firma \neconob GmbH. "
+                    android:text="@string/creditstext"
                     android:id="@+id/credits"
                     android:textColor="#ffffff"
         android:textStyle="bold"

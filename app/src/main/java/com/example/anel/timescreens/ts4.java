@@ -94,7 +94,7 @@ public class ts4 extends ActionBarActivity {
         TextView test = (TextView) this.findViewById(R.id.viewPoints);
         test.setText("" + points);
         test = (TextView) findViewById(R.id.txtRunde);
-        test.setText( "Runde: " + (round + 1) + "/10" );
+        test.setText((round + 1) + "/10" );
 
         //stringarray mit den synonymen und nichtsynonymen
         String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};

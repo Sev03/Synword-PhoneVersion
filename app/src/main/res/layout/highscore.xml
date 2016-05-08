@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rangliste"
+        android:text="@string/synhighscoretext"
         android:id="@+id/textView2"
         android:layout_gravity="center_horizontal"
         android:textSize="25dp"
@@ -33,7 +33,7 @@
         android:layout_alignRight="@+id/textView15"
         android:layout_alignEnd="@+id/textView15"
         android:layout_below="@+id/textView15"
-        android:layout_marginTop="-25dp" />
+        android:layout_marginTop="-24dp" />
 
     <LinearLayout
         android:orientation="horizontal"

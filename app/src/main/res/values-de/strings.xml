@@ -13,4 +13,12 @@
     <string name="toast">Ausgewählte Sprache...</string>
     <string name="tab">&#9;</string>
     <string name="helpText">SynWord ist ein Spiel, in welchem du spielend Synonyme (Begriffe, die einem Wort in ihrer Bedeutung ähnlich sind) finden musst. \n\nJedes richtig gefundene Wort bringt dir in einer Runde 5 Punkte, so kannst du pro Spiel maximal 100 Punkte erreichen.\n\nUnter Spielen kommst du zu den beiden Spielmodi, „Richtigkeit“ und „Zeitmodus“. In „Richtigkeit“ kannst du ohne Zeitdruck die 2 richtigen Synonyme aus den 6 vorgegeben Wörtern wählen.\n\nIm „Zeitmodus“ hast du 10 Sekunden Zeit, die 2 Begriffe zu finden, bevor das Spiel zum nächsten Spielrunde springt.\n\nDie Rangliste zeigt die besten 10 Spieler und den Spielmodus an.</string>
+    <string name="creditstext">Entwickler \nAnel Jusic\nFlorian Kropfitsch\nVersion\n0.9.0\n\nEntwickelt als Praktikum mit der Firma econob GmbH.</string>
+    <string name="ingamedescription">Markiere zwei Begriffe, die dem Wort am ähnlichsten sind.</string>
+    <string name="runde">Runde:</string>
+    <string name="punkte">Punkte:</string>
+    <string name="loadmain">das Synonymspiel</string>
+    <string name="sumpoints">Gesamtpunkte</string>
+    <string name="buttonpophighscore">Fertig</string>
+    <string name="synhighscoretext">Rangliste</string>
 </resources>
