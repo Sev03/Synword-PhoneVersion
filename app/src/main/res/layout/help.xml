@@ -31,14 +31,14 @@
         android:layout_marginBottom="15dp"
         android:layout_marginTop="30dp"
         android:fillViewport="true"
-        android:layout_below="@+id/textView">
+        android:layout_below="@+id/textView"
+        android:background="@drawable/textgrey">
         <TextView
             android:text="@string/helpText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/credits"
             android:textColor="#ffffff"
-            android:background="@drawable/textgrey"
             android:textStyle="bold"
             android:layout_below="@+id/textView6"
             android:layout_centerHorizontal="true"

@@ -21,4 +21,7 @@
     <string name="sumpoints">Total Score</string>
     <string name="buttonpophighscore">Done</string>
     <string name="synhighscoretext">Highscore</string>
+    <string name="accuracytext" formatted="false">*There are 10 rounds to play.\n*You can choose 2 words out of 6 in each round.\n*There are 2 synonyms (words with similar meaning)  among the 6 words, each right synonym will give you 5 points.</string>
+    <string name="fastnesstext" formatted="false">*There are 10 rounds to play.\n*You can choose 2 words out of 6 in each round.\n*There are 2 synonyms (words with similar meaning)  among the 6 words, each right synonym will give you 5 points.\n*After 3 seconds: 80% of points (4 or 8)\n*After 6 seconds: 60% of points (3 or 6)\n*After 9 seconds: 40% of points (2 or 4)\n*After the 10th second: 10% of points (1 or 2)\n*11-15 seconds: no points, round changes after 15 seconds</string>
+    <string name="gamerules">Gamerules</string>
 </resources>
