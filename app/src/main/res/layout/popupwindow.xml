@@ -19,46 +19,64 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Vermeide Fehler:"
         android:id="@+id/textView4"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="32dp"
         android:textSize="20dp"
         android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="25dp" />
-
-    <TextView
+        android:layout_alignLeft="@+id/scrollView1"
+        android:layout_alignStart="@+id/scrollView1" />
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="*Wähle 2 Synonyme aus 6 Wörtern \n*5 Punkte pro richtigem Wort \n*10 Runden pro Spiel"
-        android:id="@+id/textView5"
         android:layout_below="@+id/textView4"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_marginRight="25dp"
-        android:textSize="15dp" />
+        android:id="@+id/scrollView1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/accuracytext"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/textView4"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_marginRight="25dp"
+            android:textSize="15dp" />
+    </ScrollView>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView7"
-        android:layout_below="@+id/textView5"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5"
         android:textSize="20dp"
-        android:layout_marginTop="25dp"
-        android:text="Sei möglichst schnell:" />
+        android:text="Sei möglichst schnell:"
+        android:layout_below="@+id/scrollView1"
+        android:layout_alignLeft="@+id/scrollView1"
+        android:layout_alignStart="@+id/scrollView1" />
 
-    <TextView
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="*2 Synonyme aus 6 Wörtern \n*10 Punkte pro Runde \n*5 Punkte Abzug für ein falsch ausgewähltes Wort \n*10 Sekunden Spielzeit \n*Nach der 5.Sekunde erhält der Spieler keine Punkte mehr"
-        android:id="@+id/textView8"
-        android:textSize="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
         android:layout_below="@+id/textView7"
-        android:layout_alignLeft="@+id/textView7"
-        android:layout_alignStart="@+id/textView7"
-        android:layout_marginRight="25dp" />
+        android:id="@+id/scrollView2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/speedtext"
+            android:id="@+id/textView8"
+            android:textSize="15dp"
+            android:layout_below="@+id/textView7"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </ScrollView>
+
 </RelativeLayout>

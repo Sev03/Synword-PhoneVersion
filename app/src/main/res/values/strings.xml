@@ -6,11 +6,18 @@
     <string name="help">Help</string>
     <string name="language_setting">Change Language</string>
     <string name="gamemode1">Accuracy</string>
-    <string name="gamemode2">Fastness</string>
+    <string name="gamemode2">Speed</string>
     <string name="manual">Manual</string>
     <string name="clickLang">Change Language</string>
     <string name="loading">Loading...</string>
     <string name="helpText">SynWord is a game where your goal is, to find synonyms (words that have the same meaning). \n\nEvery correct chosen word rewards you with 5 points, resulting in a maximum of 100 obtainable points. \n\n
         SynWord ist ein Spiel, in welchem du spielend Synonyme (Begriffe, die einem Wort in ihrer Bedeutung ähnlich sind) finden musst. \n\nJedes richtig gefundene Wort bringt dir in einer Runde 5 Punkte, so kannst du pro Spiel maximal 100 Punkte erreichen.\n\nUnter Spielen kommst du zu den beiden Spielmodi, „Richtigkeit“ und „Zeitmodus“. In „Richtigkeit“ kannst du ohne Zeitdruck die 2 richtigen Synonyme aus den 6 vorgegeben Wörtern wählen.\n\nIm „Zeitmodus“ hast du 10 Sekunden Zeit, die 2 Begriffe zu finden, bevor das Spiel zum nächsten Spielrunde springt.\n\nDie Rangliste zeigt die besten 10 Spieler und den Spielmodus an.</string>
     <string name="tab">\u0009</string>
+    <string name="accuracytext">There are 10 rounds to play.\nYou can choose 2 words out of 6 in each round.\nThere are 2 synonyms (words with similar meaning)  among the 6 words, each right synonym will give you 5 points.\n\n</string>
+    <string name="speedtext">*There are 10 rounds to play.\n*You can choose 2 words out of 6 in each round.\n*There are 2 synonyms (words with similar meaning)  among the 6 words, each right synonym will give you 5 points.\n
+*After 3 seconds: 80% of points\n
+*After 6 seconds: 60% of points\n
+*After 9 seconds: 40% of points)\n\
+*After the 10th second: 10% of points\n
+*11-15 seconds: no points, round changes after 15 seconds \n</string>
 </resources>
