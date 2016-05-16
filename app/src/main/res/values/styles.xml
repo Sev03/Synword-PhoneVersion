@@ -14,4 +14,12 @@
         <item name="android:windowCloseOnTouchOutside">false</item>
     </style>
 
+    <style name="AppTheme.popscoreTheme">
+        <item name="android:clickable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:focusable">true</item>
+    </style>
+
 </resources>

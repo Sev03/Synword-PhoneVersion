@@ -1,6 +1,7 @@
 package com.example.anel;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +44,7 @@ public class pophighscore extends Activity{
     String gamemode;
     String phoneID;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,8 +74,9 @@ public class pophighscore extends Activity{
         tempusername.setGravity(Gravity.CENTER);
 
 
-
     }
+
+
 
     private void insertToDatabase(String name, String hs, String modi, String phonenumber){
     class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
@@ -139,6 +143,7 @@ public class pophighscore extends Activity{
         @Override
         protected void onPostExecute(String result) {
 //            super.onPostExecute(result);
+
             try
             {
                 JSONObject json_data = new JSONObject(result);
@@ -148,6 +153,7 @@ public class pophighscore extends Activity{
                 {
                     Toast.makeText(getBaseContext(), "Erfolgreich gespeichert",
                             Toast.LENGTH_SHORT).show();
+
                 }
                 else
                 {

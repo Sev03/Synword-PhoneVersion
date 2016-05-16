@@ -24,4 +24,6 @@
     <string name="accuracytext" formatted="false">*Es sind 10 Runden zu spielen.\n*Du kannst 2 Wörter pro Runde wählen.\n*Es gibt 2 Synonyme (Begriffe ähnlicher Bedeutung) unter den 6 Wörtern, pro richtig gewählten Synonym gibt es 5 Punkte.</string>
     <string name="fastnesstext" formatted="false">*Es sind 10 Runden zu spielen.\n*Du kannst 2 Wörter pro Runde wählen.\n*Es gibt 2 Synonyme (Begriffe ähnlicher Bedeutung) unter den 6 Wörtern, pro richtig gewählten Synonym gibt es 5 Punkte.\n*Nach 3 Sekunden: 80% der Punkte (4 bzw. 8)\n*Nach 6 Sekunden: 60% der Punkte (3 bzw. 6)\n*Nach 9 Sekunden: 40% der Punkte (2 bzw. 4)\n*Nach der 10. Sekunde: 10% der Punkte (1 bzw. 2)\n*11-15 Sekunden: Keine Punkte, Rundenwechsel nach 15 Sekunden.</string>
     <string name="gamerules">Spielbedingungen</string>
+    <string name="highscorerank">Rang</string>
+    <string name="hspoints">Punkte</string>
 </resources>

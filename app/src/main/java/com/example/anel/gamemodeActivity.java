@@ -3,6 +3,7 @@ package com.example.anel;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,9 +49,9 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if (isChecked) {
             sprache = "EN";
-
         } else {
             sprache = "DE";
+
         }
     }
 
@@ -88,6 +89,7 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
         Intent intent = new Intent(this, loadscreenActivity.class);
         intent.putExtra("sprache", sprache);
         startActivity(intent);
+
     }
 
     public void showZeit(View view) {

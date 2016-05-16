@@ -31,11 +31,10 @@ public class HighscoreActivity extends ActionBarActivity {
         Intent intent = getIntent();
         rangliste = intent.getStringArrayListExtra("highscore");
         fillInHighscore(rangliste);
-
         TextView scoreView = (TextView)findViewById(R.id.txtRang);
-        scoreView.setText(rankText);
-        //        TextView rankView = (TextView)findViewByID(R.id.txtGesamtscore);
-//        rankView.setText(scoreText);
+        scoreView.setText(rankText );
+        TextView rankView = (TextView)findViewById(R.id.txtGesamtscore);
+        rankView.setText(scoreText);
         TextView userView = (TextView)findViewById(R.id.txtNickname);
         userView.setText(userText);
         TextView modeView = (TextView)findViewById(R.id.txtModus);
