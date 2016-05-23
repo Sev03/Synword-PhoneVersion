@@ -48,6 +48,7 @@ public class ts3 extends ActionBarActivity {
     static final int INTERVAL = 10;
 
     Handler countdown = new Handler();
+    Handler timer = new Handler();
 
     private void ShuffleArray(int[] array)
     {
@@ -134,6 +135,16 @@ public class ts3 extends ActionBarActivity {
             }
         };
         countdown.postDelayed(runnable, 1500 / INTERVAL);
+
+        timer.postDelayed(new Runnable() {
+            public void run() {
+                Intent intent = new Intent(ts3.this, ts4.class);
+                intent.putExtra("message", pointcounter);
+                intent.putStringArrayListExtra("words", wordlist);
+                pointcounter.setRound(3);
+                startActivity(intent);
+            }
+        }, 15000);
     }
 
 
@@ -159,7 +170,6 @@ public class ts3 extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
-        finish();
     }
 
     @Override
@@ -301,6 +311,7 @@ public class ts3 extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(3);
         startActivity(intent);
+        timer.removeCallbacksAndMessages(null);
         finish();
     }
 }

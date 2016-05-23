@@ -53,6 +53,7 @@ public class ts10 extends ActionBarActivity {
     static final int INTERVAL = 10;
 
     Handler countdown = new Handler();
+    Handler timer = new Handler();
 
     private void ShuffleArray(int[] array)
     {
@@ -139,6 +140,22 @@ public class ts10 extends ActionBarActivity {
             }
         };
         countdown.postDelayed(runnable, 1500 / INTERVAL);
+
+        timer.postDelayed(new Runnable() {
+            public void run() {
+                TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+                mngr.getDeviceId();
+                String gamemodus = "Zeit";
+                Intent intent = new Intent(ts10.this, pophighscore.class);
+                intent.putExtra("message", pointcounter);
+                intent.putStringArrayListExtra("words", wordlist);
+                intent.putExtra("modi", gamemodus);
+                pointcounter.setRound(10);
+                startActivity(intent);
+                timer.removeCallbacksAndMessages(null);
+                finish();
+            }
+        }, 15000);
     }
     @Override
     protected void onDestroy() {
@@ -166,7 +183,6 @@ public class ts10 extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
-        finish();
     }
 
     @Override
@@ -311,6 +327,7 @@ public class ts10 extends ActionBarActivity {
         intent.putExtra("modi", gamemodus);
         pointcounter.setRound(10);
         startActivity(intent);
+        timer.removeCallbacksAndMessages(null);
         finish();
     }
 }

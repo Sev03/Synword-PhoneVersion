@@ -49,6 +49,7 @@ public class    timescreen extends ActionBarActivity {
     static final int INTERVAL = 10;
 
     Handler countdown = new Handler();
+    Handler timer = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +100,16 @@ public class    timescreen extends ActionBarActivity {
         };
         countdown.postDelayed(runnable, 1500 / INTERVAL);
 
+        timer.postDelayed(new Runnable() {
+            public void run() {
+                Intent intent = new Intent(timescreen.this, ts2_test.class);
+                intent.putExtra("message", pointcounter);
+                intent.putStringArrayListExtra("words", wordlist);
+                pointcounter.setRound(1);
+                startActivity(intent);
+                finish();
+            }
+        }, 15000);
     }
 
     private void fillInWords(ArrayList<String> results) {
@@ -280,7 +291,6 @@ public class    timescreen extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
-        finish();
     }
 
 
@@ -291,6 +301,7 @@ public class    timescreen extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(1);
         startActivity(intent);
+        timer.removeCallbacksAndMessages(null);
         finish();
     }
 }

@@ -49,6 +49,7 @@ public class ts6 extends ActionBarActivity {
     static final int INTERVAL = 10;
 
     Handler countdown = new Handler();
+    Handler timer = new Handler();
 
     private void ShuffleArray(int[] array)
     {
@@ -136,6 +137,15 @@ public class ts6 extends ActionBarActivity {
         };
         countdown.postDelayed(runnable, 1500 / INTERVAL);
 
+        timer.postDelayed(new Runnable() {
+            public void run() {
+                Intent intent = new Intent(ts6.this, ts7.class);
+                intent.putExtra("message", pointcounter);
+                intent.putStringArrayListExtra("words", wordlist);
+                pointcounter.setRound(6);
+                startActivity(intent);
+            }
+        }, 15000);
     }
 
     @Override
@@ -164,7 +174,6 @@ public class ts6 extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
-        finish();
     }
 
     @Override
@@ -306,6 +315,7 @@ public class ts6 extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(6);
         startActivity(intent);
+        timer.removeCallbacksAndMessages(null);
         finish();
     }
 }
