@@ -19,6 +19,7 @@ public class MainActivity extends ActionBarActivity {
     private ImageButton btnDE;
     private ImageButton btnEN;
     private ImageButton btnLang;
+    public static boolean language = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +67,7 @@ public class MainActivity extends ActionBarActivity {
 
 
     public void clickEN(View view) {
+        if (language == false) {
             btnEN = (ImageButton) findViewById(R.id.btnLang);
             Locale locale = new Locale("en_EN");
             Locale.setDefault(locale);
@@ -73,10 +75,13 @@ public class MainActivity extends ActionBarActivity {
             config.locale = locale;
             getApplicationContext().getResources().updateConfiguration(config, null);
             recreate();
+            this.language = true;
+        }
     }
 
 
     public void clickDE(View view) {
+        if (language == true) {
             btnDE = (ImageButton) findViewById(R.id.btnDE);
             Locale locale = new Locale("de_DE");
             Locale.setDefault(locale);
@@ -84,6 +89,8 @@ public class MainActivity extends ActionBarActivity {
             config.locale = locale;
             getApplicationContext().getResources().updateConfiguration(config, null);
             recreate();
+            this.language = false;
+        }
     }
 
     public void showHelp(View view) {
