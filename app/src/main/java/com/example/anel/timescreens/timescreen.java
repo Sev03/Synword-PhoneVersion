@@ -86,6 +86,7 @@ public class    timescreen extends ActionBarActivity {
 
         intervallBar.setProgress(150);
 
+
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -102,7 +103,7 @@ public class    timescreen extends ActionBarActivity {
 
         timer.postDelayed(new Runnable() {
             public void run() {
-                Intent intent = new Intent(timescreen.this, ts2_test.class);
+                Intent intent = new Intent(timescreen.this, ts2.class);
                 intent.putExtra("message", pointcounter);
                 intent.putStringArrayListExtra("words", wordlist);
                 pointcounter.setRound(1);
@@ -154,6 +155,7 @@ public class    timescreen extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
 
     @Override
@@ -297,6 +299,7 @@ public class    timescreen extends ActionBarActivity {
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, ts2.class);
+
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(1);

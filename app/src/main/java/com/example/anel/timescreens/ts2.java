@@ -18,6 +18,8 @@ import com.example.anel.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Anel on 14.12.2015.
@@ -34,7 +36,6 @@ public class ts2 extends ActionBarActivity {
     public String nosyn4 = "hieb";
     ArrayList<String> wordlist = new ArrayList<String>();
 
-
     public Button b1;
     public Button b2;
     public Button b3;
@@ -42,6 +43,7 @@ public class ts2 extends ActionBarActivity {
     public Button b5;
     public Button b6;
     Points pointcounter = new Points();
+    int timestamp;
 
     ProgressBar intervallBar;
     // Interval <= 10 möglich
@@ -121,6 +123,7 @@ public class ts2 extends ActionBarActivity {
 
         intervallBar.setProgress(150);
 
+
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -138,7 +141,7 @@ public class ts2 extends ActionBarActivity {
 
         timer.postDelayed(new Runnable() {
             public void run() {
-                Intent intent = new Intent(ts2.this, ts3_test.class);
+                Intent intent = new Intent(ts2.this, ts3.class);
                 intent.putExtra("message", pointcounter);
                 intent.putStringArrayListExtra("words", wordlist);
                 pointcounter.setRound(2);
@@ -146,6 +149,7 @@ public class ts2 extends ActionBarActivity {
             }
         }, 15000);
     }
+
 
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -155,7 +159,9 @@ public class ts2 extends ActionBarActivity {
     boolean btn6isclicked = false;
 
 
-
+    public int calcPoints(int time){
+            return Math.min(5, 6 - (int) ( Math.floor( time / 2 ) ) );
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
