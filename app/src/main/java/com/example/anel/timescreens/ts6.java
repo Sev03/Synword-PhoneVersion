@@ -164,6 +164,7 @@ public class ts6 extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -305,5 +306,6 @@ public class ts6 extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(6);
         startActivity(intent);
+        finish();
     }
 }

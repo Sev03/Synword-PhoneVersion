@@ -10,7 +10,7 @@
     <string name="manual">Manual</string>
     <string name="clickLang">Change Language</string>
     <string name="loading">Loading...</string>
-    <string name="helpText">SynWord is a game where your goal is, to find synonyms (words that have the same meaning). \n\nEvery correct chosen word rewards you with 5 points, resulting in a maximum of 100 obtainable points.</string>
+    <string name="helpText">SynWord is a game in which you have to find synonyms (words with a similar meaning). Each correct word will give you 5 points (there are two synonyms per round) which sum up to 100 points per game.\nThe button Play will get you to the gamemodes „Accuracy“ and „Speed“. In „Accuracy“ you can search fort he two synonyms without time pressure to gain the maximum points.\nIn „Speed“ you have 15 seconds to find the words per round, gainging fewer points for correct words if you’re slower.\nIn „Highscore“ you can see the top ten ranked by points in each gamemode.</string>
     <string name="tab">\u0009</string>
     <string name="creditstext">Developers</string>
     <string name="creditsnames">Anel Jusic\nFlorian Kropfitsch</string>

@@ -280,6 +280,7 @@ public class    timescreen extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
+        finish();
     }
 
 
@@ -290,6 +291,6 @@ public class    timescreen extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(1);
         startActivity(intent);
-
+        finish();
     }
 }

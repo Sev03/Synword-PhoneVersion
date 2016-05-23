@@ -157,6 +157,7 @@ public class ts2 extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -298,5 +299,6 @@ public class ts2 extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(2);
         startActivity(intent);
+        finish();
     }
 }

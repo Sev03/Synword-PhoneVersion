@@ -166,6 +166,7 @@ public class ts10 extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -310,5 +311,6 @@ public class ts10 extends ActionBarActivity {
         intent.putExtra("modi", gamemodus);
         pointcounter.setRound(10);
         startActivity(intent);
+        finish();
     }
 }
