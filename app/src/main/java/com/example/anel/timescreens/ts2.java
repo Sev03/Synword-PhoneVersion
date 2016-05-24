@@ -51,6 +51,16 @@ public class ts2 extends ActionBarActivity {
 
     Handler countdown = new Handler();
     Handler timer = new Handler();
+    Timer punktetimer = new Timer();
+
+    boolean btn1isclicked = false;
+    boolean btn2isclicked = false;
+    boolean btn3isclicked = false;
+    boolean btn4isclicked = false;
+    boolean btn5isclicked = false;
+    boolean btn6isclicked = false;
+
+
 
     private void ShuffleArray(int[] array)
     {
@@ -121,9 +131,14 @@ public class ts2 extends ActionBarActivity {
 
         pointcounter.setPointcounter(points);
 
+        punktetimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                timestamp += 1;
+            }
+        }, 1000);
+
         intervallBar.setProgress(150);
-
-
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -150,30 +165,17 @@ public class ts2 extends ActionBarActivity {
         }, 15000);
     }
 
-
-    boolean btn1isclicked = false;
-    boolean btn2isclicked = false;
-    boolean btn3isclicked = false;
-    boolean btn4isclicked = false;
-    boolean btn5isclicked = false;
-    boolean btn6isclicked = false;
-
-
     public int calcPoints(int time){
             return Math.min(5, 6 - (int) ( Math.floor( time / 2 ) ) );
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
+        countdown.removeCallbacksAndMessages(null);
+        timer.removeCallbacksAndMessages(null);
+        punktetimer.cancel();
     }
 
     @Override
@@ -200,7 +202,7 @@ public class ts2 extends ActionBarActivity {
             btn1isclicked = true;
         }
         if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
         if (pressed == 2) {
@@ -217,7 +219,7 @@ public class ts2 extends ActionBarActivity {
         }
 
         if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
 
@@ -237,7 +239,7 @@ public class ts2 extends ActionBarActivity {
         }
 
         if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
         if (pressed == 2){
@@ -257,7 +259,7 @@ public class ts2 extends ActionBarActivity {
         }
 
         if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
 
@@ -278,7 +280,7 @@ public class ts2 extends ActionBarActivity {
         }
 
         if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
 
@@ -298,7 +300,7 @@ public class ts2 extends ActionBarActivity {
         }
 
         if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
 
@@ -315,7 +317,9 @@ public class ts2 extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(2);
         startActivity(intent);
+        countdown.removeCallbacksAndMessages(null);
         timer.removeCallbacksAndMessages(null);
+        punktetimer.cancel();
         finish();
     }
 }

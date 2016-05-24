@@ -100,7 +100,7 @@
             android:indeterminate="false"
             android:progress="100"
             android:layout_below="@+id/linearLayout"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"/>
 
         <Button
             android:text="Interessensvertreter"

@@ -19,6 +19,8 @@ import com.example.anel.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Anel on 14.12.2015.
@@ -26,6 +28,7 @@ import java.util.Random;
 public class ts6 extends ActionBarActivity {
     public int points;
     public int round;
+    int timestamp;
     public String ankerword = "Angriff";
     public String syn1 = "offensive";
     public String syn2 = "attacke";
@@ -50,6 +53,14 @@ public class ts6 extends ActionBarActivity {
 
     Handler countdown = new Handler();
     Handler timer = new Handler();
+    Timer punktetimer = new Timer();
+
+    boolean btn1isclicked = false;
+    boolean btn2isclicked = false;
+    boolean btn3isclicked = false;
+    boolean btn4isclicked = false;
+    boolean btn5isclicked = false;
+    boolean btn6isclicked = false;
 
     private void ShuffleArray(int[] array)
     {
@@ -120,6 +131,13 @@ public class ts6 extends ActionBarActivity {
 
         pointcounter.setPointcounter(points);
 
+        punktetimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                timestamp += 1;
+            }
+        }, 1000);
+
         intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         intervallBar.setProgress(150);
 
@@ -144,6 +162,7 @@ public class ts6 extends ActionBarActivity {
                 intent.putStringArrayListExtra("words", wordlist);
                 pointcounter.setRound(6);
                 startActivity(intent);
+                finish();
             }
         }, 15000);
     }
@@ -153,27 +172,16 @@ public class ts6 extends ActionBarActivity {
         super.onDestroy();
     }
 
-    boolean btn1isclicked = false;
-    boolean btn2isclicked = false;
-    boolean btn3isclicked = false;
-    boolean btn4isclicked = false;
-    boolean btn5isclicked = false;
-    boolean btn6isclicked = false;
-
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    public int calcPoints(int time){
+        return Math.min(5, 6 - (int) ( Math.floor( time / 2 ) ) );
     }
 
     @Override
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
+        timer.removeCallbacksAndMessages(null);
+        punktetimer.cancel();
     }
 
     @Override
@@ -192,7 +200,6 @@ public class ts6 extends ActionBarActivity {
     }
 
     int pressed = 0;
-
     public void onClick1 (View view){
         view.setBackgroundResource(R.drawable.buttongreen);
         if (btn1isclicked == false) {
@@ -202,106 +209,76 @@ public class ts6 extends ActionBarActivity {
         if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
-
         if (pressed == 2) {
             showNextScreen(view);
         }
-
-
     }
+
     public void onClick2 (View view){
         view.setBackgroundResource(R.drawable.buttongreen);
         if (btn2isclicked == false) {
             pressed++;
             btn2isclicked = true;
         }
-
         if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
-
-
         if (pressed == 2){
             showNextScreen(view);
         }
-
-
-
     }
+
     public void onClick3 (View view){
         view.setBackgroundResource(R.drawable.buttongreen);
         if (btn3isclicked == false) {
             pressed++;
             btn3isclicked = true;
-
         }
-
         if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
-
         if (pressed == 2){
             showNextScreen(view);
         }
-
-
-
-
     }
+
     public void onClick4 (View view){
         view.setBackgroundResource(R.drawable.buttongreen);
         if (btn4isclicked == false) {
             pressed++;
             btn4isclicked = true;
-
         }
-
         if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
-
-
         if (pressed == 2){
             showNextScreen(view);
         }
-
-
-
-
     }
+
     public void onClick5 (View view){
         view.setBackgroundResource(R.drawable.buttongreen);
         if (btn5isclicked == false) {
             pressed++;
             btn5isclicked = true;
-
         }
-
         if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
-
-
         if (pressed == 2){
             showNextScreen(view);
         }
-
-
-
     }
+
     public void onClick6 (View view){
         view.setBackgroundResource(R.drawable.buttongreen);
         if (btn6isclicked == false) {
             pressed++;
             btn6isclicked = true;
-
         }
-
         if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
             pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
         }
-
-
         if (pressed == 2){
             showNextScreen(view);
         }
@@ -316,6 +293,7 @@ public class ts6 extends ActionBarActivity {
         pointcounter.setRound(6);
         startActivity(intent);
         timer.removeCallbacksAndMessages(null);
+        punktetimer.cancel();
         finish();
     }
 }

@@ -27,15 +27,6 @@ public class MainActivity extends ActionBarActivity {
         getSupportActionBar().hide();
     }
 
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -72,7 +63,7 @@ public class MainActivity extends ActionBarActivity {
             Locale locale = new Locale("en_EN");
             Locale.setDefault(locale);
             Configuration config = new Configuration();
-            config.locale = locale;
+            config.locale = locale.ENGLISH;
             getApplicationContext().getResources().updateConfiguration(config, null);
             recreate();
             this.language = true;
@@ -86,7 +77,7 @@ public class MainActivity extends ActionBarActivity {
             Locale locale = new Locale("de_DE");
             Locale.setDefault(locale);
             Configuration config = new Configuration();
-            config.locale = locale;
+            config.locale = locale.GERMAN;
             getApplicationContext().getResources().updateConfiguration(config, null);
             recreate();
             this.language = false;

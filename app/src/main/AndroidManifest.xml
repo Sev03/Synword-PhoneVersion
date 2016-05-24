@@ -231,34 +231,6 @@
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
-        <activity
-            android:name="com.example.anel.timescreens.timescreen_test"
-            android:label="Timescreen Runde 10"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation|screenSize">
-        </activity>
-
-        <activity
-            android:name="com.example.anel.timescreens.ts2_test"
-            android:label="Timescreen Runde 10"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation|screenSize">
-        </activity>
-
-        <activity
-            android:name="com.example.anel.timescreens.ts3_test"
-            android:label="Timescreen Runde 10"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation|screenSize">
-        </activity>
-
-        <activity
-            android:name="com.example.anel.timescreens.ts4_test"
-            android:label="Timescreen Runde 10"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation|screenSize">
-        </activity>
-
 
     </application>
 </manifest>

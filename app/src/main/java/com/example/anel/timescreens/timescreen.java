@@ -19,6 +19,8 @@ import com.example.anel.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Anel on 14.12.2015.
@@ -43,6 +45,8 @@ public class    timescreen extends ActionBarActivity {
     public Button b4;
     public Button b5;
     public Button b6;
+    int timestamp;
+    private Thread thread;
 
     ProgressBar intervallBar;
     // Interval <= 10 möglich
@@ -50,6 +54,7 @@ public class    timescreen extends ActionBarActivity {
 
     Handler countdown = new Handler();
     Handler timer = new Handler();
+    Timer punktetimer = new Timer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,8 @@ public class    timescreen extends ActionBarActivity {
         Intent intent = getIntent();
         wordlist = intent.getStringArrayListExtra("words");
         fillInWords(wordlist);
+
+
 
         intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         b1 = (Button) findViewById(R.id.btnWord1);
@@ -85,7 +92,6 @@ public class    timescreen extends ActionBarActivity {
         b6.setText(arr[array[5]]);
 
         intervallBar.setProgress(150);
-
 
         Runnable runnable = new Runnable() {
             @Override
@@ -148,14 +154,9 @@ public class    timescreen extends ActionBarActivity {
     boolean btn6isclicked = false;
     Points pointcounter = new Points();
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    public int calcPoints(int time){
+        return Math.min(5, 6 - (int) ( Math.floor( time / 2 ) ) );
     }
-
 
 
     @Override
@@ -182,7 +183,7 @@ public class    timescreen extends ActionBarActivity {
             btn1isclicked = true;
         }
         if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
         if (pressed == 2) {
@@ -199,7 +200,7 @@ public class    timescreen extends ActionBarActivity {
         }
 
         if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
 
@@ -219,7 +220,7 @@ public class    timescreen extends ActionBarActivity {
         }
 
         if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
         if (pressed == 2){
@@ -239,7 +240,7 @@ public class    timescreen extends ActionBarActivity {
         }
 
         if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
 
@@ -260,7 +261,7 @@ public class    timescreen extends ActionBarActivity {
         }
 
         if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
 
@@ -280,7 +281,7 @@ public class    timescreen extends ActionBarActivity {
         }
 
         if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
 
 
@@ -293,18 +294,22 @@ public class    timescreen extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
+        countdown.removeCallbacksAndMessages(null);
+        timer.removeCallbacksAndMessages(null);
+        punktetimer.cancel();
     }
 
 
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, ts2.class);
-
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(1);
         startActivity(intent);
+        countdown.removeCallbacksAndMessages(null);
         timer.removeCallbacksAndMessages(null);
+        punktetimer.cancel();
         finish();
     }
 }

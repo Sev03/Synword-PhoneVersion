@@ -6,12 +6,12 @@
     <string name="help">Help</string>
     <string name="language_setting">Change Language</string>
     <string name="gamemode1">Accuracy</string>
-    <string name="gamemode2">Fastness</string>
+    <string name="gamemode2">Speed</string>
     <string name="manual">Manual</string>
     <string name="clickLang">Change Language</string>
     <string name="loading">Loading...</string>
-    <string name="helpText">SynWord is a game in which you have to find synonyms (words with a similar meaning). Each correct word will give you 5 points (there are two synonyms per round) which sum up to 100 points per game.\nThe button Play will get you to the gamemodes „Accuracy“ and „Speed“. In „Accuracy“ you can search fort he two synonyms without time pressure to gain the maximum points.\nIn „Speed“ you have 15 seconds to find the words per round, gainging fewer points for correct words if you’re slower.\nIn „Highscore“ you can see the top ten ranked by points in each gamemode.</string>
-    <string name="tab">\u0009</string>
+    <string name="helpText">SynWord is a game in which you have to find synonyms (words with a similar meaning). \n\nEach correct word will give you 5 points (there are two synonyms per round) which sum up to 100 points per game.\n\nThe button Play will get you to the gamemodes „Accuracy“ and „Speed“. \n\nIn „Accuracy“ you can search fort he two synonyms without time pressure to gain the maximum points.\n\nIn „Speed“ you have 15 seconds to find the words per round, gaining fewer points for correct words if you’re slower.\n\nIn „Highscore“ you can see the top ten ranked by points in each gamemode.</string>
+    <string names="tab">\u0009</string>
     <string name="creditstext">Developers</string>
     <string name="creditsnames">Anel Jusic\nFlorian Kropfitsch</string>
     <string name="creditstext2">Version</string>
@@ -25,7 +25,7 @@
     <string name="buttonpophighscore">Done</string>
     <string name="synhighscoretext">Highscore</string>
     <string name="accuracytext" formatted="false">*There are 10 rounds to play.\n*You can choose 2 words out of 6 in each round.\n*There are 2 synonyms (words with similar meaning)  among the 6 words, each right synonym will give you 5 points.</string>
-    <string name="fastnesstext" formatted="false">*There are 10 rounds to play.\n*You can choose 2 words out of 6 in each round.\n*There are 2 synonyms (words with similar meaning)  among the 6 words, each right synonym will give you 5 points.\n*After 3 seconds: 80% of points (4 or 8)\n*After 6 seconds: 60% of points (3 or 6)\n*After 9 seconds: 40% of points (2 or 4)\n*After the 10th second: 10% of points (1 or 2)\n*11-15 seconds: no points, round changes after 15 seconds</string>
+    <string name="speedtext" formatted="false">*There are 10 rounds to play.\n*You can choose 2 words out of 6 in each round.\n*There are 2 synonyms (words with similar meaning)  among the 6 words, each right synonym will give you 5 points.\n*After 3 seconds: 80% of points (4 or 8)\n*After 6 seconds: 60% of points (3 or 6)\n*After 9 seconds: 40% of points (2 or 4)\n*After the 10th second: 10% of points (1 or 2)\n*11-15 seconds: no points, round changes after 15 seconds</string>
     <string name="gamerules">Gamerules</string>
     <string name="highscorerank">Rank</string>
     <string name="hspoints">Score</string>
