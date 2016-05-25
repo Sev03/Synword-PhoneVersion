@@ -131,7 +131,7 @@ public class ts6 extends ActionBarActivity {
         intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         intervallBar.setProgress(150);
 
-        cdTimer = new CountDownTimer(15000, 1000) {
+        cdTimer = new CountDownTimer(15400, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 timestamp += 1;
@@ -141,13 +141,14 @@ public class ts6 extends ActionBarActivity {
                 Intent intent = new Intent(ts6.this, ts7.class);
                 intent.putExtra("message", pointcounter);
                 intent.putStringArrayListExtra("words", wordlist);
-                pointcounter.setRound(1);
+                pointcounter.setRound(6);
                 startActivity(intent);
                 finish();
             }
 
         }.start();
 
+        intervallBar.setProgress(15 * INTERVAL);
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -155,12 +156,13 @@ public class ts6 extends ActionBarActivity {
                 if (intervallBar.getProgress() == 0) {
                     countdown.removeCallbacks(this);
                     Log.e("THREAD", "CANCELED");
+
                     return;
                 }
-                countdown.postDelayed(this, 1500 / INTERVAL);
+                countdown.postDelayed(this, 1000 / INTERVAL);
             }
         };
-        countdown.postDelayed(runnable, 1500 / INTERVAL);
+        countdown.postDelayed(runnable, 0);
     }
 
     @Override

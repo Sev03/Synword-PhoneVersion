@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.anel.synword.R;
@@ -19,6 +20,9 @@ public class MainActivity extends ActionBarActivity {
     private ImageButton btnDE;
     private ImageButton btnEN;
     private ImageButton btnLang;
+    private Button btnHelp;
+    private Button btnPlay;
+    private Button btnScore;
     public static boolean language = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +48,16 @@ public class MainActivity extends ActionBarActivity {
 
     public void showPlay(View view) {
         // Do something in response to button
-        //((Button) view).setEnabled( false );
+        btnPlay = (Button)findViewById(R.id.btnPlay);
+        btnPlay.getBackground().setAlpha(128);
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
     }
 
     public void showHighscore(View view) {
         // Do something in response to button
-
+        btnScore = (Button)findViewById(R.id.btnScore);
+        btnScore.getBackground().setAlpha(128);
         Intent intent = new Intent(this, highscoreLoadscreen.class);
         startActivity(intent);
     }
@@ -70,7 +76,6 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-
     public void clickDE(View view) {
         if (language == true) {
             btnDE = (ImageButton) findViewById(R.id.btnDE);
@@ -86,14 +91,15 @@ public class MainActivity extends ActionBarActivity {
 
     public void showHelp(View view) {
         // Do something in response to button
-
+        btnHelp = (Button)findViewById(R.id.btnHelp);
+        btnHelp.getBackground().setAlpha(128);
         Intent intent = new Intent(this, helpActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void showCredits(View view) {
         // Do something in response to button
-
         Intent intent = new Intent(this, creditsActivity.class);
         startActivity(intent);
     }

@@ -130,7 +130,7 @@ public class ts10 extends ActionBarActivity {
         b6.setText(arr[array[5]]);
         pointcounter.setPointcounter(points);
 
-        cdTimer = new CountDownTimer(15000, 1000) {
+        cdTimer = new CountDownTimer(15400, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 timestamp += 1;
@@ -152,6 +152,7 @@ public class ts10 extends ActionBarActivity {
 
         intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         intervallBar.setProgress(150);
+        intervallBar.setProgress(15 * INTERVAL);
 
         Runnable runnable = new Runnable() {
             @Override
@@ -160,12 +161,13 @@ public class ts10 extends ActionBarActivity {
                 if (intervallBar.getProgress() == 0) {
                     countdown.removeCallbacks(this);
                     Log.e("THREAD", "CANCELED");
+
                     return;
                 }
-                countdown.postDelayed(this, 1500 / INTERVAL);
+                countdown.postDelayed(this, 1000 / INTERVAL);
             }
         };
-        countdown.postDelayed(runnable, 1500 / INTERVAL);
+        countdown.postDelayed(runnable, 0);
 
     }
     @Override

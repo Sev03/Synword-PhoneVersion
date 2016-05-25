@@ -102,7 +102,6 @@ public class    timescreen extends ActionBarActivity {
         fillInWords(wordlist);
 
 
-
         intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         b1 = (Button) findViewById(R.id.btnWord1);
         b2 = (Button) findViewById(R.id.btnWord2);
@@ -129,7 +128,7 @@ public class    timescreen extends ActionBarActivity {
 
         intervallBar.setProgress(150);
 
-        cdTimer = new CountDownTimer(15000, 1000) {
+        cdTimer = new CountDownTimer(15400, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 timestamp += 1;
@@ -146,6 +145,7 @@ public class    timescreen extends ActionBarActivity {
 
         }.start();
 
+        intervallBar.setProgress(15 * INTERVAL);
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -153,12 +153,13 @@ public class    timescreen extends ActionBarActivity {
                 if (intervallBar.getProgress() == 0) {
                     countdown.removeCallbacks(this);
                     Log.e("THREAD", "CANCELED");
+
                     return;
                 }
-                countdown.postDelayed(this, 1500 / INTERVAL);
+                countdown.postDelayed(this, 1000 / INTERVAL);
             }
         };
-        countdown.postDelayed(runnable, 1500 / INTERVAL);
+        countdown.postDelayed(runnable, 0);
     }
 
     public int calcPoints(int time){

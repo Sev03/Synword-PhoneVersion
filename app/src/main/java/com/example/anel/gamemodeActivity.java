@@ -24,6 +24,8 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
 
     Switch switchLang;
     String sprache = "DE";
+    private Button btnFehlerfrei;
+    private Button btnZeit;
 
 
     @Override
@@ -45,7 +47,6 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
 
     }
 
-
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         if (isChecked) {
             sprache = "EN";
@@ -55,11 +56,10 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
         }
     }
 
-
-
     public void onBackPressed(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -79,17 +79,22 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
 
     public void showFehlerfrei(View view) {
         // Do something in response to button
+        btnFehlerfrei = (Button)findViewById(R.id.btnFehlerfrei);
+        btnFehlerfrei.getBackground().setAlpha(128);
         Intent intent = new Intent(this, loadscreenActivity.class);
         intent.putExtra("sprache", sprache);
         startActivity(intent);
-
+        finish();
     }
 
     public void showZeit(View view) {
         // Do something in response to button
+        btnZeit = (Button)findViewById(R.id.btnZeit);
+        btnZeit.getBackground().setAlpha(128);
         Intent intent = new Intent(this, tsloadscreenActivity.class);
         intent.putExtra("sprache", sprache);
         startActivity(intent);
+        finish();
     }
 
 }
