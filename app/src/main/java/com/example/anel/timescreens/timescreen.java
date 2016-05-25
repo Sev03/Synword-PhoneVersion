@@ -3,6 +3,7 @@ package com.example.anel.timescreens;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -53,8 +54,43 @@ public class    timescreen extends ActionBarActivity {
     static final int INTERVAL = 10;
 
     Handler countdown = new Handler();
-    Handler timer = new Handler();
-    Timer punktetimer = new Timer();
+    Points pointcounter = new Points();
+    CountDownTimer cdTimer;
+
+
+    boolean btn1isclicked = false;
+    boolean btn2isclicked = false;
+    boolean btn3isclicked = false;
+    boolean btn4isclicked = false;
+    boolean btn5isclicked = false;
+    boolean btn6isclicked = false;
+
+    private void fillInWords(ArrayList<String> results) {
+        String firstrow = results.get(0);
+        String[] wordsplit = firstrow.split("\\s+");
+
+        this.ankerword = wordsplit[0];
+        this.syn1 = wordsplit[1];
+        this.syn2 = wordsplit[2];
+        this.nosyn1 = wordsplit[3];
+        this.nosyn2 = wordsplit[4];
+        this.nosyn3 = wordsplit[5];
+        this.nosyn4 = wordsplit[6];
+
+    }
+
+    private void ShuffleArray(int[] array) {
+        int index;
+        Random random = new Random();
+        for (int i = array.length - 1; i > 0; i--) {
+            index = random.nextInt(i + 1);
+            if (index != i) {
+                array[index] ^= array[i];
+                array[i] ^= array[index];
+                array[index] ^= array[i];
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +129,23 @@ public class    timescreen extends ActionBarActivity {
 
         intervallBar.setProgress(150);
 
+        cdTimer = new CountDownTimer(15000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                timestamp += 1;
+            }
+
+            public void onFinish() {
+                Intent intent = new Intent(timescreen.this, ts2.class);
+                intent.putExtra("message", pointcounter);
+                intent.putStringArrayListExtra("words", wordlist);
+                pointcounter.setRound(1);
+                startActivity(intent);
+                finish();
+            }
+
+        }.start();
+
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -106,56 +159,19 @@ public class    timescreen extends ActionBarActivity {
             }
         };
         countdown.postDelayed(runnable, 1500 / INTERVAL);
-
-        timer.postDelayed(new Runnable() {
-            public void run() {
-                Intent intent = new Intent(timescreen.this, ts2.class);
-                intent.putExtra("message", pointcounter);
-                intent.putStringArrayListExtra("words", wordlist);
-                pointcounter.setRound(1);
-                startActivity(intent);
-                finish();
-            }
-        }, 15000);
     }
-
-    private void fillInWords(ArrayList<String> results) {
-        String firstrow = results.get(0);
-        String[] wordsplit = firstrow.split("\\s+");
-
-        this.ankerword = wordsplit[0];
-        this.syn1 = wordsplit[1];
-        this.syn2 = wordsplit[2];
-        this.nosyn1 = wordsplit[3];
-        this.nosyn2 = wordsplit[4];
-        this.nosyn3 = wordsplit[5];
-        this.nosyn4 = wordsplit[6];
-
-    }
-
-    private void ShuffleArray(int[] array) {
-        int index;
-        Random random = new Random();
-        for (int i = array.length - 1; i > 0; i--) {
-            index = random.nextInt(i + 1);
-            if (index != i) {
-                array[index] ^= array[i];
-                array[i] ^= array[index];
-                array[index] ^= array[i];
-            }
-        }
-    }
-
-    boolean btn1isclicked = false;
-    boolean btn2isclicked = false;
-    boolean btn3isclicked = false;
-    boolean btn4isclicked = false;
-    boolean btn5isclicked = false;
-    boolean btn6isclicked = false;
-    Points pointcounter = new Points();
 
     public int calcPoints(int time){
-        return Math.min(5, 6 - (int) ( Math.floor( time / 2 ) ) );
+        return Math.max(0, 6 - (int) (Math.floor(time / 2)));
+    }
+
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, gamemodeActivity.class);
+        startActivity(intent);
+        countdown.removeCallbacksAndMessages(null);
+        cdTimer.cancel();
     }
 
 
@@ -290,16 +306,6 @@ public class    timescreen extends ActionBarActivity {
         }
     }
 
-    @Override
-    public void onBackPressed(){
-        Intent intent = new Intent(this, gamemodeActivity.class);
-        startActivity(intent);
-        countdown.removeCallbacksAndMessages(null);
-        timer.removeCallbacksAndMessages(null);
-        punktetimer.cancel();
-    }
-
-
     public void showNextScreen(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, ts2.class);
@@ -308,8 +314,7 @@ public class    timescreen extends ActionBarActivity {
         pointcounter.setRound(1);
         startActivity(intent);
         countdown.removeCallbacksAndMessages(null);
-        timer.removeCallbacksAndMessages(null);
-        punktetimer.cancel();
+        cdTimer.cancel();
         finish();
     }
 }

@@ -2,6 +2,7 @@ package com.example.anel.timescreens;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -34,24 +35,21 @@ public class ts2 extends ActionBarActivity {
     public String nosyn2 = "unfall";
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
-    ArrayList<String> wordlist = new ArrayList<String>();
-
     public Button b1;
     public Button b2;
     public Button b3;
     public Button b4;
     public Button b5;
     public Button b6;
-    Points pointcounter = new Points();
-    int timestamp;
+    private int timestamp;
 
-    ProgressBar intervallBar;
-    // Interval <= 10 möglich
+    ProgressBar intervallBar;    // Interval <= 10 möglich
     static final int INTERVAL = 10;
 
+    ArrayList<String> wordlist = new ArrayList<String>();
+    Points pointcounter = new Points();
     Handler countdown = new Handler();
-    Handler timer = new Handler();
-    Timer punktetimer = new Timer();
+    CountDownTimer cdTimer;
 
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -59,8 +57,6 @@ public class ts2 extends ActionBarActivity {
     boolean btn4isclicked = false;
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
-
-
 
     private void ShuffleArray(int[] array)
     {
@@ -131,12 +127,22 @@ public class ts2 extends ActionBarActivity {
 
         pointcounter.setPointcounter(points);
 
-        punktetimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
+        cdTimer = new CountDownTimer(15000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
                 timestamp += 1;
             }
-        }, 1000);
+
+            public void onFinish() {
+                Intent intent = new Intent(ts2.this, ts3.class);
+                intent.putExtra("message", pointcounter);
+                intent.putStringArrayListExtra("words", wordlist);
+                pointcounter.setRound(1);
+                startActivity(intent);
+                finish();
+            }
+
+        }.start();
 
         intervallBar.setProgress(150);
         Runnable runnable = new Runnable() {
@@ -153,20 +159,10 @@ public class ts2 extends ActionBarActivity {
             }
         };
         countdown.postDelayed(runnable, 1500 / INTERVAL);
-
-        timer.postDelayed(new Runnable() {
-            public void run() {
-                Intent intent = new Intent(ts2.this, ts3.class);
-                intent.putExtra("message", pointcounter);
-                intent.putStringArrayListExtra("words", wordlist);
-                pointcounter.setRound(2);
-                startActivity(intent);
-            }
-        }, 15000);
     }
 
     public int calcPoints(int time){
-            return Math.min(5, 6 - (int) ( Math.floor( time / 2 ) ) );
+            return Math.max(0, 6 - (int) (Math.floor(time / 2)));
     }
 
     @Override
@@ -174,8 +170,7 @@ public class ts2 extends ActionBarActivity {
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
         countdown.removeCallbacksAndMessages(null);
-        timer.removeCallbacksAndMessages(null);
-        punktetimer.cancel();
+        cdTimer.cancel();
     }
 
     @Override
@@ -318,8 +313,7 @@ public class ts2 extends ActionBarActivity {
         pointcounter.setRound(2);
         startActivity(intent);
         countdown.removeCallbacksAndMessages(null);
-        timer.removeCallbacksAndMessages(null);
-        punktetimer.cancel();
+        cdTimer.cancel();
         finish();
     }
 }

@@ -3,6 +3,7 @@ package com.example.anel.timescreens;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -28,7 +29,6 @@ import java.util.TimerTask;
 public class ts7 extends ActionBarActivity {
     public int points;
     public int round;
-    int timestamp;
     public String ankerword = "Angriff";
     public String syn1 = "offensive";
     public String syn2 = "attacke";
@@ -36,23 +36,21 @@ public class ts7 extends ActionBarActivity {
     public String nosyn2 = "unfall";
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
-    ArrayList<String> wordlist = new ArrayList<String>();
-
-
     public Button b1;
     public Button b2;
     public Button b3;
     public Button b4;
     public Button b5;
     public Button b6;
-    Points pointcounter = new Points();
+    private int timestamp;
 
     ProgressBar intervallBar;    // Interval <= 10 möglich
     static final int INTERVAL = 10;
 
+    ArrayList<String> wordlist = new ArrayList<String>();
+    Points pointcounter = new Points();
     Handler countdown = new Handler();
-    Handler timer = new Handler();
-    Timer punktetimer = new Timer();
+    CountDownTimer cdTimer;
 
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -129,16 +127,25 @@ public class ts7 extends ActionBarActivity {
         b6.setText(arr[array[5]]);
 
         pointcounter.setPointcounter(points);
-
-        punktetimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                timestamp += 1;
-            }
-        }, 1000);
-
         intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
         intervallBar.setProgress(150);
+
+        cdTimer = new CountDownTimer(15000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                timestamp += 1;
+            }
+
+            public void onFinish() {
+                Intent intent = new Intent(ts7.this, ts8.class);
+                intent.putExtra("message", pointcounter);
+                intent.putStringArrayListExtra("words", wordlist);
+                pointcounter.setRound(1);
+                startActivity(intent);
+                finish();
+            }
+
+        }.start();
 
         Runnable runnable = new Runnable() {
             @Override
@@ -153,17 +160,6 @@ public class ts7 extends ActionBarActivity {
             }
         };
         countdown.postDelayed(runnable, 1500 / INTERVAL);
-
-        timer.postDelayed(new Runnable() {
-            public void run() {
-                Intent intent = new Intent(ts7.this, ts8.class);
-                intent.putExtra("message", pointcounter);
-                intent.putStringArrayListExtra("words", wordlist);
-                pointcounter.setRound(7);
-                startActivity(intent);
-                finish();
-            }
-        }, 15000);
     }
 
     @Override
@@ -172,15 +168,15 @@ public class ts7 extends ActionBarActivity {
     }
 
     public int calcPoints(int time){
-        return Math.min(5, 6 - (int) ( Math.floor( time / 2 ) ) );
+        return Math.max(0, 6 - (int) (Math.floor(time / 2)));
     }
 
     @Override
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
-        timer.removeCallbacksAndMessages(null);
-        punktetimer.cancel();
+        cdTimer.cancel();
+        countdown.removeCallbacksAndMessages(null);
     }
 
     @Override
@@ -206,7 +202,7 @@ public class ts7 extends ActionBarActivity {
             btn1isclicked = true;
         }
         if(b1.getText().toString()==syn1 || b1.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
         if (pressed == 2) {
             showNextScreen(view);
@@ -220,7 +216,7 @@ public class ts7 extends ActionBarActivity {
             btn2isclicked = true;
         }
         if(b2.getText().toString()==syn1 || b2.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
         if (pressed == 2){
             showNextScreen(view);
@@ -234,7 +230,7 @@ public class ts7 extends ActionBarActivity {
             btn3isclicked = true;
         }
         if(b3.getText().toString()==syn1 || b3.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
         if (pressed == 2){
             showNextScreen(view);
@@ -248,7 +244,7 @@ public class ts7 extends ActionBarActivity {
             btn4isclicked = true;
         }
         if(b4.getText().toString()==syn1 || b4.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
         if (pressed == 2){
             showNextScreen(view);
@@ -262,7 +258,7 @@ public class ts7 extends ActionBarActivity {
             btn5isclicked = true;
         }
         if(b5.getText().toString()==syn1 || b5.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
         if (pressed == 2){
             showNextScreen(view);
@@ -276,7 +272,7 @@ public class ts7 extends ActionBarActivity {
             btn6isclicked = true;
         }
         if(b6.getText().toString()==syn1 || b6.getText().toString()==syn2) {
-            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + 5);
+            pointcounter.setPointcounter(this.pointcounter.getPointcounter() + calcPoints(timestamp));
         }
         if (pressed == 2){
             showNextScreen(view);
@@ -291,8 +287,8 @@ public class ts7 extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(7);
         startActivity(intent);
-        timer.removeCallbacksAndMessages(null);
-        punktetimer.cancel();
+        cdTimer.cancel();
+        countdown.removeCallbacksAndMessages(null);
         finish();
     }
 }

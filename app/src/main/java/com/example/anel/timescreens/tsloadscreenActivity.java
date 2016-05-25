@@ -68,11 +68,10 @@ public class tsloadscreenActivity extends ActionBarActivity {
                 if (sprache.contains("DE")){
                     httppost = new HttpPost("http://felf.ga:25571/SynWord1_php.php");
                 }
-                else {
-                    if (sprache.contains("EN")) {
+                else if (sprache.contains("EN")) {
                         httppost = new HttpPost("http://felf.ga:25571/SynWordEnglisch_php.php");
-                    }
                 }
+
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                 HttpResponse response = httpclient.execute(httppost);
                 HttpEntity entity = response.getEntity();
