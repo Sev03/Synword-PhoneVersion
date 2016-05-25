@@ -277,5 +277,6 @@ public class gs10activity extends ActionBarActivity {
         intent.putExtra("phoneid", phoneID);
         pointcounter.setRound(10);
         startActivity(intent);
+        finish();
     }
 }

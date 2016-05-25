@@ -146,6 +146,7 @@ public class ts10 extends ActionBarActivity {
                 intent.putExtra("modi", gamemodus);
                 pointcounter.setRound(10);
                 startActivity(intent);
+                finish();
             }
 
         }.start();
@@ -300,5 +301,6 @@ public class ts10 extends ActionBarActivity {
         startActivity(intent);
         cdTimer.cancel();
         countdown.removeCallbacksAndMessages(null);
+        finish();
     }
 }
