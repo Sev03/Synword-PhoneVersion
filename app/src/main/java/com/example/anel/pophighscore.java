@@ -174,13 +174,17 @@ public class pophighscore extends Activity{
 
     public void onDismiss(View view) {
         // Do something in response to button
-        username = tempusername.getText().toString();
-        insertToDatabase(username, highscorenumber, gamemode, phoneID);
-        Toast.makeText(getBaseContext(), "Erfolgreich gespeichert",
-                Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, gamemodeActivity.class);
-        startActivity(intent);
-
+        if (tempusername.getText().toString().contains(" ")) {
+            tempusername.setError("No Spaces Allowed");
+            Toast.makeText(pophighscore.this, "No Spaces Allowed", Toast.LENGTH_LONG).show();
+        }else {
+            username = tempusername.getText().toString();
+            insertToDatabase(username, highscorenumber, gamemode, phoneID);
+            Toast.makeText(getBaseContext(), "Erfolgreich gespeichert",
+                    Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, gamemodeActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
