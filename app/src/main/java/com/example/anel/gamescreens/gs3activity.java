@@ -264,5 +264,6 @@ public class gs3activity extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(3);
         startActivity(intent);
+        finish();
     }
 }

@@ -266,5 +266,6 @@ public class gs2activity extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(2);
         startActivity(intent);
+        finish();
     }
 }

@@ -258,7 +258,7 @@ public class gamescreenActivity extends ActionBarActivity {
         intent.putStringArrayListExtra("words", wordlist);
         pointcounter.setRound(1);
         startActivity(intent);
-
+        finish();
     }
 
 }
