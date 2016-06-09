@@ -29,4 +29,6 @@
     <string name="gamerules">Gamerules</string>
     <string name="highscorerank">Rank</string>
     <string name="hspoints">Score</string>
+    <string name="hserror">No Spaces allowed</string>
+    <string name="hserror2">No username entered</string>
 </resources>

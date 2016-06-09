@@ -30,4 +30,6 @@
     <string name="gamerules">Spielbedingungen</string>
     <string name="highscorerank">Rang</string>
     <string name="hspoints">Punkte</string>
+    <string name="hserror">Keine Leerzeichen erlaubt</string>
+    <string name="hserror2">Kein Username eingegeben</string>
 </resources>

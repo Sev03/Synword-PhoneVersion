@@ -175,8 +175,9 @@ public class pophighscore extends Activity{
     public void onDismiss(View view) {
         // Do something in response to button
         if (tempusername.getText().toString().contains(" ")) {
-            tempusername.setError("No Spaces Allowed");
-            Toast.makeText(pophighscore.this, "No Spaces Allowed", Toast.LENGTH_LONG).show();
+            tempusername.setError(getText(R.string.hserror));
+        } else if (tempusername.length() == 0){
+            tempusername.setError(getText(R.string.hserror2));
         }else {
             username = tempusername.getText().toString();
             insertToDatabase(username, highscorenumber, gamemode, phoneID);
