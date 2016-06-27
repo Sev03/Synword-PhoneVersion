@@ -45,23 +45,23 @@
         android:id="@+id/txtPunkte"
         android:layout_alignTop="@+id/txtGesamtpunkte"
         android:layout_centerHorizontal="true"
-        android:textSize="60dp"
+        android:textSize="80dp"
         android:text="2345"
         android:textColor="#990000"
         android:textStyle="bold"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="0dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Username"
+        android:text="User"
         android:id="@+id/textView9"
         android:textSize="25dp"
         android:textColor="#FFFFFFFF"
         android:layout_below="@+id/txtPunkte"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="60dp" />
 
     <EditText
         android:layout_width="170dp"
