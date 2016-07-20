@@ -1,12 +1,10 @@
-package com.example.anel.gamescreens;
+package com.example.anel;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.ProgressBar;
 
 import com.example.anel.synword.R;
 
@@ -27,15 +25,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
- * Created by Florian on 22.03.2016.
+ * Created by III-Sev-III on 23.03.2016.
  */
-public class loadscreenActivity extends ActionBarActivity {
-
-    ArrayList<String> results = new ArrayList<String>();
+public class highscoreLoadscreen_zeit extends ActionBarActivity {
+    ArrayList<String> rangliste = new ArrayList<String>();
     LoadscreenSub task = new LoadscreenSub();
-    private ProgressBar spinner;
-    private String sprache = "";
-
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,15 +37,12 @@ public class loadscreenActivity extends ActionBarActivity {
         setContentView(R.layout.loadscreen);
         getSupportActionBar().hide();
         task.execute();
-        Intent intent = getIntent();
-        sprache = intent.getExtras().getString("sprache");
-        spinner = (ProgressBar)findViewById(R.id.progressBar1);
-        spinner.setVisibility(View.VISIBLE);
+
     }
 
     public void goToNextScreenWhenFinished(){
-        Intent intent = new Intent(this, gamescreenActivity.class);
-        intent.putStringArrayListExtra("words", results);
+        Intent intent = new Intent(this, HighscoreActivity_zeit.class);
+        intent.putStringArrayListExtra("highscore", rangliste);
         startActivity(intent);
 
     }
@@ -70,13 +61,7 @@ public class loadscreenActivity extends ActionBarActivity {
 
             try{
                 HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost("");
-                if (sprache.contains("DE")){
-                    httppost = new HttpPost("http://felf.ga:25571/SynWord1_php.php");
-                }
-                else if (sprache.contains("EN")) {
-                    httppost = new HttpPost("http://felf.ga:25571/SynWordEnglisch_php.php");
-                }
+                HttpPost httppost = new HttpPost("http://felf.ga:25571/Synword_zeit.php");
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                 HttpResponse response = httpclient.execute(httppost);
                 HttpEntity entity = response.getEntity();
@@ -85,18 +70,19 @@ public class loadscreenActivity extends ActionBarActivity {
                 Log.e("log_tag", "Fehler bei der http Verbindung " + e.toString());
             }
 
-                try {
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
-                    StringBuilder sb = new StringBuilder();
-                    String line = null;
-                    while ((line = reader.readLine()) != null) {
-                        sb.append(line + "n");
-                    }
-                    is.close();
-                    result = sb.toString();
-                } catch (Exception e) {
-                    Log.e("log_tag", "Error converting result " + e.toString());
+            try{
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is,"iso-8859-1"),8);
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line + "n");
                 }
+                is.close();
+                result=sb.toString();
+            }catch(Exception e){
+                Log.e("log_tag", "Error converting result "+e.toString());
+            }
+
 
             return result;
         }
@@ -107,12 +93,8 @@ public class loadscreenActivity extends ActionBarActivity {
                 for(int i=0;i<jArray.length();i++){
                     json_data = jArray.getJSONObject(i);
 
-                    // Hier werden Ankerword, Syn1, Syn2, NoSyn1, NoSyn2, NoSyn3, NoSyn4 in die ArrayList
-                    // gespeichert
-                    results.add((String) json_data.get("Ankerword") + " " + json_data.get("Syn1")
-                            + " " + json_data.get("Syn2") + " " + json_data.get("NoSyn1")
-                            + " " + json_data.get("NoSyn2") + " " + json_data.get("NoSyn3")
-                            + " " + json_data.get("NoSyn4"));
+                    // Highscore (
+                    rangliste.add((String) json_data.get("username") + " " + json_data.get("highscorenumber"));
                 }
                 goToNextScreenWhenFinished();
 
@@ -120,7 +102,7 @@ public class loadscreenActivity extends ActionBarActivity {
             catch(JSONException e){
                 Log.e("log_tag", "Error parsing data "+e.toString());
             }
-        spinner.setVisibility(View.GONE);
+
 
         }
     }

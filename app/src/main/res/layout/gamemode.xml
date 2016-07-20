@@ -40,8 +40,8 @@
                     android:text="@string/gamemode1"
                     android:textColor="#ffffff"
                     android:textSize="20dp"
-                    android:layout_width="220dp"
-                    android:layout_height="75dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/buttongreen"
                     android:id="@+id/btnFehlerfrei"
                     android:shadowColor="#A8A8A8"
@@ -53,14 +53,16 @@
                     android:onClick="showFehlerfrei"
                     android:layout_marginTop="65dp"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
 
                 <Button
                     android:text="@string/gamemode2"
                     android:textColor="#ffffff"
                     android:textSize="20dp"
-                    android:layout_width="220dp"
-                    android:layout_height="75dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/buttongreen"
                     android:id="@+id/btnZeit"
                     android:shadowColor="#A8A8A8"
@@ -70,10 +72,11 @@
                     android:clickable="true"
                     android:singleLine="true"
                     android:onClick="showZeit"
+                    android:layout_marginTop="24dp"
                     android:layout_below="@+id/btnFehlerfrei"
-                    android:layout_alignLeft="@+id/btnFehlerfrei"
-                    android:layout_alignStart="@+id/btnFehlerfrei"
-                    android:layout_marginTop="20dp" />
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginLeft="25dp" />
 
 
     <Button
@@ -104,7 +107,7 @@
         android:textOff="DE"
         android:layout_below="@+id/txtGamesprache"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -115,6 +118,28 @@
         android:layout_below="@+id/btnZeit"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DE"
+        android:id="@+id/textView26"
+        android:layout_alignTop="@+id/switchLang"
+        android:layout_toLeftOf="@+id/switchLang"
+        android:layout_toStartOf="@+id/switchLang"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EN"
+        android:id="@+id/textView27"
+        android:layout_alignTop="@+id/switchLang"
+        android:layout_toRightOf="@+id/switchLang"
+        android:layout_toEndOf="@+id/switchLang"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp" />
 
 </RelativeLayout>
 

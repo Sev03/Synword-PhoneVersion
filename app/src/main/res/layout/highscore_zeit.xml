@@ -27,8 +27,7 @@
             android:padding="10dp"
             android:id="@+id/tableLayout"
             android:layout_below="@+id/accuracyButton"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
@@ -114,10 +113,12 @@
         android:checked="false"
         android:textOn="@string/gamemode2"
         android:textSize="15dp"
+        android:onClick="onToggle"
         android:layout_alignTop="@+id/timeButton"
         android:layout_alignLeft="@+id/tableLayout"
         android:layout_alignStart="@+id/tableLayout"
-        android:alpha="0.5"/>
+        android:clickable="true"
+        android:singleLine="true"/>
 
     <Button
         android:layout_width="145dp"
@@ -128,12 +129,10 @@
         android:checked="false"
         android:textOn="@string/gamemode2"
         android:textSize="15dp"
-        android:onClick="onToggleZeit"
         android:layout_below="@+id/textView2"
         android:layout_alignRight="@+id/tableLayout"
         android:layout_alignEnd="@+id/tableLayout"
-        android:clickable="true"
-        android:singleLine="true"
+        android:alpha="0.5"
         android:layout_marginTop="25dp" />
 
 </RelativeLayout>

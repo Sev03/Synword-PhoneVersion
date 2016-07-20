@@ -50,7 +50,7 @@ public class gameLoadscreen extends Activity {
             // Ask user to connect to Internet
             AlertDialog alertDialog = new AlertDialog.Builder(gameLoadscreen.this).create();
             alertDialog.setTitle("Achtung");
-            alertDialog.setMessage("Es besteht keine Internetverbindung! Bitte überprüfe!");
+            alertDialog.setMessage("Es besteht keine Internetverbindung! Bitte überprüfen!");
             alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Erneut versuchen ",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {

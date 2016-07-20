@@ -52,7 +52,6 @@ public class gamemodeActivity extends ActionBarActivity implements CompoundButto
             sprache = "EN";
         } else {
             sprache = "DE";
-
         }
     }
 

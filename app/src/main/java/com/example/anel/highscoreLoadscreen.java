@@ -61,7 +61,7 @@ public class highscoreLoadscreen extends ActionBarActivity {
 
             try{
                 HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost("http://felf.ga:25571/SynWord3_php.php");
+                HttpPost httppost = new HttpPost("http://felf.ga:25571/Synword_fehlerfrei.php");
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                 HttpResponse response = httpclient.execute(httppost);
                 HttpEntity entity = response.getEntity();
@@ -94,8 +94,7 @@ public class highscoreLoadscreen extends ActionBarActivity {
                     json_data = jArray.getJSONObject(i);
 
                     // Highscore (
-                    rangliste.add((String) json_data.get("username") + " " + json_data.get("highscorenumber")
-                            + " " + json_data.get("gamemode"));
+                    rangliste.add((String) json_data.get("username") + " " + json_data.get("highscorenumber"));
                 }
                 goToNextScreenWhenFinished();
 
