@@ -31,4 +31,10 @@
     <string name="hspoints">Score</string>
     <string name="hserror">No Spaces allowed</string>
     <string name="hserror2">No username entered</string>
+    <string name="versioncheck">Searching for updates...</string>
+    <string name="noInternet">No internet connection available!</string>
+    <string name="tryagain">Try again</string>
+    <string name="alert">Alert!</string>
+    <string name="versiontext">New Update available</string>
+    <string name="versionclick">Go to Google Play</string>
 </resources>

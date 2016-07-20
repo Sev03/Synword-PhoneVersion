@@ -37,7 +37,18 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView20"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/versioncheck"
+        android:id="@+id/textView20"
+        android:layout_below="@+id/textView18"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_marginTop="25dp"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

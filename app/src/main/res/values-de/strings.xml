@@ -32,4 +32,10 @@
     <string name="hspoints">Punkte</string>
     <string name="hserror">Keine Leerzeichen erlaubt</string>
     <string name="hserror2">Kein Username eingegeben</string>
+    <string name="versioncheck">Suche nach Updates...</string>
+    <string name="noInternet">Es besteht keine Internetverbindung!</string>
+    <string name="tryagain">Erneut versuchen</string>
+    <string name="alert">Achtung!</string>
+    <string name="versiontext">Neue Version verfügbar!</string>
+    <string name="versionclick">Gehe zum Playstore</string>
 </resources>

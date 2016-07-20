@@ -56,7 +56,7 @@ public class HighscoreActivity_zeit extends ActionBarActivity{
 
                this.username = wordsplit[0];
                this.score = wordsplit[1];
-               this.rankText = this.rankText + "#" + (i+1) + ": " +"\n";
+               this.rankText = this.rankText + "" + (i+1) + "\n";
                this.scoreText = this.scoreText + score +"\n";
                this.userText = this.userText + username + "\n";
                i++;
