@@ -21,7 +21,7 @@
     <string name="runde">Stage:</string>
     <string name="punkte">Score:</string>
     <string name="loadmain">The Synonymgame</string>
-    <string name="sumpoints">Total Score</string>
+    <string name="sumpoints">Score</string>
     <string name="buttonpophighscore">Done</string>
     <string name="synhighscoretext">Highscore</string>
     <string name="accuracytext" formatted="false">*There are 10 rounds to play.\n*You can choose 2 words out of 6 in each round.\n*There are 2 synonyms (words with similar meaning)  among the 6 words, each right synonym will give you 5 points.</string>
