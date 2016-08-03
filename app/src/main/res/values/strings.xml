@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Synword</string>
+    <string name="app_name">Synword</string>
     <string name="action_settings">something here</string>
     <string name="playButton">Play</string>
     <string name="score">Highscore</string>
@@ -11,7 +11,6 @@
     <string name="clickLang">Gamelanguage</string>
     <string name="loading">Loading...</string>
     <string name="helpText">SynWord is a game in which you have to find synonyms (words with a similar meaning). \n\nEach correct word will give you 5 points (there are two synonyms per round) which sum up to 100 points per game.\n\nThe button Play will get you to the gamemodes „Accuracy“ and „Speed“. \n\nIn „Accuracy“ you can search fort he two synonyms without time pressure to gain the maximum points.\n\nIn „Speed“ you have 15 seconds to find the words per round, gaining fewer points for correct words if you’re slower.\n\nIn „Highscore“ you can see the top ten ranked by points in each gamemode.</string>
-    <string names="tab">\u0009</string>
     <string name="creditstext">Developers</string>
     <string name="creditsnames">Anel Jusic\nFlorian Kropfitsch</string>
     <string name="creditstext2">Version</string>

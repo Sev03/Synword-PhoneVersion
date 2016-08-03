@@ -8,11 +8,11 @@
         android:layout_height="wrap_content"
         android:text="@string/gamerules"
         android:id="@+id/textView3"
-        android:layout_marginTop="10dp"
         android:textSize="25dp"
+        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffff" />
+        android:layout_marginTop="10dp" />
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -39,7 +39,6 @@
                 android:text="@string/gamemode1"
                 android:id="@+id/textView4"
                 android:textSize="20dp"
-                android:layout_below="@+id/textView3"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
 

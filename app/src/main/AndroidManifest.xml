@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.anel.synword" >
+    package="bakkarbeit.SS16.code.synword" >
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.anel.gameLoadscreen"
+            android:name="bakkarbeit.SS16.code.gameLoadscreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
@@ -23,66 +23,66 @@
         </activity>
 
         <activity
-            android:name="com.example.anel.MainActivity"
+            android:name="bakkarbeit.SS16.code.MainActivity"
             android:label="Hauptmenü"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.HighscoreActivity"
+            android:name="bakkarbeit.SS16.code.HighscoreActivity"
             android:label="Highscore"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.HighscoreActivity_zeit"
+            android:name="bakkarbeit.SS16.code.HighscoreActivity_zeit"
             android:label="Highscore"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="com.example.anel.gamemodeActivity"
+            android:name="bakkarbeit.SS16.code.gamemodeActivity"
             android:label="Gamemode"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="com.example.anel.highscoreLoadscreen"
+            android:name="bakkarbeit.SS16.code.highscoreLoadscreen"
             android:label="Loadscreenhighscore"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.highscoreLoadscreen_zeit"
+            android:name="bakkarbeit.SS16.code.highscoreLoadscreen_zeit"
             android:label="Loadscreenhighscore"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.loadscreenActivity"
+            android:name="bakkarbeit.SS16.code.gamescreens.loadscreenActivity"
             android:label="loadscreen"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="com.example.anel.timescreens.tsloadscreenActivity"
+            android:name="bakkarbeit.SS16.code.timescreens.tsloadscreenActivity"
             android:label="loadscreen"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="com.example.anel.gamescreens.gamescreenActivity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gamescreenActivity"
             android:label="Gamescreen"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.creditsActivity"
+            android:name="bakkarbeit.SS16.code.creditsActivity"
             android:label="Credits"
             android:theme="@style/AppTheme.CustomTheme"
             android:screenOrientation="portrait"
@@ -90,158 +90,158 @@
         </activity>
 
         <activity
-            android:name="com.example.anel.helpActivity"
+            android:name="bakkarbeit.SS16.code.helpActivity"
             android:label="Help"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.gs2activity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gs2activity"
             android:label="Gamescreen Runde 2"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.gs3activity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gs3activity"
             android:label="Gamescreen Runde 3"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.gs4activity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gs4activity"
             android:label="Gamescreen Runde 4"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.gs5activity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gs5activity"
             android:label="Gamescreen Runde 5"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.gs6activity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gs6activity"
             android:label="Gamescreen Runde 6"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.gs7activity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gs7activity"
             android:label="Gamescreen Runde 7"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.gs8activity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gs8activity"
             android:label="Gamescreen Runde 8" >
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.gs9activity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gs9activity"
             android:label="Gamescreen Runde 9"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.gamescreens.gs10activity"
+            android:name="bakkarbeit.SS16.code.gamescreens.gs10activity"
             android:label="Gamescreen Runde 10"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.timescreen"
+            android:name="bakkarbeit.SS16.code.timescreens.timescreen"
             android:label="Timescreen Runde 1"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.ts2"
+            android:name="bakkarbeit.SS16.code.timescreens.ts2"
             android:label="Timescreen Runde 2"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.ts3"
+            android:name="bakkarbeit.SS16.code.timescreens.ts3"
             android:label="Timescreen Runde 3"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.ts4"
+            android:name="bakkarbeit.SS16.code.timescreens.ts4"
             android:label="Timescreen Runde 4"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.ts5"
+            android:name="bakkarbeit.SS16.code.timescreens.ts5"
             android:label="Timescreen Runde 5"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.Pop"
+            android:name="bakkarbeit.SS16.code.Pop"
             android:theme="@style/AppTheme.CustomTheme"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.ts6"
+            android:name="bakkarbeit.SS16.code.timescreens.ts6"
             android:label="Timescreen Runde 6"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.ts7"
+            android:name="bakkarbeit.SS16.code.timescreens.ts7"
             android:label="Timescreen Runde 7"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.ts8"
+            android:name="bakkarbeit.SS16.code.timescreens.ts8"
             android:label="Timescreen Runde 8"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.ts9"
+            android:name="bakkarbeit.SS16.code.timescreens.ts9"
             android:label="Timescreen Runde 9"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.timescreens.ts10"
+            android:name="bakkarbeit.SS16.code.timescreens.ts10"
             android:label="Timescreen Runde 10"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="com.example.anel.pophighscore"
+            android:name="bakkarbeit.SS16.code.pophighscore"
             android:theme="@style/AppTheme.CustomTheme2"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
-        <activity android:name="com.example.anel.CheckNetwork"
+        <activity android:name="bakkarbeit.SS16.code.CheckNetwork"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
