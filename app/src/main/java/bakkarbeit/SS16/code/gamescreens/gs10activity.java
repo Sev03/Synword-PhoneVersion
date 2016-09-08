@@ -269,7 +269,6 @@ public class gs10activity extends ActionBarActivity {
         String gamemodus = "Fehlerfrei";
         Intent intent = new Intent(this, pophighscore.class);
         intent.putExtra("message", pointcounter);
-        intent.putStringArrayListExtra("words", wordlist);
         intent.putExtra("modi", gamemodus);
         intent.putExtra("phoneid", phoneID);
         pointcounter.setRound(10);

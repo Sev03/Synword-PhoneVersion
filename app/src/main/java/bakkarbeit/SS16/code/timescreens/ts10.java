@@ -133,11 +133,11 @@ public class ts10 extends ActionBarActivity {
 
             public void onFinish() {
                 TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-                mngr.getDeviceId();
+                String phoneID = mngr.getDeviceId();
                 String gamemodus = "Zeit";
                 Intent intent = new Intent(ts10.this, pophighscore.class);
                 intent.putExtra("message", pointcounter);
-                intent.putStringArrayListExtra("words", wordlist);
+                intent.putExtra("phoneid", phoneID);
                 intent.putExtra("modi", gamemodus);
                 pointcounter.setRound(10);
                 startActivity(intent);
