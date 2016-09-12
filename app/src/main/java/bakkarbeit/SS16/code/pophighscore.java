@@ -101,7 +101,7 @@ public class pophighscore extends Activity{
 
             try {
                 HttpClient httpClient = new DefaultHttpClient();
-                HttpPost httpPost = new HttpPost("http://felf.ga:25571/SynWord2_php.php");
+                HttpPost httpPost = new HttpPost("http://synword.felf.io/insertplayer.php");
                 httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                 HttpResponse response = httpClient.execute(httpPost);
                 HttpEntity entity = response.getEntity();

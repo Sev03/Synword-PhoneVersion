@@ -52,14 +52,12 @@ public class highscoreLoadscreen_zeit extends ActionBarActivity {
         String result = "";
         ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 
-        Exception exception;
-
         @Override
         protected String doInBackground(String... strings) {
 
             try{
                 HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost("http://felf.ga:25571/Synword_zeit.php");
+                HttpPost httppost = new HttpPost("http://synword.felf.io/highscore_zeit.php");
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                 HttpResponse response = httpclient.execute(httppost);
                 HttpEntity entity = response.getEntity();
