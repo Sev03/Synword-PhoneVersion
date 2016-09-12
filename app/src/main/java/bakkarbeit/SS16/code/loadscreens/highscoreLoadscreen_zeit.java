@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code;
+package bakkarbeit.SS16.code.loadscreens;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -21,6 +21,8 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import bakkarbeit.SS16.code.highscore.HighscoreActivity_zeit;
 
 /**
  * Created by III-Sev-III on 23.03.2016.

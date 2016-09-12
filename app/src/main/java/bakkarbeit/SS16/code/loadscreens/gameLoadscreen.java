@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code;
+package bakkarbeit.SS16.code.loadscreens;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -8,6 +8,8 @@ import android.app.AlertDialog;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import bakkarbeit.SS16.code.ConnectionDetector;
+import bakkarbeit.SS16.code.MainActivity;
 import bakkarbeit.SS16.code.synword.R;
 
 /**

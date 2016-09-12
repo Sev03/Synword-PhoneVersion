@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import bakkarbeit.SS16.code.Points;
-import bakkarbeit.SS16.code.gamemodeActivity;
+import bakkarbeit.SS16.code.loadscreens.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;

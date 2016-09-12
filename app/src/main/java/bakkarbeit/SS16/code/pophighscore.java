@@ -28,6 +28,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import bakkarbeit.SS16.code.loadscreens.gamemodeActivity;
+
 /**
  * Created by III-Sev-III on 17.02.2016.
  */

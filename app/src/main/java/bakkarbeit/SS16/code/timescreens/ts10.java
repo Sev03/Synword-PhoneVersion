@@ -15,7 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import bakkarbeit.SS16.code.Points;
-import bakkarbeit.SS16.code.gamemodeActivity;
+import bakkarbeit.SS16.code.loadscreens.gamemodeActivity;
 import bakkarbeit.SS16.code.pophighscore;
 
 import java.util.ArrayList;
@@ -286,12 +286,13 @@ public class ts10 extends ActionBarActivity {
 
     public void showNextScreen(View view) {
         TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-        mngr.getDeviceId();
+        String phoneID = mngr.getDeviceId();
         String gamemodus = "Zeit";
         Intent intent = new Intent(this, pophighscore.class);
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
         intent.putExtra("modi", gamemodus);
+        intent.putExtra("phoneid", phoneID);
         pointcounter.setRound(10);
         startActivity(intent);
         cdTimer.cancel();

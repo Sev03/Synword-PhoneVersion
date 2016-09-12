@@ -21,7 +21,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="bakkarbeit.SS16.code.gameLoadscreen"
+            android:name="bakkarbeit.SS16.code.loadscreens.gameLoadscreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
@@ -39,33 +39,33 @@
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.HighscoreActivity"
+            android:name="bakkarbeit.SS16.code.highscore.HighscoreActivity"
             android:label="Highscore"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.HighscoreActivity_zeit"
+            android:name="bakkarbeit.SS16.code.highscore.HighscoreActivity_zeit"
             android:label="Highscore"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="bakkarbeit.SS16.code.gamemodeActivity"
+            android:name="bakkarbeit.SS16.code.loadscreens.gamemodeActivity"
             android:label="Gamemode"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="bakkarbeit.SS16.code.highscoreLoadscreen"
+            android:name="bakkarbeit.SS16.code.loadscreens.highscoreLoadscreen"
             android:label="Loadscreenhighscore"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.highscoreLoadscreen_zeit"
+            android:name="bakkarbeit.SS16.code.loadscreens.highscoreLoadscreen_zeit"
             android:label="Loadscreenhighscore"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">

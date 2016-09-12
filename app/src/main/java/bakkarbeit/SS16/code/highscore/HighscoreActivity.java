@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code;
+package bakkarbeit.SS16.code.highscore;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +10,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import bakkarbeit.SS16.code.MainActivity;
+import bakkarbeit.SS16.code.loadscreens.highscoreLoadscreen_zeit;
+
 /**
  * Created by Anel on 14.12.2015.
  */
-public class HighscoreActivity_zeit extends ActionBarActivity{
+public class HighscoreActivity extends ActionBarActivity {
 
     ArrayList<String> rangliste = new ArrayList<String>();
     String username;
@@ -25,10 +28,10 @@ public class HighscoreActivity_zeit extends ActionBarActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(bakkarbeit.SS16.code.synword.R.layout.highscore_zeit);
+        setContentView(bakkarbeit.SS16.code.synword.R.layout.highscore);
         getSupportActionBar().hide();
 
-        modus = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.accuracyButton);
+        modus = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.timeButton);
 
         Intent intent = getIntent();
         rangliste = intent.getStringArrayListExtra("highscore");
@@ -39,6 +42,7 @@ public class HighscoreActivity_zeit extends ActionBarActivity{
         rankView.setText(scoreText);
         TextView userView = (TextView)findViewById(bakkarbeit.SS16.code.synword.R.id.txtNickname);
         userView.setText(userText);
+
     }
 
     private void   fillInHighscore(ArrayList<String> results) {
@@ -51,18 +55,18 @@ public class HighscoreActivity_zeit extends ActionBarActivity{
 
                this.username = wordsplit[0];
                this.score = wordsplit[1];
-               this.rankText = this.rankText + "" + (i+1) + "\n";
+               this.rankText = this.rankText + "" + (i+1) +"\n";
                this.scoreText = this.scoreText + score +"\n";
                this.userText = this.userText + username + "\n";
                i++;
        }
     }
 
-    public void onToggle(View view) {
-        Intent intent = new Intent(this, highscoreLoadscreen.class);
-        startActivity(intent);
-        finish();
+    public void onToggleZeit(View view) {
+            Intent intent = new Intent(this, highscoreLoadscreen_zeit.class);
+            startActivity(intent);
     }
+
 
     public void onBackPressed(){
         Intent intent = new Intent(this, MainActivity.class);
