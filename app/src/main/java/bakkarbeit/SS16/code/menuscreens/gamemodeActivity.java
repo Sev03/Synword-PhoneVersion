@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code;
+package bakkarbeit.SS16.code.menuscreens;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+import bakkarbeit.SS16.code.MainActivity;
+import bakkarbeit.SS16.code.Data.Pop;
 import bakkarbeit.SS16.code.loadscreens.loadscreenActivity;
 import bakkarbeit.SS16.code.loadscreens.tsloadscreenActivity;
 

@@ -1,27 +1,27 @@
-package bakkarbeit.SS16.code;
+package bakkarbeit.SS16.code.menuscreens;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.DisplayMetrics;
 import android.view.MenuItem;
+
+import bakkarbeit.SS16.code.MainActivity;
 
 /**
  * Created by Anel on 14.12.2015.
  */
-public class creditsActivity extends ActionBarActivity {
+public class helpActivity extends ActionBarActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(bakkarbeit.SS16.code.synword.R.layout.credits);
+        setContentView(bakkarbeit.SS16.code.synword.R.layout.help);
         getSupportActionBar().hide();
+    }
 
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-
-        getWindow().setLayout((int) (width * .9), (int) (height * .8));
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override

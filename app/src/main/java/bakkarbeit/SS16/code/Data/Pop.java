@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code;
+package bakkarbeit.SS16.code.Data;
 
 import android.app.Activity;
 import android.os.Bundle;

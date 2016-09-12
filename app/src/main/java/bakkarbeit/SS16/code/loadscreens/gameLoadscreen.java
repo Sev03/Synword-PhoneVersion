@@ -8,7 +8,7 @@ import android.app.AlertDialog;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import bakkarbeit.SS16.code.ConnectionDetector;
+import bakkarbeit.SS16.code.Data.ConnectionDetector;
 import bakkarbeit.SS16.code.MainActivity;
 import bakkarbeit.SS16.code.synword.R;
 

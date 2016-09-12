@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import bakkarbeit.SS16.code.loadscreens.highscoreLoadscreen;
+import bakkarbeit.SS16.code.menuscreens.creditsActivity;
+import bakkarbeit.SS16.code.menuscreens.gamemodeActivity;
+import bakkarbeit.SS16.code.menuscreens.helpActivity;
 import bakkarbeit.SS16.code.synword.R;
 
 import java.util.Locale;

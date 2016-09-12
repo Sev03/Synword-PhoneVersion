@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import bakkarbeit.SS16.code.Points;
+import bakkarbeit.SS16.code.Data.Points;
 import bakkarbeit.SS16.code.synword.R;
-import bakkarbeit.SS16.code.gamemodeActivity;
+import bakkarbeit.SS16.code.menuscreens.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;

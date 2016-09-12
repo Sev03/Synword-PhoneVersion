@@ -14,8 +14,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import bakkarbeit.SS16.code.Points;
-import bakkarbeit.SS16.code.gamemodeActivity;
+import bakkarbeit.SS16.code.Data.Points;
+import bakkarbeit.SS16.code.menuscreens.gamemodeActivity;
 import bakkarbeit.SS16.code.pophighscore;
 
 import java.util.ArrayList;
