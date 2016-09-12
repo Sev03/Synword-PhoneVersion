@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code.gamescreens;
+package bakkarbeit.SS16.code.loadscreens;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -23,6 +23,8 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import bakkarbeit.SS16.code.gamescreens.gamescreenActivity;
 
 /**
  * Created by Florian on 22.03.2016.

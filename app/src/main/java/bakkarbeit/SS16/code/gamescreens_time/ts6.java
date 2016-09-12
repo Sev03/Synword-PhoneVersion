@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code.timescreens;
+package bakkarbeit.SS16.code.gamescreens_time;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import bakkarbeit.SS16.code.Points;
-import bakkarbeit.SS16.code.loadscreens.gamemodeActivity;
+import bakkarbeit.SS16.code.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,7 +21,7 @@ import java.util.Random;
 /**
  * Created by Anel on 14.12.2015.
  */
-public class ts8 extends ActionBarActivity {
+public class ts6 extends ActionBarActivity {
     public int points;
     public int round;
     public String ankerword = "Angriff";
@@ -69,9 +69,8 @@ public class ts8 extends ActionBarActivity {
             }
         }
     }
-
     private void   fillInWords(ArrayList<String> results) {
-        String firstrow = results.get(8);
+        String firstrow = results.get(6);
         String[] wordsplit = firstrow.split("\\s+");
 
         this.ankerword = wordsplit[0];
@@ -124,6 +123,9 @@ public class ts8 extends ActionBarActivity {
 
         pointcounter.setPointcounter(points);
 
+        intervallBar = (ProgressBar) findViewById(bakkarbeit.SS16.code.synword.R.id.intervallBar);
+        intervallBar.setProgress(150);
+
         cdTimer = new CountDownTimer(15400, 1000) {
 
             public void onTick(long millisUntilFinished) {
@@ -131,18 +133,15 @@ public class ts8 extends ActionBarActivity {
             }
 
             public void onFinish() {
-                Intent intent = new Intent(ts8.this, ts9.class);
+                Intent intent = new Intent(ts6.this, ts7.class);
                 intent.putExtra("message", pointcounter);
                 intent.putStringArrayListExtra("words", wordlist);
-                pointcounter.setRound(8);
+                pointcounter.setRound(6);
                 startActivity(intent);
                 finish();
             }
 
         }.start();
-
-        intervallBar = (ProgressBar) findViewById(bakkarbeit.SS16.code.synword.R.id.intervallBar);
-        intervallBar.setProgress(150);
 
         intervallBar.setProgress(15 * INTERVAL);
         Runnable runnable = new Runnable() {
@@ -160,6 +159,7 @@ public class ts8 extends ActionBarActivity {
         };
         countdown.postDelayed(runnable, 0);
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -280,10 +280,10 @@ public class ts8 extends ActionBarActivity {
 
     public void showNextScreen(View view) {
         // Do something in response to buttons
-        Intent intent = new Intent(this, ts9.class);
+        Intent intent = new Intent(this, ts7.class);
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
-        pointcounter.setRound(8);
+        pointcounter.setRound(6);
         startActivity(intent);
         cdTimer.cancel();
         countdown.removeCallbacksAndMessages(null);

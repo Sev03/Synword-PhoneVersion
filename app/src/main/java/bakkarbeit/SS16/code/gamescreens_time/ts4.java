@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code.timescreens;
+package bakkarbeit.SS16.code.gamescreens_time;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import bakkarbeit.SS16.code.Points;
-import bakkarbeit.SS16.code.loadscreens.gamemodeActivity;
+import bakkarbeit.SS16.code.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;

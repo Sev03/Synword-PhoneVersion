@@ -1,12 +1,10 @@
-package bakkarbeit.SS16.code.timescreens;
+package bakkarbeit.SS16.code.gamescreens_time;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,8 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import bakkarbeit.SS16.code.Points;
-import bakkarbeit.SS16.code.loadscreens.gamemodeActivity;
-import bakkarbeit.SS16.code.pophighscore;
+import bakkarbeit.SS16.code.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -24,7 +21,7 @@ import java.util.Random;
 /**
  * Created by Anel on 14.12.2015.
  */
-public class ts10 extends ActionBarActivity {
+public class ts3 extends ActionBarActivity {
     public int points;
     public int round;
     public String ankerword = "Angriff";
@@ -73,7 +70,7 @@ public class ts10 extends ActionBarActivity {
         }
     }
     private void   fillInWords(ArrayList<String> results) {
-        String firstrow = results.get(2);
+        String firstrow = results.get(3);
         String[] wordsplit = firstrow.split("\\s+");
 
         this.ankerword = wordsplit[0];
@@ -123,7 +120,11 @@ public class ts10 extends ActionBarActivity {
         b4.setText(arr[array[3]]);
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
+
         pointcounter.setPointcounter(points);
+
+        intervallBar = (ProgressBar) findViewById(bakkarbeit.SS16.code.synword.R.id.intervallBar);
+        intervallBar.setProgress(150);
 
         cdTimer = new CountDownTimer(15400, 1000) {
 
@@ -132,24 +133,17 @@ public class ts10 extends ActionBarActivity {
             }
 
             public void onFinish() {
-                TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-                String phoneID = mngr.getDeviceId();
-                String gamemodus = "Zeit";
-                Intent intent = new Intent(ts10.this, pophighscore.class);
+                Intent intent = new Intent(ts3.this, ts4.class);
                 intent.putExtra("message", pointcounter);
-                intent.putExtra("phoneid", phoneID);
-                intent.putExtra("modi", gamemodus);
-                pointcounter.setRound(10);
+                intent.putStringArrayListExtra("words", wordlist);
+                pointcounter.setRound(3);
                 startActivity(intent);
                 finish();
             }
 
         }.start();
 
-        intervallBar = (ProgressBar) findViewById(bakkarbeit.SS16.code.synword.R.id.intervallBar);
-        intervallBar.setProgress(150);
         intervallBar.setProgress(15 * INTERVAL);
-
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -164,11 +158,6 @@ public class ts10 extends ActionBarActivity {
             }
         };
         countdown.postDelayed(runnable, 0);
-
-    }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 
     public int calcPoints(int time){
@@ -180,8 +169,8 @@ public class ts10 extends ActionBarActivity {
     public void onBackPressed(){
         Intent intent = new Intent(this, gamemodeActivity.class);
         startActivity(intent);
-        cdTimer.cancel();
         countdown.removeCallbacksAndMessages(null);
+        cdTimer.cancel();
     }
 
     @Override
@@ -285,18 +274,14 @@ public class ts10 extends ActionBarActivity {
     }
 
     public void showNextScreen(View view) {
-        TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-        String phoneID = mngr.getDeviceId();
-        String gamemodus = "Zeit";
-        Intent intent = new Intent(this, pophighscore.class);
+        // Do something in response to buttons
+        Intent intent = new Intent(this, ts4.class);
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
-        intent.putExtra("modi", gamemodus);
-        intent.putExtra("phoneid", phoneID);
-        pointcounter.setRound(10);
+        pointcounter.setRound(3);
         startActivity(intent);
-        cdTimer.cancel();
         countdown.removeCallbacksAndMessages(null);
+        cdTimer.cancel();
         finish();
     }
 }

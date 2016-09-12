@@ -52,7 +52,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="bakkarbeit.SS16.code.loadscreens.gamemodeActivity"
+            android:name="bakkarbeit.SS16.code.gamemodeActivity"
             android:label="Gamemode"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
@@ -72,13 +72,13 @@
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.gamescreens.loadscreenActivity"
+            android:name="bakkarbeit.SS16.code.loadscreens.loadscreenActivity"
             android:label="loadscreen"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.tsloadscreenActivity"
+            android:name="bakkarbeit.SS16.code.loadscreens.tsloadscreenActivity"
             android:label="loadscreen"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
@@ -167,35 +167,35 @@
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.timescreen"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.timescreen"
             android:label="Timescreen Runde 1"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.ts2"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.ts2"
             android:label="Timescreen Runde 2"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.ts3"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.ts3"
             android:label="Timescreen Runde 3"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.ts4"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.ts4"
             android:label="Timescreen Runde 4"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.ts5"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.ts5"
             android:label="Timescreen Runde 5"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
@@ -209,35 +209,35 @@
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.ts6"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.ts6"
             android:label="Timescreen Runde 6"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.ts7"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.ts7"
             android:label="Timescreen Runde 7"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.ts8"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.ts8"
             android:label="Timescreen Runde 8"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.ts9"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.ts9"
             android:label="Timescreen Runde 9"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
-            android:name="bakkarbeit.SS16.code.timescreens.ts10"
+            android:name="bakkarbeit.SS16.code.gamescreens_time.ts10"
             android:label="Timescreen Runde 10"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation|screenSize">

@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code.timescreens;
+package bakkarbeit.SS16.code.gamescreens_time;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import bakkarbeit.SS16.code.Points;
-import bakkarbeit.SS16.code.loadscreens.gamemodeActivity;
+import bakkarbeit.SS16.code.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,7 +21,7 @@ import java.util.Random;
 /**
  * Created by Anel on 14.12.2015.
  */
-public class ts6 extends ActionBarActivity {
+public class ts7 extends ActionBarActivity {
     public int points;
     public int round;
     public String ankerword = "Angriff";
@@ -70,7 +70,7 @@ public class ts6 extends ActionBarActivity {
         }
     }
     private void   fillInWords(ArrayList<String> results) {
-        String firstrow = results.get(6);
+        String firstrow = results.get(7);
         String[] wordsplit = firstrow.split("\\s+");
 
         this.ankerword = wordsplit[0];
@@ -122,7 +122,6 @@ public class ts6 extends ActionBarActivity {
         b6.setText(arr[array[5]]);
 
         pointcounter.setPointcounter(points);
-
         intervallBar = (ProgressBar) findViewById(bakkarbeit.SS16.code.synword.R.id.intervallBar);
         intervallBar.setProgress(150);
 
@@ -133,10 +132,10 @@ public class ts6 extends ActionBarActivity {
             }
 
             public void onFinish() {
-                Intent intent = new Intent(ts6.this, ts7.class);
+                Intent intent = new Intent(ts7.this, ts8.class);
                 intent.putExtra("message", pointcounter);
                 intent.putStringArrayListExtra("words", wordlist);
-                pointcounter.setRound(6);
+                pointcounter.setRound(7);
                 startActivity(intent);
                 finish();
             }
@@ -280,10 +279,10 @@ public class ts6 extends ActionBarActivity {
 
     public void showNextScreen(View view) {
         // Do something in response to buttons
-        Intent intent = new Intent(this, ts7.class);
+        Intent intent = new Intent(this, ts8.class);
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
-        pointcounter.setRound(6);
+        pointcounter.setRound(7);
         startActivity(intent);
         cdTimer.cancel();
         countdown.removeCallbacksAndMessages(null);

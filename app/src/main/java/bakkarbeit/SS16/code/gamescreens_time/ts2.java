@@ -1,4 +1,4 @@
-package bakkarbeit.SS16.code.timescreens;
+package bakkarbeit.SS16.code.gamescreens_time;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import bakkarbeit.SS16.code.Points;
-import bakkarbeit.SS16.code.loadscreens.gamemodeActivity;
+import bakkarbeit.SS16.code.gamemodeActivity;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,11 +21,9 @@ import java.util.Random;
 /**
  * Created by Anel on 14.12.2015.
  */
-public class    timescreen extends ActionBarActivity {
-
+public class ts2 extends ActionBarActivity {
     public int points;
     public int round;
-    // Default Werte für die Buttons
     public String ankerword = "Angriff";
     public String syn1 = "offensive";
     public String syn2 = "attacke";
@@ -33,25 +31,21 @@ public class    timescreen extends ActionBarActivity {
     public String nosyn2 = "unfall";
     public String nosyn3 = "schuss";
     public String nosyn4 = "hieb";
-    ArrayList<String> wordlist = new ArrayList<String>();
-
     public Button b1;
     public Button b2;
     public Button b3;
     public Button b4;
     public Button b5;
     public Button b6;
-    int timestamp;
-    private Thread thread;
+    private int timestamp;
 
-    ProgressBar intervallBar;
-    // Interval <= 10 möglich
+    ProgressBar intervallBar;    // Interval <= 10 möglich
     static final int INTERVAL = 10;
 
-    Handler countdown = new Handler();
+    ArrayList<String> wordlist = new ArrayList<String>();
     Points pointcounter = new Points();
+    Handler countdown = new Handler();
     CountDownTimer cdTimer;
-
 
     boolean btn1isclicked = false;
     boolean btn2isclicked = false;
@@ -60,8 +54,23 @@ public class    timescreen extends ActionBarActivity {
     boolean btn5isclicked = false;
     boolean btn6isclicked = false;
 
-    private void fillInWords(ArrayList<String> results) {
-        String firstrow = results.get(0);
+    private void ShuffleArray(int[] array)
+    {
+        int index;
+        Random random = new Random();
+        for (int i = array.length - 1; i > 0; i--)
+        {
+            index = random.nextInt(i + 1);
+            if (index != i)
+            {
+                array[index] ^= array[i];
+                array[i] ^= array[index];
+                array[index] ^= array[i];
+            }
+        }
+    }
+    private void   fillInWords(ArrayList<String> results) {
+        String firstrow = results.get(1);
         String[] wordsplit = firstrow.split("\\s+");
 
         this.ankerword = wordsplit[0];
@@ -73,31 +82,25 @@ public class    timescreen extends ActionBarActivity {
         this.nosyn4 = wordsplit[6];
 
     }
-
-    private void ShuffleArray(int[] array) {
-        int index;
-        Random random = new Random();
-        for (int i = array.length - 1; i > 0; i--) {
-            index = random.nextInt(i + 1);
-            if (index != i) {
-                array[index] ^= array[i];
-                array[i] ^= array[index];
-                array[index] ^= array[i];
-            }
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(bakkarbeit.SS16.code.synword.R.layout.timescreen);
         getSupportActionBar().hide();
+
         Intent intent = getIntent();
+        points = ((Points) intent.getExtras().get("message")).getPointcounter();
+        round = ((Points) intent.getExtras().get("message")).getRound();
         wordlist = intent.getStringArrayListExtra("words");
         fillInWords(wordlist);
-
-
         intervallBar = (ProgressBar) findViewById(bakkarbeit.SS16.code.synword.R.id.intervallBar);
+        TextView test = (TextView) this.findViewById(bakkarbeit.SS16.code.synword.R.id.viewPoints);
+        test.setText("" + points);
+        test = (TextView) findViewById(bakkarbeit.SS16.code.synword.R.id.txtRunde);
+        test.setText((round + 1) + "/10" );
+
+        //stringarray mit den synonymen und nichtsynonymen
+        String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
         b1 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord1);
         b2 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord2);
         b3 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord3);
@@ -105,13 +108,10 @@ public class    timescreen extends ActionBarActivity {
         b5 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord5);
         b6 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord6);
 
-        //stringarray mit den synonymen und nichtsynonymen
-        String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
-
-        TextView test = (TextView) this.findViewById(bakkarbeit.SS16.code.synword.R.id.txtWord);
-        test.setText(ankerword);
+        TextView hauptwort = (TextView) this.findViewById(bakkarbeit.SS16.code.synword.R.id.txtWord);
+        hauptwort.setText(ankerword);
         //array für positionen
-        int[] array = {0, 1, 2, 3, 4, 5};
+        int[] array = {0,1,2,3,4,5};
         //aufruf shufflefunktion
         ShuffleArray(array);
         b1.setText(arr[array[0]]);
@@ -121,7 +121,7 @@ public class    timescreen extends ActionBarActivity {
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
 
-        intervallBar.setProgress(150);
+        pointcounter.setPointcounter(points);
 
         cdTimer = new CountDownTimer(15400, 1000) {
 
@@ -130,10 +130,10 @@ public class    timescreen extends ActionBarActivity {
             }
 
             public void onFinish() {
-                Intent intent = new Intent(timescreen.this, ts2.class);
+                Intent intent = new Intent(ts2.this, ts3.class);
                 intent.putExtra("message", pointcounter);
                 intent.putStringArrayListExtra("words", wordlist);
-                pointcounter.setRound(1);
+                pointcounter.setRound(2);
                 startActivity(intent);
                 finish();
             }
@@ -158,9 +158,8 @@ public class    timescreen extends ActionBarActivity {
     }
 
     public int calcPoints(int time){
-        return Math.max(0, 6 - (int) (Math.floor(time / 2)));
+            return Math.max(0, 6 - (int) (Math.floor(time / 2)));
     }
-
 
     @Override
     public void onBackPressed(){
@@ -169,7 +168,6 @@ public class    timescreen extends ActionBarActivity {
         countdown.removeCallbacksAndMessages(null);
         cdTimer.cancel();
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -302,12 +300,13 @@ public class    timescreen extends ActionBarActivity {
         }
     }
 
+
     public void showNextScreen(View view) {
-        // Do something in response to button
-        Intent intent = new Intent(this, ts2.class);
+        // Do something in response to buttons
+        Intent intent = new Intent(this, ts3.class);
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
-        pointcounter.setRound(1);
+        pointcounter.setRound(2);
         startActivity(intent);
         countdown.removeCallbacksAndMessages(null);
         cdTimer.cancel();

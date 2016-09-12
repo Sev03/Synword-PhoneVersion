@@ -1,10 +1,12 @@
-package bakkarbeit.SS16.code.timescreens;
+package bakkarbeit.SS16.code.gamescreens_time;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,8 +15,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import bakkarbeit.SS16.code.Points;
-import bakkarbeit.SS16.code.synword.R;
-import bakkarbeit.SS16.code.loadscreens.gamemodeActivity;
+import bakkarbeit.SS16.code.gamemodeActivity;
+import bakkarbeit.SS16.code.pophighscore;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -22,7 +24,7 @@ import java.util.Random;
 /**
  * Created by Anel on 14.12.2015.
  */
-public class ts5 extends ActionBarActivity {
+public class ts10 extends ActionBarActivity {
     public int points;
     public int round;
     public String ankerword = "Angriff";
@@ -71,7 +73,7 @@ public class ts5 extends ActionBarActivity {
         }
     }
     private void   fillInWords(ArrayList<String> results) {
-        String firstrow = results.get(5);
+        String firstrow = results.get(2);
         String[] wordsplit = firstrow.split("\\s+");
 
         this.ankerword = wordsplit[0];
@@ -86,7 +88,7 @@ public class ts5 extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.timescreen);
+        setContentView(bakkarbeit.SS16.code.synword.R.layout.timescreen);
         getSupportActionBar().hide();
 
         Intent intent = getIntent();
@@ -94,22 +96,22 @@ public class ts5 extends ActionBarActivity {
         round = ((Points) intent.getExtras().get("message")).getRound();
         wordlist = intent.getStringArrayListExtra("words");
         fillInWords(wordlist);
-        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
-        TextView test = (TextView) this.findViewById(R.id.viewPoints);
+        intervallBar = (ProgressBar) findViewById(bakkarbeit.SS16.code.synword.R.id.intervallBar);
+        TextView test = (TextView) this.findViewById(bakkarbeit.SS16.code.synword.R.id.viewPoints);
         test.setText("" + points);
-        test = (TextView) findViewById(R.id.txtRunde);
+        test = (TextView) findViewById(bakkarbeit.SS16.code.synword.R.id.txtRunde);
         test.setText((round + 1) + "/10" );
 
         //stringarray mit den synonymen und nichtsynonymen
         String[] arr = {syn1, syn2, nosyn1, nosyn2, nosyn3, nosyn4};
-        b1 = (Button) findViewById(R.id.btnWord1);
-        b2 = (Button) findViewById(R.id.btnWord2);
-        b3 = (Button) findViewById(R.id.btnWord3);
-        b4 = (Button) findViewById(R.id.btnWord4);
-        b5 = (Button) findViewById(R.id.btnWord5);
-        b6 = (Button) findViewById(R.id.btnWord6);
+        b1 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord1);
+        b2 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord2);
+        b3 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord3);
+        b4 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord4);
+        b5 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord5);
+        b6 = (Button) findViewById(bakkarbeit.SS16.code.synword.R.id.btnWord6);
 
-        TextView hauptwort = (TextView) this.findViewById(R.id.txtWord);
+        TextView hauptwort = (TextView) this.findViewById(bakkarbeit.SS16.code.synword.R.id.txtWord);
         hauptwort.setText(ankerword);
         //array für positionen
         int[] array = {0,1,2,3,4,5};
@@ -121,11 +123,7 @@ public class ts5 extends ActionBarActivity {
         b4.setText(arr[array[3]]);
         b5.setText(arr[array[4]]);
         b6.setText(arr[array[5]]);
-
         pointcounter.setPointcounter(points);
-
-        intervallBar = (ProgressBar) findViewById(R.id.intervallBar);
-        intervallBar.setProgress(150);
 
         cdTimer = new CountDownTimer(15400, 1000) {
 
@@ -134,17 +132,24 @@ public class ts5 extends ActionBarActivity {
             }
 
             public void onFinish() {
-                Intent intent = new Intent(ts5.this, ts6.class);
+                TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+                String phoneID = mngr.getDeviceId();
+                String gamemodus = "Zeit";
+                Intent intent = new Intent(ts10.this, pophighscore.class);
                 intent.putExtra("message", pointcounter);
-                intent.putStringArrayListExtra("words", wordlist);
-                pointcounter.setRound(5);
+                intent.putExtra("phoneid", phoneID);
+                intent.putExtra("modi", gamemodus);
+                pointcounter.setRound(10);
                 startActivity(intent);
                 finish();
             }
 
         }.start();
 
+        intervallBar = (ProgressBar) findViewById(bakkarbeit.SS16.code.synword.R.id.intervallBar);
+        intervallBar.setProgress(150);
         intervallBar.setProgress(15 * INTERVAL);
+
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -159,8 +164,8 @@ public class ts5 extends ActionBarActivity {
             }
         };
         countdown.postDelayed(runnable, 0);
-    }
 
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -169,6 +174,7 @@ public class ts5 extends ActionBarActivity {
     public int calcPoints(int time){
         return Math.max(0, 6 - (int) (Math.floor(time / 2)));
     }
+
 
     @Override
     public void onBackPressed(){
@@ -186,7 +192,7 @@ public class ts5 extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == bakkarbeit.SS16.code.synword.R.id.action_settings) {
             return true;
         }
 
@@ -195,7 +201,7 @@ public class ts5 extends ActionBarActivity {
 
     int pressed = 0;
     public void onClick1 (View view){
-        view.setBackgroundResource(R.drawable.buttongreen);
+        view.setBackgroundResource(bakkarbeit.SS16.code.synword.R.drawable.buttongreen);
         if (btn1isclicked == false) {
             pressed++;
             btn1isclicked = true;
@@ -209,7 +215,7 @@ public class ts5 extends ActionBarActivity {
     }
 
     public void onClick2 (View view){
-        view.setBackgroundResource(R.drawable.buttongreen);
+        view.setBackgroundResource(bakkarbeit.SS16.code.synword.R.drawable.buttongreen);
         if (btn2isclicked == false) {
             pressed++;
             btn2isclicked = true;
@@ -223,7 +229,7 @@ public class ts5 extends ActionBarActivity {
     }
 
     public void onClick3 (View view){
-        view.setBackgroundResource(R.drawable.buttongreen);
+        view.setBackgroundResource(bakkarbeit.SS16.code.synword.R.drawable.buttongreen);
         if (btn3isclicked == false) {
             pressed++;
             btn3isclicked = true;
@@ -237,7 +243,7 @@ public class ts5 extends ActionBarActivity {
     }
 
     public void onClick4 (View view){
-        view.setBackgroundResource(R.drawable.buttongreen);
+        view.setBackgroundResource(bakkarbeit.SS16.code.synword.R.drawable.buttongreen);
         if (btn4isclicked == false) {
             pressed++;
             btn4isclicked = true;
@@ -251,7 +257,7 @@ public class ts5 extends ActionBarActivity {
     }
 
     public void onClick5 (View view){
-        view.setBackgroundResource(R.drawable.buttongreen);
+        view.setBackgroundResource(bakkarbeit.SS16.code.synword.R.drawable.buttongreen);
         if (btn5isclicked == false) {
             pressed++;
             btn5isclicked = true;
@@ -265,7 +271,7 @@ public class ts5 extends ActionBarActivity {
     }
 
     public void onClick6 (View view){
-        view.setBackgroundResource(R.drawable.buttongreen);
+        view.setBackgroundResource(bakkarbeit.SS16.code.synword.R.drawable.buttongreen);
         if (btn6isclicked == false) {
             pressed++;
             btn6isclicked = true;
@@ -278,13 +284,16 @@ public class ts5 extends ActionBarActivity {
         }
     }
 
-
     public void showNextScreen(View view) {
-        // Do something in response to buttons
-        Intent intent = new Intent(this, ts6.class);
+        TelephonyManager mngr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        String phoneID = mngr.getDeviceId();
+        String gamemodus = "Zeit";
+        Intent intent = new Intent(this, pophighscore.class);
         intent.putExtra("message", pointcounter);
         intent.putStringArrayListExtra("words", wordlist);
-        pointcounter.setRound(5);
+        intent.putExtra("modi", gamemodus);
+        intent.putExtra("phoneid", phoneID);
+        pointcounter.setRound(10);
         startActivity(intent);
         cdTimer.cancel();
         countdown.removeCallbacksAndMessages(null);
