@@ -94,7 +94,7 @@ public class gs10activity extends ActionBarActivity {
     }
 
     private void   fillInWords(ArrayList<String> results) {
-        String firstrow = results.get(2);
+        String firstrow = results.get(10);
         String[] wordsplit = firstrow.split("\\s+");
 
         this.ankerword = wordsplit[0];
